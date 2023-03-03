@@ -16,3 +16,9 @@ background.png //背景圖
 icon.png //網頁圖標
 sub-background.png //文字旁的背景圖
 ```
+# 自定義
+打開編輯器，按鍵盤的```Ctrl + F```搜尋↓
+```File Manager
+Title //更換網頁標題['My SPACE']
+change //更換['#']爲你的鏈接
+```
