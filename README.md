@@ -16,7 +16,7 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
             "url": "/icon.png" //填寫絕對路徑 e.g: sub-background.png
         },
         "gravatar": {
-            "email": "tou6ocjzq@mozmail.com" //作者gravatar電郵
+            "email": "" //作者gravatar電郵
         }
     },
     "background":{
