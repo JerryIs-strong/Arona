@@ -1,12 +1,12 @@
 [data-mode='dark'] {
-    --background-color: #252424f5;
+    --background-color: #252424d6;
     --font-color: #fff;
     --font-secondary-color: #d6d6d6;
     --font-hover-color: #000;
 }
 
 [data-mode='light'] {
-    --background-color: #fffffff5;
+    --background-color: #ffffffc9;
     --font-color: #000;
     --font-secondary-color: #252525;
     --font-hover-color: #fff;
@@ -43,6 +43,7 @@ html {
     width: 70%;
     align-items: center;
     border-radius: 20px;
+    backdrop-filter: blur(20px);
 }
 
 .main .img {
