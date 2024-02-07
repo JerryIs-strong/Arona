@@ -1,8 +1,8 @@
 {
     "basic environment": {
-        "website name": "My SPACE",
+        "website name": "My Planet",
         "website description": "海内存知己 天涯若比鄰",
-        "holder name": "SPACE",
+        "holder name": "JERRY",
         "holder icon":{
             "method": "local",
             "local":{
@@ -20,13 +20,13 @@
         "link-1": {
             "enabled": true,
             "icon": "fa-brands fa-facebook",
-            "url": "https://facebook.com",
+            "url": "https://www.facebook.com/heyajerry07",
             "target": "blank"
         }, 
         "link-2": {
             "enabled": true,
             "icon": "fa fa-youtube",
-            "url": "https://youtube.com",
+            "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
             "target": "blank"
         }, 
         "link-3": {
@@ -38,13 +38,13 @@
         "link-4": {
             "enabled": true,
             "icon": "fa fa-instagram",
-            "url": "https://instagram.com",
+            "url": "https://www.instagram.com/jerry._.hwj7818/",
             "target": "blank"
         }, 
         "link-5": {
             "enabled": true,
-            "icon": "fa  fa-telegram",
-            "url": "https://web.telegram.org/",
+            "icon": "fa-solid fa-blog",
+            "url": "https://jerryis-strong.github.io/",
             "target": "blank"
         }
     }
