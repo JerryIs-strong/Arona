@@ -28,6 +28,7 @@ html {
     flex-direction: row;
     width: 70%;
     align-items: center;
+    border-radius: 20px;
 }
 
 .main .img {
@@ -37,6 +38,7 @@ html {
     height: 40vh;
     position: relative;
     animation: in 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    border-radius: 20px 0 0 20px;
 }
 
 .main .text {
@@ -91,6 +93,7 @@ html {
     #img {
         width: 100%;
         animation: in-lite 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+        border-radius: 20px 20px 0 0;
     }
 }
 
