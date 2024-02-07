@@ -11,6 +11,9 @@
             "gravatar": {
                 "email": "tou6ocjzq@mozmail.com"
             }
+        },
+        "background":{
+            "url": "background.png"
         }
     },
     "Link": {

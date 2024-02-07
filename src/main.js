@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const basicEnvironment = data['basic environment'];
             const linkSettings = data['Link'];
             const holderIcon = data['basic environment']['holder icon'];
+            const backgroundUrl = data['basic environment']['background'];
             const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
 
             // Apply the basic environment settings to the HTML elements
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }else if(holderIcon['method'] == "gravatar"){
                 document.getElementById('img').style.backgroundImage = `url("${gravatarUrl}")`;
             }
+
+            document.getElementById('background').style.backgroundImage = `url("${backgroundUrl["url"]}")`;
 
             // Apply the link settings to the HTML elements
             Object.keys(linkSettings).forEach(key => {
