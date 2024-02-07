@@ -1,6 +1,6 @@
 # HTML How
 推介使用[replit.com](https://replit.com/)、[NetLify](https://www.netlify.com/)或[Github page](https://pages.github.com/)所提供的網頁托管\
-Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub
+Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
 預覽: [NetLify](https://jerrypro.netlify.app/)
 ## 配置項
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除除`setting.json`配置文件以外的文件，以免發生錯誤
