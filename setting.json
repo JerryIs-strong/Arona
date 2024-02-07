@@ -30,7 +30,7 @@
             "target": "blank"
         }, 
         "link-3": {
-            "enabled": true,
+            "enabled": false,
             "icon": "fa fa-link",
             "url": "https://google.com",
             "target": "blank"
