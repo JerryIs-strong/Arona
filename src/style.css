@@ -1,3 +1,17 @@
+[data-mode='dark'] {
+    --background-color: #252424f5;
+    --font-color: #fff;
+    --font-secondary-color: #d6d6d6;
+    --font-hover-color: #000;
+}
+
+[data-mode='light'] {
+    --background-color: #fffffff5;
+    --font-color: #000;
+    --font-secondary-color: #252525;
+    --font-hover-color: #fff;
+}
+
 body,
 html {
     margin: 0;
@@ -22,7 +36,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fffffff5;
+    background-color: var(--background-color);
     max-width: 1200px;
     display: flex;
     flex-direction: row;
@@ -50,13 +64,14 @@ html {
 
 .main .text h1 {
     margin-bottom: 5px;
+    color: var(--font-color);
 }
 
 .main .text h2 {
     margin: 0;
     font-weight: 300;
     font-size: 15px;
-    color: #252525;
+    color: var(--font-secondary-color);
     margin-bottom: 10px;
 }
 
@@ -65,13 +80,13 @@ html {
 }
 
 .mediaBtn a {
-    border: 1px solid #000;
+    border: 1px solid var(--font-color);
     border-radius: 30px;
     padding: 16px;
     width: 15px;
-    color: #000;
+    color: var(--font-color);
     text-decoration: none;
-    box-shadow: 2px 2px #000;
+    box-shadow: 2px 2px var(--font-color);
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -80,9 +95,9 @@ html {
 }
 
 .mediaBtn a:hover {
-    background-color: #000;
-    color: #fff;
-    box-shadow: 0 0 #000;
+    background-color: var(--font-color);
+    color: var(--font-hover-color);
+    box-shadow: 0 0 var(--font-color);
 }
 
 @media screen and (max-width: 590px) {

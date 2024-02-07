@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const holderIcon = data['basic environment']['holder icon'];
             const backgroundUrl = data['basic environment']['background'];
             const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
+            const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            console.log(darkMode);
 
             // Apply the basic environment settings to the HTML elements
             document.title = basicEnvironment['website name'];
@@ -27,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             document.getElementById('background').style.backgroundImage = `url("${backgroundUrl["url"]}")`;
+
+            if (darkMode) {
+                document.documentElement.setAttribute("data-mode", "dark");
+            } else {
+                document.documentElement.setAttribute("data-mode", "light");
+            }
+
+            if(holderIcon['method'] == "local"){
+                document.getElementById('img').style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;
+            }else if(holderIcon['method'] == "gravatar"){
+                document.getElementById('img').style.backgroundImage = `url("${gravatarUrl}")`;
+            }
 
             // Apply the link settings to the HTML elements
             Object.keys(linkSettings).forEach(key => {
