@@ -58,18 +58,3 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub
     }
 }
 ```
-## 渲染
-```File Manager
-background.png
-icon.png
-index.html
-sub-background.png
-```
-應該已輸入至你的 repo\
-\
-請上傳並替換(如需要) ↓
-```File Manager
-background.png //背景圖
-icon.png //網頁圖標
-sub-background.png //文字旁的背景圖
-```
