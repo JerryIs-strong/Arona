@@ -1,0 +1,123 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PingFang SC", "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+}
+
+.background {
+    background-image: url('../background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0.95;
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffffff5;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    align-items: center;
+}
+
+.main .img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    position: relative;
+    animation: in 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+}
+
+.main .text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main .text h1 {
+    margin-bottom: 5px;
+}
+
+.main .text h2 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15px;
+    color: #252525;
+    margin-bottom: 10px;
+}
+
+.mediaBtn {
+    margin: 10px 10px 30px;
+}
+
+.mediaBtn a {
+    border: 1px solid #000;
+    border-radius: 30px;
+    padding: 16px;
+    width: 15px;
+    color: #000;
+    text-decoration: none;
+    box-shadow: 2px 2px #000;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.mediaBtn a {
+    margin: 0 5px 5px;
+}
+
+.mediaBtn a:hover {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 0 #000;
+}
+
+@media screen and (max-width: 590px) {
+    #main {
+        flex-direction: column;
+    }
+
+    #img {
+        width: 100%;
+        animation: in-lite 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    }
+}
+
+@keyframes in {
+
+    0%,
+    40% {
+        width: 0;
+        scale: 0.6;
+    }
+
+    100% {
+        width: 46vh;
+        scale: 1;
+    }
+}
+
+@keyframes in-lite {
+
+    0%,
+    40% {
+        height: 0;
+        scale: 0.6;
+    }
+
+    100% {
+        height: 29vh;
+        scale: 1;
+    }
+}

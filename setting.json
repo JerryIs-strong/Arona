@@ -1,0 +1,48 @@
+{
+    "basic environment": {
+        "website name": "My SPACE",
+        "website description": "海内存知己 天涯若比鄰",
+        "holder name": "SPACE",
+        "holder icon":{
+            "method": "local",
+            "local":{
+                "url": "sub-background.png"
+            },
+            "gravatar": {
+                "email": "tou6ocjzq@mozmail.com"
+            }
+        }
+    },
+    "Link": {
+        "link-1": {
+            "enabled": true,
+            "icon": "fa-brands fa-facebook",
+            "url": "https://facebook.com",
+            "target": "blank"
+        }, 
+        "link-2": {
+            "enabled": true,
+            "icon": "fa fa-youtube",
+            "url": "https://youtube.com",
+            "target": "blank"
+        }, 
+        "link-3": {
+            "enabled": true,
+            "icon": "fa fa-link",
+            "url": "https://google.com",
+            "target": "blank"
+        }, 
+        "link-4": {
+            "enabled": true,
+            "icon": "fa fa-instagram",
+            "url": "https://instagram.com",
+            "target": "blank"
+        }, 
+        "link-5": {
+            "enabled": true,
+            "icon": "fa  fa-telegram",
+            "url": "https://web.telegram.org/",
+            "target": "blank"
+        }
+    }
+}
