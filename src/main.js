@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'display: inline-block;background-color:rgba(0,180,0,1);color:#fff;padding:4px;border-radius:0 4px 4px 0'
     ) 
 
-    fetch('../setting.json')
+    fetch('setting.json')
         .then(response => response.json())
         .then(data => {
             // Extract the settings from the JSON data
