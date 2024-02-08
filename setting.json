@@ -14,7 +14,7 @@
         },
         "background":{
             "method": "bing",
-            "url": "http://api.btstu.cn/sjbz/?lx=dongman"
+            "url": "background.png"
         },
         "signature":{
             "enabled": true,
