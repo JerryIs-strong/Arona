@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const version = "V1.0.3";
     console.log(
-        'Welcome to my webpage!\n\nPowered by %cpersonal-webpage%cV1.0.2', 
+        `Welcome to my webpage!\n\nPowered by %cpersonal-webpage%c${version}`, 
         'display: inline—block;background-color:rgba(66,66,66,0.8);color:#fff;margin—bottom:6px;padding:4px;border-radius:4px 0 0 4px',
         'display: inline-block;background-color:rgba(0,180,0,1);color:#fff;padding:4px;border-radius:0 4px 4px 0'
-    ) 
+    );
 
     fetch('setting.json')
         .then(response => response.json())

@@ -20,7 +20,8 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
         }
     },
     "background":{
-        "url": "background.png" //1.Local: 填寫絕對路徑 e.g: background.png | 2.外部鏈接: 添加https://標頭 e.g: https://jerrypro.xyz/background.png
+        "method": "bing", //1.Local/外部連結 | 2.Bing Api
+        "url": "background.png" //1.Local: 填寫絕對路徑 e.g: background.png | 2.外部連結: 添加https://標頭 e.g: https://jerrypro.xyz/background.png
     }
 }
 ```
