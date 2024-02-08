@@ -3,6 +3,7 @@
     --font-color: #fff;
     --font-secondary-color: #d6d6d6;
     --font-hover-color: #000;
+    --font-sign-color: #ffffff15;
 }
 
 [data-mode='light'] {
@@ -10,6 +11,7 @@
     --font-color: #000;
     --font-secondary-color: #252525;
     --font-hover-color: #fff;
+    --font-sign-color: #50505021;
 }
 
 body,
@@ -17,8 +19,12 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "PingFang SC", "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
     overflow: hidden;
+    background-color: var(--font-hover-color);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .background {
@@ -105,6 +111,14 @@ html {
     box-shadow: 0 0 var(--font-color);
 }
 
+.sign{
+    bottom: 0;
+    position: absolute;
+    right: 20px;
+    font-size: 120px;
+    color: var(--font-sign-color);
+}
+
 @media screen and (max-width: 590px) {
     #main {
         flex-direction: column;
@@ -114,6 +128,10 @@ html {
         width: 100%;
         animation: in-lite 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
         border-radius: 20px 20px 0 0;
+    }
+
+    div.auto-hide {
+        display: none;
     }
 }
 

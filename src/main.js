@@ -16,12 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const backgroundUrl = data['basic environment']['background'];
             const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
             const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            console.log(darkMode);
+            const sign = basicEnvironment['signature']
 
             // Apply the basic environment settings to the HTML elements
             document.title = basicEnvironment['website name'];
             document.getElementById('title').innerText = "HEY! " + basicEnvironment['holder name'];
             document.getElementById('description').innerText = basicEnvironment['website description'];
+            
+            if(sign['enabled']){
+                document.getElementById('sign').innerText = sign['content']
+                if(sign['auto-hide'] == true){
+                    document.getElementById('sign').classList.add("auto-hide");
+                }
+            }
 
             if(holderIcon['method'] == "local"){
                 document.getElementById('img').style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;

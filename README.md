@@ -22,6 +22,11 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     "background":{
         "method": "bing", //1.Local/外部連結 | 2.Bing Api
         "url": "background.png" //1.Local: 填寫絕對路徑 e.g: background.png | 2.外部連結: 添加https://標頭 e.g: https://jerrypro.xyz/background.png
+    },
+    "signature":{
+        "enabled": true, //true: 開啓 | false: 關閉
+        "content": "JP", //個性簽名
+        "auto-hide": true //true: 在移動設備中自動隱藏 | False: 在在移動設備中顯示
     }
 }
 ```
@@ -29,31 +34,31 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
 ```Json
 "Link": {
     "link-1": { //鏈接1
-        "enabled": true, //enable: 開啓 | false: 關閉
+        "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa-brands fa-facebook", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://facebook.com", //鏈接目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-2": { //鏈接2
-        "enabled": true, //enable: 開啓 | false: 關閉
+        "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa fa-youtube", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://youtube.com", //鏈接目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-3": { //鏈接3
-        "enabled": true, //enable: 開啓 | false: 關閉
+        "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa fa-link", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://google.com", //鏈接目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-4": { //鏈接4
-        "enabled": true, //enable: 開啓 | false: 關閉
+        "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa fa-instagram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://instagram.com", //鏈接目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-5": { //鏈接5
-        "enabled": true, //enable: 開啓 | false: 關閉
+        "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa  fa-telegram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://web.telegram.org/", //鏈接目標
         "target": "blank" //_blank | _self | _parent | _top
