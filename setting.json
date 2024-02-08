@@ -13,6 +13,7 @@
             }
         },
         "background":{
+            "method": "bing",
             "url": "http://api.btstu.cn/sjbz/?lx=dongman"
         }
     },

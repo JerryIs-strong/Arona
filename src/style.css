@@ -18,10 +18,11 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: "PingFang SC", "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+    overflow: hidden;
 }
 
 .background {
-    background-image: url('../background.png');
+    background-image: url('');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,6 +30,7 @@ html {
     width: 100%;
     position: absolute;
     opacity: 0.95;
+    animation: bgFadeIn 0.9s cubic-bezier(0.25, 0.04, 0, 0.89);
 }
 
 .main {
@@ -140,5 +142,20 @@ html {
     100% {
         height: 29vh;
         scale: 1;
+    }
+}
+
+
+@keyframes bgFadeIn {
+    0%{
+        transform: scale(1.8);
+        opacity: 0;
+        filter: blur(20px);
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 0.95;
+        filter: blur(0);
     }
 }

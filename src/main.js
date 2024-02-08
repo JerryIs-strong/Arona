@@ -28,7 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('img').style.backgroundImage = `url("${gravatarUrl}")`;
             }
 
-            document.getElementById('background').style.backgroundImage = `url(${backgroundUrl["url"]})`;
+            if(backgroundUrl['method'] == "bing"){
+                getBing();
+            }else if(backgroundUrl['method'] == "local"){
+                document.getElementById('background').style.backgroundImage = `url(${backgroundUrl["url"]})`;
+            }
+            
 
             if (darkMode) {
                 document.documentElement.setAttribute("data-mode", "dark");
