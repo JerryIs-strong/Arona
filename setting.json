@@ -13,7 +13,7 @@
             }
         },
         "background":{
-            "url": "background.png"
+            "url": "http://api.btstu.cn/sjbz/?lx=dongman"
         }
     },
     "Link": {

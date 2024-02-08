@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('img').style.backgroundImage = `url("${gravatarUrl}")`;
             }
 
-            document.getElementById('background').style.backgroundImage = `url("${backgroundUrl["url"]}")`;
+            document.getElementById('background').style.backgroundImage = `url(${backgroundUrl["url"]})`;
 
             if (darkMode) {
                 document.documentElement.setAttribute("data-mode", "dark");
