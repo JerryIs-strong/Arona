@@ -66,3 +66,5 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     }
 }
 ```
+## 更新日志
+> V1.0.3[1]: 更改背景加載動畫速率
