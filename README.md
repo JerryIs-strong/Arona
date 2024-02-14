@@ -34,34 +34,34 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
 ### Link 鏈接按鈕
 ```Json
 "Link": {
-    "link-1": { //鏈接1
+    "link-1": { 
         "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa-brands fa-facebook", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://facebook.com", //鏈接目標
+        "url": "https://facebook.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
-    "link-2": { //鏈接2
+    "link-2": {
         "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa fa-youtube", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://youtube.com", //鏈接目標
+        "url": "https://youtube.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
-    "link-3": { //鏈接3
+    "link-3": {
         "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa fa-link", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://google.com", //鏈接目標
+        "url": "https://google.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
-    "link-4": { //鏈接4
+    "link-4": {
         "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa fa-instagram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://instagram.com", //鏈接目標
+        "url": "https://instagram.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
-    "link-5": { //鏈接5
+    "link-5": {
         "enabled": true, //true: 開啓 | false: 關閉
         "icon": "fa  fa-telegram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://web.telegram.org/", //鏈接目標
+        "url": "https://web.telegram.org/", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     }
 }
