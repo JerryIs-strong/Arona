@@ -36,7 +36,7 @@ html {
     width: 100%;
     position: absolute;
     opacity: 0.95;
-    animation: bgFadeIn 0.9s cubic-bezier(0.25, 0.04, 0, 0.89);
+    animation: bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89);
 }
 
 .main {
@@ -126,7 +126,7 @@ html {
 
     #img {
         width: 100%;
-        animation: in-lite 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+        animation: in-lite 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
         border-radius: 20px 20px 0 0;
     }
 
