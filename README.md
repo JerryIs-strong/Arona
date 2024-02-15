@@ -36,30 +36,35 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
 "Link": {
     "link-1": { 
         "enabled": true, //true: 開啓 | false: 關閉
+        "name": "fb", //用於URL Parameters檢測
         "icon": "fa-brands fa-facebook", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://facebook.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-2": {
         "enabled": true, //true: 開啓 | false: 關閉
+        "name": "yt", //用於URL Parameters檢測
         "icon": "fa fa-youtube", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://youtube.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-3": {
         "enabled": true, //true: 開啓 | false: 關閉
+        "name": "", //用於URL Parameters檢測
         "icon": "fa fa-link", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://google.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-4": {
         "enabled": true, //true: 開啓 | false: 關閉
+        "name": "ig", //用於URL Parameters檢測
         "icon": "fa fa-instagram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://instagram.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-5": {
         "enabled": true, //true: 開啓 | false: 關閉
+        "name": "blog", //用於URL Parameters檢測
         "icon": "fa  fa-telegram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://web.telegram.org/", //連結目標
         "target": "blank" //_blank | _self | _parent | _top

@@ -59,8 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
             Object.keys(linkSettings).forEach(key => {
                 const link = linkSettings[key];
                 const linkElement = document.getElementById(`${key}`);
+                const linkName = link['name']
                 linkElement.style.display = link['enabled'] ? 'inline-block' : 'none';
-                if(linkElement.classList.contains("fa-" + urlParams.get('media'))){
+                linkElement.setAttribute('l-name', linkName);
+                if(linkElement.getAttribute('l-name') == urlParams.get('media')){
                     linkElement.style.display = 'none';
                 }else{
                     if(link['enabled']){

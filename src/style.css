@@ -14,13 +14,16 @@
     --font-sign-color: #50505021;
 }
 
+*{
+    overflow: hidden;
+}
+
 body,
 html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
-    overflow: hidden;
     background-color: var(--font-hover-color);
     user-select: none;
     -webkit-user-select: none;
@@ -118,6 +121,7 @@ html {
     font-size: 120px;
     color: var(--font-sign-color);
     z-index: -1;
+    font-family: "Protest Riot", Microsoft Yahei, sans-serif;
 }
 
 @media screen and (max-width: 590px) {
