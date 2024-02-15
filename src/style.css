@@ -14,10 +14,6 @@
     --font-sign-color: #50505021;
 }
 
-*{
-    overflow: hidden;
-}
-
 body,
 html {
     margin: 0;
@@ -28,8 +24,7 @@ html {
     user-select: none;
     -webkit-user-select: none;
     -webkit-user-drag: none;
-    max-width: 100%;
-    max-height: 100%;
+    overflow: hidden;
 }
 
 .background {
