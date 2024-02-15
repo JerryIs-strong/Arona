@@ -27,7 +27,7 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     "signature":{
         "enabled": true, //true: 開啓 | false: 關閉
         "content": "JP", //個性簽名
-        "auto-hide": true //true: 在移動設備中自動隱藏 | False: 在在移動設備中顯示
+        "auto-hide": true //true: 在移動設備中自動隱藏 | False: 在移動設備中顯示
     }
 }
 ```
@@ -66,5 +66,15 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     }
 }
 ```
+## URL Parameters
+syntax: url + ```?media=```
+
+Case: 在Instagram中發放連結
+| Url | NEW | OLD |
+| :---: | :---: | :---: |
+| https://jerrypro.netlify.app/?media=instagram | ![](https://s2.loli.net/2024/02/15/hEydFbJLOV6c4ko.png) | ![](https://s2.loli.net/2024/02/15/WEYTNaJC3fMot2b.png) |
+
 ## 更新日志
+> 添加對URL Parameters的支持，能在不同場景打開的連結中隱藏當前社交媒體的連結按鈕
+
 > V1.0.3[1]: 更改背景加載動畫速率

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const version = "V1.0.3";
+    const version = "V1.0.4";
     console.log(
         `Welcome to my webpage!\n\nPowered by %cpersonal-webpage%c${version}`, 
         'display: inline—block;background-color:rgba(66,66,66,0.8);color:#fff;margin—bottom:6px;padding:4px;border-radius:4px 0 0 4px',
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
             const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
             const sign = basicEnvironment['signature']
+            const urlParams = new URLSearchParams(window.location.search);
 
             // Apply the basic environment settings to the HTML elements
             document.title = basicEnvironment['website name'];
@@ -42,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('background').style.backgroundImage = `url(${backgroundUrl["url"]})`;
             }
             
-
             if (darkMode) {
                 document.documentElement.setAttribute("data-mode", "dark");
             } else {
@@ -59,10 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
             Object.keys(linkSettings).forEach(key => {
                 const link = linkSettings[key];
                 const linkElement = document.getElementById(`${key}`);
-                linkElement.className = link["icon"];
-                linkElement.target = link["target"];
                 linkElement.style.display = link['enabled'] ? 'inline-block' : 'none';
-                linkElement.setAttribute('href', link['url']);
+                if(linkElement.classList.contains("fa-" + urlParams.get('media'))){
+                    linkElement.style.display = 'none';
+                }else{
+                    if(link['enabled']){
+                        linkElement.className = link["icon"];
+                        linkElement.target = link["target"];
+                        linkElement.setAttribute('href', link['url']);
+                    }
+                }
             });
         })
         .catch(error => {
