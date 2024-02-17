@@ -23,8 +23,36 @@
         },
         "music":{
             "enabled": true,
-            "name": "那年 - 任然 • 任然精選集 • 2016",
-            "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
+            "data": {
+                "music-1":{
+                    "name": "那年 - 任然 • 任然精選集 • 2016",
+                    "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
+                },
+                "music-2":{
+                    "name": "那年初夏 - 任然 • 禁獵社 • 2012",
+                    "url": "https://music.youtube.com/watch?v=bGpwSrphTn8"
+                },
+                "music-3":{
+                    "name": "圈住你 - 一口甜 • 圈住你 • 2019",
+                    "url": "https://music.youtube.com/watch?v=RR9w_ZSsTvM"
+                },
+                "music-4":{
+                    "name": "我 - 一口甜 • 甜蜜三重奏 • 2019",
+                    "url": "https://music.youtube.com/watch?v=XdovJNev2Ps"
+                },
+                "music-5":{
+                    "name": "喜歡你 - 一口甜 • 甜蜜三重奏 • 2019",
+                    "url": "https://music.youtube.com/watch?v=YtVeAJ8_w7c"
+                },
+                "music-6":{
+                    "name": "想和你在一起 - 一口甜 • 甜蜜三重奏 • 2019",
+                    "url": "https://music.youtube.com/watch?v=J9hilYRBwuE"
+                },
+                "music-7":{
+                    "name": "下墜 - 一口甜 • 下墜 • 2021",
+                    "url": "https://music.youtube.com/watch?v=nor_-bD_Qgo"
+                }
+            }
         }
     },
     "Link": {

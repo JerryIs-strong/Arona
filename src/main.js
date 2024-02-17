@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Extract the settings from the JSON data
             const basicEnvironment = data['basic environment'];
             const linkSettings = data['Link'];
+            const musicData = basicEnvironment['music']['data'];
+            const musicNumber = Object.keys(musicData).length;
+            const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
+            const musicKey = musicData[`music-${musicRandom}`];
             const holderIcon = data['basic environment']['holder icon'];
             const backgroundUrl = data['basic environment']['background'];
             const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
@@ -33,8 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if(music['enabled']){
-                document.getElementById('MusicName').innerText = music['name']
-                document.getElementById('MusicName').setAttribute('href', music['url'])
+                document.getElementById('MusicName').innerText = musicKey['name']
+                document.getElementById('MusicName').setAttribute('href', musicKey['url'])
+                
             }else{
                 document.getElementById('shareMusic').remove()
             }

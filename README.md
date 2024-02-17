@@ -28,6 +28,19 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
         "enabled": true, //true: 開啓 | false: 關閉
         "content": "JP", //個性簽名
         "auto-hide": true //true: 在移動設備中自動隱藏 | False: 在移動設備中顯示
+    },
+    "music": { 
+        "enabled": true, //true: 開啓 | false: 關閉
+        "data":{ //可添加多首歌曲，但music-${}必須由1開始!
+            "music-1":{
+                "name": "那年 - 任然 • 任然精選集 • 2016",
+                "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
+            },
+            "music-2":{
+                "name": "圈住你 - 一口甜 • 圈住你 • 2019",
+                "url": "https://music.youtube.com/watch?v=RR9w_ZSsTvM"
+            }
+        }
     }
 }
 ```
@@ -80,6 +93,8 @@ Case: 在Instagram中發放連結
 | https://jerrypro.netlify.app/?media=instagram | ![](https://s2.loli.net/2024/02/15/hEydFbJLOV6c4ko.png) | ![](https://s2.loli.net/2024/02/15/WEYTNaJC3fMot2b.png) |
 
 ## 更新日志
+> V1.0.4[2]: 添加Music Share功能，快來和別人分享喜歡的音樂吧！
+
 > V1.0.4[1]: 添加對URL Parameters的支持，能在不同場景打開的連結中隱藏當前社交媒體的連結按鈕
 
 > V1.0.3[1]: 更改背景加載動畫速率
