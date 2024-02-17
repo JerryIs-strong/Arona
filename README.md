@@ -31,7 +31,7 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     },
     "music": { 
         "enabled": true, //true: 開啓 | false: 關閉
-        "data":{ //可添加多首歌曲，但music-${}必須由1開始!
+        "data":{ //可添加多首歌曲，但music-$必須由1開始!
             "music-1":{
                 "name": "那年 - 任然 • 任然精選集 • 2016",
                 "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
@@ -90,7 +90,7 @@ syntax: ```url + ?media=```
 Case: 在Instagram中發放連結
 | Url | NEW | OLD |
 | :---: | :---: | :---: |
-| https://jerrypro.netlify.app/?media=instagram | ![](https://s2.loli.net/2024/02/15/hEydFbJLOV6c4ko.png) | ![](https://s2.loli.net/2024/02/15/WEYTNaJC3fMot2b.png) |
+| https://jerrypro.netlify.app/?media=instagram | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
 
 ## 更新日志
 > V1.0.4[2]: 添加Music Share功能，快來和別人分享喜歡的音樂吧！
