@@ -60,16 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const link = linkSettings[key];
                 const linkElement = document.getElementById(`${key}`);
                 const linkName = link['name']
-                linkElement.style.display = link['enabled'] ? 'inline-block' : 'none';
-                linkElement.setAttribute('l-name', linkName);
-                if(linkElement.getAttribute('l-name') == urlParams.get('media')){
-                    linkElement.style.display = 'none';
-                }else{
-                    if(link['enabled']){
-                        linkElement.className = link["icon"];
-                        linkElement.target = link["target"];
-                        linkElement.setAttribute('href', link['url']);
+                if(link['enabled']){
+                    linkElement.setAttribute('l-name', linkName);
+                    if(linkElement.getAttribute('l-name') == urlParams.get('media')){
+                        linkElement.remove();
+                    }else{
+                        if(link['enabled']){
+                            linkElement.className = link["icon"];
+                            linkElement.target = link["target"];
+                            linkElement.setAttribute('href', link['url']);
+                        }
                     }
+                }else{
+                    linkElement.remove();
                 }
             });
         })
