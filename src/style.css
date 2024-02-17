@@ -119,6 +119,7 @@ html {
     color: var(--font-sign-color);
     z-index: -1;
     font-family: "Protest Riot", Microsoft Yahei, sans-serif;
+    white-space: nowrap;
 }
 
 @media screen and (max-width: 590px) {
