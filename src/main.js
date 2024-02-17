@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
             const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
             const sign = basicEnvironment['signature']
+            const music = basicEnvironment['music']
             const urlParams = new URLSearchParams(window.location.search);
 
             // Apply the basic environment settings to the HTML elements
@@ -29,6 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(sign['auto-hide'] == true){
                     document.getElementById('sign').classList.add("auto-hide");
                 }
+            }
+
+            if(music['enabled']){
+                document.getElementById('MusicName').innerText = music['name']
+                document.getElementById('MusicName').setAttribute('href', music['url'])
+            }else{
+                document.getElementById('shareMusic').remove()
             }
 
             if(holderIcon['method'] == "local"){

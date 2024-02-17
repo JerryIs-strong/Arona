@@ -99,9 +99,6 @@ html {
     text-decoration: none;
     box-shadow: 2px 2px var(--font-color);
     transition: box-shadow 0.3s ease-in-out;
-}
-
-.mediaBtn a {
     margin: 0 5px 5px;
 }
 
@@ -119,7 +116,31 @@ html {
     color: var(--font-sign-color);
     z-index: -1;
     font-family: "Protest Riot", Microsoft Yahei, sans-serif;
-    white-space: nowrap;
+}
+
+.musicIcon{
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.shareMusic{
+    color: rgb(255, 255, 255);
+    z-index: 10;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.MusicName{
+    cursor: pointer;
+}
+
+a.MusicName:-webkit-any-link {
+    color: unset;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 590px) {

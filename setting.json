@@ -20,6 +20,11 @@
             "enabled": true,
             "content": "(๑´ㅁ`)",
             "auto-hide": true
+        },
+        "music":{
+            "enabled": true,
+            "name": "那年 - 任然 • 任然精選集 • 2016",
+            "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
         }
     },
     "Link": {
