@@ -4,12 +4,12 @@
         "website description": "海内存知己 天涯若比鄰",
         "holder name": "JERRY",
         "holder icon":{
-            "method": "local",
+            "method": "gravatar",
             "local":{
                 "url": "sub-background.png"
             },
             "gravatar": {
-                "email": ""
+                "email": "heyajerry@gmail.com"
             }
         },
         "background":{
