@@ -91,5 +91,6 @@
             "url": "https://jerryis-strong.github.io/",
             "target": "blank"
         }
-    }
+    },
+    "debug": true
 }
