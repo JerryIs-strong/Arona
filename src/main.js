@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if(music['enabled']){
                 document.getElementById('MusicName').innerText = musicKey['name'];
                 document.getElementById('MusicName').setAttribute('href', musicKey['url']);
+                document.getElementById('MusicName').setAttribute("title", musicKey['name']);
                 debug(`>> 隨機歌曲已經加載 <<`);
             }else{
-                document.getElementById('shareMusic').remove()
+                document.getElementById('music').remove()
             }
 
             if(backgroundUrl['method'] == "bing"){
@@ -98,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             linkElement.className = link["icon"];
                             linkElement.target = link["target"];
                             linkElement.setAttribute('href', link['url']);
+                            linkElement.setAttribute("title", link['title']);
                         }
                     }
                 }else{

@@ -118,12 +118,12 @@ html {
     font-family: "Protest Riot", Microsoft Yahei, sans-serif;
 }
 
-.musicIcon{
+.musicIcon, .githubIcon{
     font-size: 20px;
     margin-right: 5px;
 }
 
-.shareMusic{
+.share{
     color: rgb(255, 255, 255);
     z-index: 10;
     position: absolute;
@@ -131,13 +131,20 @@ html {
     right: 20px;
     font-weight: bold;
     opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .MusicName{
     cursor: pointer;
 }
 
-a.MusicName:-webkit-any-link {
+.github{
+    margin-top: 10px;
+}
+
+a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
     color: unset;
     cursor: pointer;
     text-decoration: none;

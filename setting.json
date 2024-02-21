@@ -58,6 +58,7 @@
     "Link": {
         "link-1": {
             "enabled": true,
+            "title": "facebook",
             "name": "fb",
             "icon": "fa-brands fa-facebook",
             "url": "https://www.facebook.com/heyajerry07",
@@ -65,6 +66,7 @@
         }, 
         "link-2": {
             "enabled": true,
+            "title": "youtube",
             "name": "yt",
             "icon": "fa fa-youtube",
             "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
@@ -72,6 +74,7 @@
         }, 
         "link-3": {
             "enabled": false,
+            "title": "",
             "name": "",
             "icon": "fa fa-link",
             "url": "https://google.com",
@@ -79,6 +82,7 @@
         }, 
         "link-4": {
             "enabled": true,
+            "title": "instagram",
             "name": "ig",
             "icon": "fa fa-instagram",
             "url": "https://www.instagram.com/jerry._.hwj7818/",
@@ -86,11 +90,12 @@
         }, 
         "link-5": {
             "enabled": true,
+            "title": "blog",
             "name": "blog",
             "icon": "fa-solid fa-blog",
             "url": "https://jerryis-strong.github.io/",
             "target": "blank"
         }
     },
-    "debug": true
+    "debug": false
 }

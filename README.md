@@ -93,6 +93,8 @@ Case: 在Instagram中發放連結
 | https://jerrypro.netlify.app/?media=instagram | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
 
 ## 更新日志
+> V1.0.4[4]: 優化無障礙設置，添加Debug Mode
+
 > V1.0.4[3]: 添加Music Share功能，快來和別人分享喜歡的音樂吧！
 
 > V1.0.4[2]: 改進以移除的方式隱藏沒有使用的連結
