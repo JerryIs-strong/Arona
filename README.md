@@ -49,6 +49,7 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
 "Link": {
     "link-1": { 
         "enabled": true, //true: 開啓 | false: 關閉
+        "title": "facebook",
         "name": "fb", //用於URL Parameters檢測
         "icon": "fa-brands fa-facebook", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://facebook.com", //連結目標
@@ -56,20 +57,23 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     },
     "link-2": {
         "enabled": true, //true: 開啓 | false: 關閉
+        "title": "youtube",
         "name": "yt", //用於URL Parameters檢測
         "icon": "fa fa-youtube", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://youtube.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
     "link-3": {
-        "enabled": true, //true: 開啓 | false: 關閉
+        "enabled": false, //true: 開啓 | false: 關閉
+        "title": "",
         "name": "", //用於URL Parameters檢測
-        "icon": "fa fa-link", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://google.com", //連結目標
-        "target": "blank" //_blank | _self | _parent | _top
+        "icon": "", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
+        "url": "", //連結目標
+        "target": "" //_blank | _self | _parent | _top
     },
     "link-4": {
         "enabled": true, //true: 開啓 | false: 關閉
+        "title": "instagram",
         "name": "ig", //用於URL Parameters檢測
         "icon": "fa fa-instagram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://instagram.com", //連結目標
@@ -77,7 +81,8 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
     },
     "link-5": {
         "enabled": true, //true: 開啓 | false: 關閉
-        "name": "blog", //用於URL Parameters檢測
+        "title": "telegram",
+        "name": "tg", //用於URL Parameters檢測
         "icon": "fa  fa-telegram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://web.telegram.org/", //連結目標
         "target": "blank" //_blank | _self | _parent | _top

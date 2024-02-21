@@ -76,9 +76,9 @@
             "enabled": false,
             "title": "",
             "name": "",
-            "icon": "fa fa-link",
-            "url": "https://google.com",
-            "target": "blank"
+            "icon": "",
+            "url": "",
+            "target": ""
         }, 
         "link-4": {
             "enabled": true,
