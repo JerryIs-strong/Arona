@@ -97,5 +97,5 @@
             "target": "blank"
         }
     },
-    "debug": true
+    "debug": false
 }
