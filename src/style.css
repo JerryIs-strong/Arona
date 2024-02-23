@@ -1,5 +1,5 @@
 [data-mode='dark'] {
-    --background-color: #252424d6;
+    --background-color: #101010b0;
     --font-color: #fff;
     --font-secondary-color: #d6d6d6;
     --font-hover-color: #000;
@@ -7,7 +7,7 @@
 }
 
 [data-mode='light'] {
-    --background-color: #ffffffc9;
+    --background-color: #ffffffa3;
     --font-color: #000;
     --font-secondary-color: #252525;
     --font-hover-color: #fff;
