@@ -13,8 +13,8 @@
             }
         },
         "background":{
-            "method": "bing",
-            "url": "background.png"
+            "method": "local",
+            "url": "https://s2.loli.net/2024/02/23/f1NbBwmt6E4PZ8F.png"
         },
         "signature":{
             "enabled": true,
@@ -97,5 +97,5 @@
             "target": "blank"
         }
     },
-    "debug": false
+    "debug": true
 }

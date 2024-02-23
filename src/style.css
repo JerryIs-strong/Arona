@@ -134,6 +134,13 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    max-height: 21px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.share::-webkit-scrollbar {
+    display: none;
 }
 
 .MusicName{
