@@ -56,9 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Apply the basic environment settings to the HTML elements
+            document.querySelector('meta[name="description"]').setAttribute('content', basicEnvironment['meta description']);
             document.title = basicEnvironment['website name'];
             document.getElementById('title').innerText = "HEY! " + basicEnvironment['holder name'];
-            document.getElementById('description').innerText = basicEnvironment['website description'];
+            document.getElementById('description').innerText = basicEnvironment['subtitle'];
 
             if (sign['enabled']) {
                 document.getElementById('sign').innerText = sign['content'];
@@ -72,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (music['enabled']) {
                 document.getElementById('MusicName').innerText = musicKey['name'];
                 document.getElementById('MusicName').setAttribute('href', musicKey['url']);
-                document.getElementById('MusicName').setAttribute("title", musicKey['name']);
+                document.getElementById('MusicName').setAttribute('title', musicKey['name']);
+                infiniteLoop();
+                document.getElementById('github').classList.add("github-loop");
                 debug(` 隨機歌曲已經加載✅`);
             } else {
                 document.getElementById('music').remove()
@@ -126,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             debug(` ${linkEnabled}/${linkCounter}連結已經加載✅`);
-            infiniteLoop();
         })
         .catch(error => {
             console.error('Error fetching or parsing the setting.json file:', error);

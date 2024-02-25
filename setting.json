@@ -1,7 +1,8 @@
 {
     "basic environment": {
         "website name": "My Planet",
-        "website description": "海内存知己 天涯若比鄰",
+        "subtitle": "海内存知己 天涯若比鄰",
+        "meta description": "JERRY's Homepage",
         "holder name": "JERRY",
         "holder icon":{
             "method": "gravatar",
@@ -13,7 +14,7 @@
             }
         },
         "background":{
-            "method": "local",
+            "method": "bing",
             "url": "https://s2.loli.net/2024/02/23/f1NbBwmt6E4PZ8F.png"
         },
         "signature":{
