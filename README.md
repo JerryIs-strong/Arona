@@ -1,15 +1,19 @@
 <br/>
 <div align="center">
-  <img src="/src/sample/banner.png" width=60%>
+    <img src="/src/sample/banner.png" width=60%>
+    <br/>
+    <a href="https://jerrypro.netlify.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="#Deploy" target="blank"><strong>📦️ 部署</strong></a>
+    <br/>
 </div>
 <br/>
 
 ---
+## Deploy
+git url = "https://github.com/JerryIs-strong/personal-webpage.git"
 
-推介使用[replit.com](https://replit.com/)、[NetLify](https://www.netlify.com/)或[Github page](https://pages.github.com/)所提供的網頁托管\
-Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
-預覽: [NetLify](https://jerrypro.netlify.app/)\
-參考教程: [JERRY PRO](https://jerryis-strong.github.io/posts/jp-5465/)、[BiliBili](https://www.bilibili.com/video/BV1R4421c7xZ/?vd_source=47382271a1d0750dd75f1b095a12ba29)
+1. [NetLify](https://www.netlify.com/)
+2. [Github page](https://pages.github.com/)
 ## 配置項
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除`setting.json`配置文件以外的文件，以免發生錯誤
 ### Basic Environment 基本環境
