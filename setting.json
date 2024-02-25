@@ -1,80 +1,56 @@
 {
     "basic environment": {
-        "website name": "My Planet",
-        "subtitle": "海内存知己 天涯若比鄰",
-        "meta description": "JERRY's Homepage",
-        "holder name": "JERRY",
+        "website name": "",
+        "subtitle": "",
+        "meta description": "",
+        "holder name": "",
         "holder icon":{
-            "method": "gravatar",
+            "method": "",
             "local":{
-                "url": "sub-background.png"
+                "url": ""
             },
             "gravatar": {
-                "email": "heyajerry@gmail.com"
+                "email": ""
             }
         },
         "background":{
-            "method": "bing",
-            "url": "https://s2.loli.net/2024/02/23/f1NbBwmt6E4PZ8F.png"
+            "method": "",
+            "url": ""
         },
         "signature":{
-            "enabled": true,
-            "content": "(๑´ㅁ`)",
-            "auto-hide": true
+            "enabled": "",
+            "content": "",
+            "auto-hide": ""
         },
         "music":{
-            "enabled": true,
+            "enabled": "",
             "data": {
                 "music-1":{
-                    "name": "那年 - 任然 • 任然精選集 • 2016",
-                    "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
-                },
-                "music-2":{
-                    "name": "那年初夏 - 任然 • 禁獵社 • 2012",
-                    "url": "https://music.youtube.com/watch?v=bGpwSrphTn8"
-                },
-                "music-3":{
-                    "name": "圈住你 - 一口甜 • 圈住你 • 2019",
-                    "url": "https://music.youtube.com/watch?v=RR9w_ZSsTvM"
-                },
-                "music-4":{
-                    "name": "我 - 一口甜 • 甜蜜三重奏 • 2019",
-                    "url": "https://music.youtube.com/watch?v=XdovJNev2Ps"
-                },
-                "music-5":{
-                    "name": "喜歡你 - 一口甜 • 甜蜜三重奏 • 2019",
-                    "url": "https://music.youtube.com/watch?v=YtVeAJ8_w7c"
-                },
-                "music-6":{
-                    "name": "想和你在一起 - 一口甜 • 甜蜜三重奏 • 2019",
-                    "url": "https://music.youtube.com/watch?v=J9hilYRBwuE"
-                },
-                "music-7":{
-                    "name": "下墜 - 一口甜 • 下墜 • 2021",
-                    "url": "https://music.youtube.com/watch?v=nor_-bD_Qgo"
+                    "name": "",
+                    "url": ""
                 }
             }
         }
     },
     "Link": {
         "link-1": {
-            "enabled": true,
-            "title": "facebook",
-            "name": "fb",
-            "icon": "fa-brands fa-facebook",
-            "url": "https://www.facebook.com/heyajerry07",
-            "target": "blank"
+            "enabled": "",
+            "title": "",
+            "name": "",
+            "icon": "",
+            "url": "",
+            "target": ""
         }, 
         "link-2": {
-            "enabled": true,
-            "title": "youtube",
-            "name": "yt",
-            "icon": "fa fa-youtube",
-            "url": "https://www.youtube.com/channel/UCb4AAgayzeNgj01ULpDDzjg",
-            "target": "blank"
+            "enabled": "",
+            "title": "",
+            "name": "",
+            "icon": "",
+            "url": "",
+            "target": ""
         }, 
         "link-3": {
-            "enabled": false,
+            "enabled": "",
             "title": "",
             "name": "",
             "icon": "",
@@ -82,21 +58,21 @@
             "target": ""
         }, 
         "link-4": {
-            "enabled": true,
-            "title": "instagram",
-            "name": "ig",
-            "icon": "fa fa-instagram",
-            "url": "https://www.instagram.com/jerry._.hwj7818/",
-            "target": "blank"
+            "enabled": "",
+            "title": "",
+            "name": "",
+            "icon": "",
+            "url": "",
+            "target": ""
         }, 
         "link-5": {
-            "enabled": true,
-            "title": "blog",
-            "name": "blog",
-            "icon": "fa-solid fa-blog",
-            "url": "https://jerryis-strong.github.io/",
-            "target": "blank"
+            "enabled": "",
+            "title": "",
+            "name": "",
+            "icon": "",
+            "url": "",
+            "target": ""
         }
     },
-    "debug": false
+    "debug": ""
 }
