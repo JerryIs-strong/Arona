@@ -4,7 +4,8 @@
     <br/>
     <br/>
     <a href="https://personal-webpage-demo-7jz1.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>
+    <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="#-配置項" target="blank"><strong>💾 配置項</strong>
     <br/>
     <br/>
     <img src="/src/sample/demo.png">
