@@ -1,19 +1,73 @@
 <br/>
 <div align="center">
-    <img src="/src/sample/banner.png" width=60%>
+    <img src="/src/sample/banner.png" width=85%>
     <br/>
     <br/>
-    <a href="https://jerrypro.netlify.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://personal-webpage-demo-7jz1.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#Deploy" target="blank"><strong>📦️ 部署</strong></a>
 </div>
-<br/>
 
 ---
-## Deploy
-git url = "https://github.com/JerryIs-strong/personal-webpage.git"
+歡迎使用JerryIs-strong/personal-webpage，你將瞭解如何部署此項目，並簡單地配置網頁的必要設置。請放心，我們將會一切從簡。
+## ✨ 特性
+- ⚡簡易性: 一切基於setting.json文件進行配置
+- 🚀高性能: 去除一切其他的功能，只做一個純粹的個人主頁
+- 🌍SEO優化: 我們盡力為你在前期做好SEO優化，減少後續的工作
+- 📱自適應: 我們為不同尺寸的設備做出了適配
+- 🌓暗黑模式: 支援自動暗黑模式的切換
+- 👩‍💻可用性: 全力支援二次開發
+- 🔗URL Parameters: 支援傳入URL Parameters，隱藏不需要的鏈接
+- 🎠美學: 支援高斯模糊
 
-1. [NetLify](https://www.netlify.com/)
-2. [Github page](https://pages.github.com/)
+## 📦️ 部署
+1. [NetLify](#NetLify)
+2. [Github page](#GithubPage)
+3. [Vercel](#Vercel)(推介)
+
+## ⚙️ 以NetLify開始
+歡迎使用NetLify部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
+<br/>
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JerryIs-strong/personal-webpage)
+<br/>
+1. 點擊以上的```Deploy to Netlify```按鈕
+2. 點擊```Connect to GitHub```
+![](/src/sample/netlify/screenshot-1.png)
+3. 授權GitHub賬戶，點擊```Authorize netlify```
+![](/src/sample/netlify/screenshot-2.png)
+4. 根據步驟，創建Git儲存庫，點擊```Save & Deploy```
+![](/src/sample/netlify/screenshot-3.png)
+5. 等待NetLify的部署工作，部署成功
+![](/src/sample/netlify/screenshot-4.png)
+
+## ⚙️ 以Github Page開始
+歡迎使用Github Page部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
+1. 點擊```Fork```按鈕
+![](/src/sample/github/screenshot-1.png)
+2. 根據步驟，創建GitHub儲存庫，點擊```Create```
+![](/src/sample/github/screenshot-2.png)
+3. 點擊```Settings```一欄
+![](/src/sample/github/screenshot-3.png)
+4. 點擊```Pages```一項
+![](/src/sample/github/screenshot-4.png)
+5. 選擇```Main```分支，點擊```Save```
+![](/src/sample/github/screenshot-5.png)
+6. 等待Github Page的部署工作，部署成功
+![](/src/sample/github/screenshot-6.png)
+## ⚙️ 以Vercel開始
+歡迎使用Vercel部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至Vercel的伺服器。<br/>
+<br/>
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JerryIs-strong/personal-webpage.git)
+<br/>
+1. 點擊以上的```deploy```按鈕
+2. 在"Create Git Repository"一欄中，選擇一個Git儲存庫(推介GitHub)
+![](/src/sample/vercel/screenshot-1.png)
+3. 根據步驟，創建Git儲存庫，點擊```Create fork```
+![](/src/sample/vercel/screenshot-2.png)
+4. 等待Git任務完成
+![](/src/sample/vercel/screenshot-3.png)
+5. 部署成功
+![](/src/sample/vercel/screenshot-4.png)
+
 ## 配置項
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除`setting.json`配置文件以外的文件，以免發生錯誤
 ### Basic Environment 基本環境
