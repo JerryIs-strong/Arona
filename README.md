@@ -20,7 +20,7 @@
 - 📱自適應: 我們為不同尺寸的設備做出了適配
 - 🌓暗黑模式: 支援自動暗黑模式的切換
 - 👩‍💻可用性: 全力支援二次開發
-- 🔗URL Parameters: 支援傳入URL Parameters，隱藏不需要的鏈接
+- 🔗URL Parameters: 支援傳入URL Parameters，隱藏不需要的連結
 - 🎠美學: 支援高斯模糊
 
 ## 📦️ 部署
