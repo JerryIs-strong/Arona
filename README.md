@@ -4,7 +4,7 @@
     <br/>
     <br/>
     <a href="https://personal-webpage-demo-7jz1.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="#Deploy" target="blank"><strong>📦️ 部署</strong></a>
+    <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>
 </div>
 
 ---
@@ -20,9 +20,10 @@
 - 🎠美學: 支援高斯模糊
 
 ## 📦️ 部署
-1. [NetLify](#NetLify)
-2. [Github page](#GithubPage)
-3. [Vercel](#Vercel)(推介)
+1. [NetLify](#%EF%B8%8F-以netlify開始)
+2. [Github page](#%EF%B8%8F-以github-page開始)
+3. [Vercel](#%EF%B8%8F-以vercel開始)(推介)
+4. 更多靜態網頁托管平臺
 
 ## ⚙️ 以NetLify開始
 歡迎使用NetLify部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
