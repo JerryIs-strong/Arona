@@ -1,3 +1,12 @@
+function testDL(){
+    const mode = document.documentElement.getAttribute("data-mode");
+    if(mode == "dark"){
+        document.documentElement.setAttribute("data-mode", "light");
+    }else{
+        document.documentElement.setAttribute("data-mode", "dark");
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const version = "V1.0.4";
     const shareElement = document.getElementById("share");
