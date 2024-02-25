@@ -8,7 +8,6 @@
     <br/>
     <br/>
     <img src="/src/sample/demo.png">
-    <br/>
 </div>
 
 ---
