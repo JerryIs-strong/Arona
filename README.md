@@ -9,7 +9,8 @@ Import`https://github.com/JerryIs-strong/personal-webpage.git`from GitHub\
 ```Json
 "basic environment": {
     "website name": "My SPACE", //網站標題(瀏覽器)
-    "website description": "海内存知己 天涯若比鄰", //内容描述
+    "subtitle": "海内存知己 天涯若比鄰", //網站副標題
+    "meta description": "JERRY's Homepage", //SEO description
     "holder name": "SPACE", //作者名稱
     "holder icon":{
         "method": "local", //作者頭像：1.local | 2.gravatar(自動獲取)
@@ -98,7 +99,9 @@ Case: 在Instagram中發放連結
 | https://jerrypro.netlify.app/?media=instagram | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
 
 ## 更新日志
-> V1.0.4[6]: 優化SEO，增加對description meta tag的設置項，解決未啟用音樂分享時的錯位問題，增加noscript tag [V1.0.4更新生命期完結]
+> >>V1.0.4更新生命期完結<<
+
+> V1.0.4[6]: 優化SEO，增加對description meta tag的設置項，解決未啟用音樂分享時的錯位問題，增加noscript tag，重命名website description設置項為subtitle
 
 > V1.0.4[5]: 合并Github與music欄，使整體更爲整潔
 
