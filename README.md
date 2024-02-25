@@ -2,9 +2,9 @@
 <div align="center">
     <img src="/src/sample/banner.png" width=60%>
     <br/>
+    <br/>
     <a href="https://jerrypro.netlify.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#Deploy" target="blank"><strong>📦️ 部署</strong></a>
-    <br/>
 </div>
 <br/>
 
