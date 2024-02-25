@@ -119,8 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (link['enabled']) {
                             linkElement.className = link["icon"];
                             linkElement.target = link["target"];
-                            linkElement.setAttribute('href', link['url']);
                             linkElement.setAttribute("title", link['title']);
+                            if(link['url'] != ""){
+                                linkElement.setAttribute('href', link['url']);
+                            }
                             linkEnabled += 1;
                         }
                     }
