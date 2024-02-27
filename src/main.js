@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const version = "V1.0.4";
+    const version = "V1.0.5";
     const shareElement = document.getElementById("share");
     let shareCounter = 0;
     console.log(

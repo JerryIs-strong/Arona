@@ -169,6 +169,8 @@ Case: 在Instagram中發放連結
 | https://jerrypro.netlify.app/?media=instagram | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
 
 ## 🎀 更新日志
+> V1.0.5[1]: 解決Android設備背景錯位的問題
+
 > INFO: V1.0.4更新生命期完結，共更新 ***6*** 次
 
 > V1.0.4[6]: 優化SEO，增加對description meta tag的設置項，解決未啟用音樂分享時的錯位問題，增加noscript tag，重命名website description設置項為subtitle
