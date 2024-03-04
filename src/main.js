@@ -86,10 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 infiniteLoop();
                 document.getElementById('github').classList.add("github-loop");
                 debug(` 隨機歌曲已經加載✅`);
-            } else if (music['enabled'] === false) {
-                debug(` 隨機歌曲已禁用⛔`, "info");
             } else {
-                debug(` 隨機歌曲設置錯誤❌`, "error");
+                if (music['enabled'] === false) {
+                    debug(` 隨機歌曲已禁用⛔`, "info");
+                } else {
+                    debug(` 隨機歌曲設置錯誤❌`, "error");
+                }
+                document.getElementById('music').remove()
             }
 
             if (backgroundUrl['method'] === "bing") {
@@ -145,8 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else { 
                     if (link['enabled'] === false) {
                         debug(` ${key}已禁用⛔`, "info");
+                    } else{
+                        debug(` ${key}設置錯誤❌`, "error");
                     }
-                    debug(` ${key}設置錯誤❌`, "error");
                     linkElement.remove();
                 }
             });
