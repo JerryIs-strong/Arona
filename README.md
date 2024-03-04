@@ -30,7 +30,7 @@
 4. 更多靜態網頁托管平臺
 
 ## ⚙️ 以NetLify開始
-歡迎使用NetLify部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
+歡迎使用NetLify部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
 <br/>
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JerryIs-strong/personal-webpage)
 <br/>
@@ -45,7 +45,7 @@
 ![](/src/sample/netlify/screenshot-4.png)
 
 ## ⚙️ 以Github Page開始
-歡迎使用Github Page部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
+歡迎使用Github Page部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
 1. 點擊```Fork```按鈕
 ![](/src/sample/github/screenshot-1.png)
 2. 根據步驟，創建GitHub儲存庫，點擊```Create```
@@ -59,7 +59,7 @@
 6. 等待Github Page的部署工作，部署成功
 ![](/src/sample/github/screenshot-6.png)
 ## ⚙️ 以Vercel開始
-歡迎使用Vercel部署你的個人主頁，相信這是一個簡單且穩定的方式! 一下教程將會講解如何將此項目部署至Vercel的伺服器。<br/>
+歡迎使用Vercel部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至Vercel的伺服器。<br/>
 <br/>
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JerryIs-strong/personal-webpage.git)
 <br/>
@@ -166,7 +166,7 @@ syntax: ```url + ?media=```
 Case: 在Instagram中發放連結
 | Url | NEW | OLD |
 | :---: | :---: | :---: |
-| https://jerrypro.netlify.app/?media=instagram | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
+| https://jerrypro.netlify.app/?media=ig | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
 
 ## 🎀 更新日志
 > V1.0.5[1]: 解決Android設備背景錯位的問題
