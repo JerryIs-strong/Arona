@@ -48,10 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
             let linkCounter = 0;
             let linkEnabled = 0;
 
-            function debug(message) {
-                if (debugInfo) {
-                    console.log(`${debugCounter}.${message}`);
-                    debugCounter += 1;
+            function debug(message, action) {
+                if (debugInfo === true) {
+                    if(action === "error"){
+                        console.error(`${debugCounter}.${message}`);
+                        debugCounter += 1;
+                    }else if(action === "info"){
+                        console.log(`${debugCounter}.${message}`);
+                        debugCounter += 1;
+                    }
                 }
             }
 
@@ -61,35 +66,43 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('title').innerText = "HEY! " + basicEnvironment['holder name'];
             document.getElementById('description').innerText = basicEnvironment['subtitle'];
 
-            if (sign['enabled']) {
+            if (sign['enabled'] === true) {
                 document.getElementById('sign').innerText = sign['content'];
                 debug(` 個性簽名已經加載✅`);
-                if (sign['auto-hide'] == true) {
+                if (sign['auto-hide'] === true) {
                     document.getElementById('sign').classList.add("auto-hide");
-                    debug(` 個性簽名自動隱藏開始運作⛔`);
+                    debug(` 個性簽名自動隱藏開始運作⛔`, "info");
                 }
+            } else if (sign['enabled'] === false) {
+                debug(` 個性簽名已禁用⛔`, "info");
+            } else {
+                debug(` 個性設置錯誤❌`, "error");
             }
 
-            if (music['enabled']) {
+            if (music['enabled'] === true) {
                 document.getElementById('MusicName').innerText = musicKey['name'];
                 document.getElementById('MusicName').setAttribute('href', musicKey['url']);
                 document.getElementById('MusicName').setAttribute('title', musicKey['name']);
                 infiniteLoop();
                 document.getElementById('github').classList.add("github-loop");
                 debug(` 隨機歌曲已經加載✅`);
+            } else if (music['enabled'] === false) {
+                debug(` 隨機歌曲已禁用⛔`, "info");
             } else {
-                document.getElementById('music').remove()
+                debug(` 隨機歌曲設置錯誤❌`, "error");
             }
 
-            if (backgroundUrl['method'] == "bing") {
+            if (backgroundUrl['method'] === "bing") {
                 getBing();
                 debug(` Bing每日壁紙已經加載✅`);
-            } else if (backgroundUrl['method'] == "local") {
+            } else if (backgroundUrl['method'] === "local") {
                 document.getElementById('background').style.backgroundImage = `url(${backgroundUrl["url"]})`;
                 debug(` 本地壁紙已經加載✅`);
+            } else {
+                debug(` 壁紙設置錯誤❌`, "error");
             }
 
-            if (darkMode) {
+            if (darkMode == true) {
                 document.documentElement.setAttribute("data-mode", "dark");
                 debug(` Dark Mode🌑`);
             } else {
@@ -97,26 +110,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 debug(` Light Mode🌕`);
             }
 
-            if (holderIcon['method'] == "local") {
+            if (holderIcon['method'] === "local") {
                 document.getElementById('img').style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;
                 debug(` 本地頭像已經加載✅`);
-            } else if (holderIcon['method'] == "gravatar") {
+            } else if (holderIcon['method'] === "gravatar") {
                 document.getElementById('img').style.backgroundImage = `url("${gravatarUrl}")`;
                 debug(` gravatar頭像已經加載✅`);
+            } else {
+                debug(` 頭像設置錯誤❌`, "error");
             }
 
             // Apply the link settings to the HTML elements
             Object.keys(linkSettings).forEach(key => {
                 const link = linkSettings[key];
                 const linkElement = document.getElementById(`${key}`);
-                const linkName = link['name']
+                const linkName = link['name'];
                 linkCounter += 1;
-                if (link['enabled']) {
+                if (link['enabled'] === true) {
                     linkElement.setAttribute('l-name', linkName);
                     if (linkElement.getAttribute('l-name') == urlParams.get('media')) {
                         linkElement.remove();
                     } else {
-                        if (link['enabled']) {
+                        if (link['enabled'] === true) {
                             linkElement.className = link["icon"];
                             linkElement.target = link["target"];
                             linkElement.setAttribute("title", link['title']);
@@ -125,12 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                             linkEnabled += 1;
                         }
+                        debug(` ${key}已經加載✅`, "info");
                     }
-                } else {
+                } else { 
+                    if (link['enabled'] === false) {
+                        debug(` ${key}已禁用⛔`, "info");
+                    }
+                    debug(` ${key}設置錯誤❌`, "error");
                     linkElement.remove();
                 }
             });
-            debug(` ${linkEnabled}/${linkCounter}連結已經加載✅`);
         })
         .catch(error => {
             console.error('Error fetching or parsing the setting.json file:', error);
