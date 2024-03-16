@@ -1,4 +1,5 @@
-fetch('setting.json')
+document.addEventListener('DOMContentLoaded', () => {
+fetch('/setting.json')
     .then(response => response.json())
     .then(data => {
         const debugInfo = data['debug'];
@@ -19,3 +20,4 @@ fetch('setting.json')
     .catch(error => {
         console.error('Error fetching or parsing the setting.json file:', error);
     });
+})
