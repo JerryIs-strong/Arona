@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description">
-    <title></title> <!--Title--->
+    <title></title>
     <link rel="shortcut icon" type="image/ico" href="./icon.ico" />
     <link rel="apple-touch-icon" href="./icon.ico" />
     <script src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./src/style.css"> <!--import css file-->
-    <link rel="stylesheet" href="./src/font/font.css"> <!--import css file-->
-    <script src="./src/main.js"></script> <!--import javascript file-->
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/font/font.css">
+    <script src="./src/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.js"></script>
+    <!--Important plugins-->
+    <script src="./src/plugins/private/log.js"></script>
+    <script src="./src/plugins/private/debug.js"></script>
 </head>
 
 <body>
@@ -45,7 +48,8 @@
             <a target="_blank" title="Build your first webpage here!" class="githubProject" href="https://github.com/JerryIs-strong/personal-webpage">JerryIs-strong/personal-webpage</a>
         </div>
     </div>
-    <script src="./src/bing-api.js"></script> <!--import javascript file-->
+    <!--JS Plugins inject-->
+    <script src="./src/plugins-manager.js"></script>
 </body>
 
 </html>
