@@ -179,6 +179,11 @@ Case: 在Instagram中發放連結
 1. 於```setting.json```中的"plugins"添加功能或組件的名稱，同時以","分割多於一個的功能或組件。(功能或組件的名稱應以"xxx.js"中的xxx作爲命名方式)
 2. 於```/plugins```放置相關功能或組件的js檔案
 
+## ✨ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
+
+
 ## 🎀 更新日志
 > V1.2.3[1]: 修復數個bug
 
