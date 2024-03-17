@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sign.enabled === true) {
         document.getElementById('sign').innerText = sign.content;
         debug(`個性簽名已經加載✅`, true);
-        if (sign.auto-hide === true) {
+        if (sign['auto-hide'] === true) {
             document.getElementById('sign').classList.add("auto-hide");
             debug(`個性簽名自動隱藏開始運作⛔`, "info", true);
         }
