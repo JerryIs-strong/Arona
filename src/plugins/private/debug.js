@@ -1,29 +1,21 @@
-const setting = JSON.parse(localStorage.getItem("setting"));
-let debugCounter = 1;
+fetch('setting.json')
+    .then(response => response.json())
+    .then(data => {
+        const debugInfo = data['debug'];
+        let debugCounter = 1;
 
-function debug(message, action, count) {
-    if (setting.debug === true) {
-        if (action === "error") {
-            if(count === true){
-                console.error(`${debugCounter}.${message}`);
-                debugCounter += 1;
-            }else if(count === false){
-                console.error(`${message}`);
-            }
-        } else if (action === "info") {
-            if(count === true){
-                console.log(`${debugCounter}.${message}`);
-                debugCounter += 1;
-            }else if(count === false){
-                console.log(`${message}`);
-            }
-        } else if (action === "warn") {
-            if(count === true){
-                console.warn(`${debugCounter}.${message}`);
-                debugCounter += 1;
-            }else if(count === false){
-                console.warn(`${message}`);
+        function debug(message, action) {
+            if (debugInfo === true) {
+                if (action === "error") {
+                    console.error(`${debugCounter}.${message}`);
+                    debugCounter += 1;
+                } else if (action === "info") {
+                    console.log(`${debugCounter}.${message}`);
+                    debugCounter += 1;
+                }
             }
         }
-    }
-}
+    })
+    .catch(error => {
+        console.error('Error fetching or parsing the setting.json file:', error);
+    });
