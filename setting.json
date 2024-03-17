@@ -73,6 +73,6 @@
             "target": ""
         }
     },
-    "debug": true,
+    "debug": false,
     "plugins": ["update-alert"]
 }
