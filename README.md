@@ -7,7 +7,7 @@
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-模組" target="blank"><strong>🚛 模組</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.2.2</strong>
+    <strong>💌 V1.2.3</strong>
     <br/>
     <br/>
     <img src="/src/sample/demo.png">
@@ -180,6 +180,8 @@ Case: 在Instagram中發放連結
 2. 於```/plugins```放置相關功能或組件的js檔案
 
 ## 🎀 更新日志
+> V1.2.3[1]: 修復數個bug
+
 > V1.2.2[1]: 重新構建Plugins的執行邏輯(這是一次大型的邏輯重構，你幾乎一定會遇到bug，如果遇到不可緩解的bug，請及時向我們報告)
 
 > V1.2.1[1]: 加入模組化，開發者能夠隨時且輕易地管理網頁的各項功能與組件

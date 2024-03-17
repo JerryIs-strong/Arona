@@ -2,7 +2,7 @@ fetch('https://raw.githubusercontent.com/JerryIs-strong/personal-webpage/main/ve
     .then(response => response.text())
     .then((text) => {
         const cloudlArrs = text;
-        const localVersion = localStorage.getItem("version");
+        const localVersion = setting['version'];
 
         function compareVersions(localVersion, cloudVersion) {
             // Extract the version numbers from the strings
