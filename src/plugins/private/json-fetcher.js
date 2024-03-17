@@ -1,7 +1,7 @@
 fetch('/setting.json')
     .then(response => response.json())
     .then(data => {
-        if(localStorage.getItem('setting') == "" || localStorage.getItem('setting') == null){
+        if(localStorage.getItem('setting') != data || localStorage.getItem('setting') == null){
             localStorage.setItem('setting', JSON.stringify(data));
             window.location.reload();
         }else{
