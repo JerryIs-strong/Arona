@@ -7,7 +7,7 @@
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-模組" target="blank"><strong>🚛 模組</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.2.3</strong>
+    <strong>💌 V1.2.4(推送版本)</strong>
     <br/>
     <br/>
     <img src="/src/sample/demo.png">
@@ -184,7 +184,7 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
-> V1.2.4[3]: 重新構建debug的邏輯代碼與樣式
+> V1.2.4[3]: 重新構建debug的邏輯代碼與樣式\
 > 受影響的文件: \
 > root\
 > &ensp;|_ src\
