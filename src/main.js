@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeLinks(linkSettings);
 
         // Start infinite loop for music
-        if (music['enabled']) {
+        if (music['enabled'] && music['Show Github Icon']) {
             infiniteLoop();
         }
     }
@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleSignature(sign) {
         const signElement = document.getElementById('sign');
-        if (sign['enabled'] === true) {
+        if (sign['enabled']) {
             signElement.innerText = sign['content'];
             debug(` 個性簽名已經加載✅`);
-            if (sign['auto-hide'] === true) {
+            if (sign['auto-hide']) {
                 signElement.classList.add("auto-hide");
                 debug(` 個性簽名自動隱藏開始運作⛔`, "info");
             }
@@ -70,19 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleMusic(music, musicKey) {
         const musicElement = document.getElementById('MusicName');
-        if (music['enabled'] === true) {
+        if (music['enabled']) {
             musicElement.innerText = musicKey['name'];
             musicElement.setAttribute('href', musicKey['url']);
             musicElement.setAttribute('title', musicKey['name']);
             document.getElementById('github').classList.add("github-loop");
             debug(` 隨機歌曲已經加載✅`);
         } else {
-            if (music['enabled'] === false) {
+            if (!music['enabled']) {
                 debug(` 隨機歌曲已禁用⛔`, "info");
             } else {
                 debug(` 隨機歌曲設置錯誤❌`, "error");
             }
-            musicElement.parentNode.removeChild(musicElement);
+            document.getElementById('share').remove();
         }
     }
 
@@ -125,10 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const linkName = link['name'];
             linkCounter += 1;
 
-            if (link['enabled'] === true) {
+            if (link['enabled']) {
                 linkElement.setAttribute('l-name', linkName);
                 if (linkElement.getAttribute('l-name') !== urlParams.get('media')) {
-                    if (link['enabled'] === true) {
+                    if (link['enabled']) {
                         linkElement.className = link["icon"];
                         linkElement.target = link["target"];
                         linkElement.setAttribute("title", link['title']);

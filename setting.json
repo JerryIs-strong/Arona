@@ -23,6 +23,7 @@
         },
         "music":{
             "enabled": false,
+            "Show Github Icon": false,
             "data": {
                 "music-1":{
                     "name": "",
