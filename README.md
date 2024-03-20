@@ -184,7 +184,7 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
-> ***V1.2.4[1][Important]: 重新構建數個重要的邏輯代碼(main,plugins-manager,debug,fercher)***\
+> ***V1.2.4[1][Important]: 重新構建數個重要的邏輯代碼***\
 > 受影響的文件: \
 > root\
 > &ensp;|_ version.txt\
