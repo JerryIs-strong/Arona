@@ -184,6 +184,16 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> V1.2.4[3]: 重新構建debug的邏輯代碼與樣式
+> 受影響的文件: \
+> root\
+> &ensp;|_ src\
+> &ensp;&ensp;&ensp;|_ plugins\
+> &ensp;&ensp;&ensp;&ensp;&ensp;|_ private\
+> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|_ debug.js\
+> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|_ log.js\
+> &ensp;&ensp;&ensp;|_ plugins-manager.js
+
 > V1.2.4[2]: 補丁更新，增加隱藏Github Icon的設置
 
 > ***V1.2.4[1][Important]: 重新構建數個重要的邏輯代碼***\

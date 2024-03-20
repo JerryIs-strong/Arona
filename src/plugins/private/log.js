@@ -6,8 +6,3 @@ console.log(
     'font-size: 20px;font-weight: bolder;font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;',
     'font-size: 15px;'
 );
-console.log(
-    `Powered by %cpersonal-webpage%c${version}`,
-    'display: inline—block;background-color:rgba(66,66,66,0.8);color:#fff;margin—bottom:6px;padding:4px;border-radius:4px 0 0 4px',
-    'display: inline-block;background-color:rgba(0,180,0,1);color:#fff;padding:4px;border-radius:0 4px 4px 0'
-);

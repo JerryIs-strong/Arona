@@ -9,11 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 document.body.appendChild(script);
             });
         }
-        console.log(
-            `%c已安裝的組件:%c${pluginsList}`,
-            'background-color: #f39898; color: #fff; padding: 5px',
-            'background-color: #fff; color: #f39898; padding: 5px'
-        );
+        styleInfo("已安裝的組件:", pluginsList, "#f39898", "#fff");
     } catch (error) {
         console.error('Error fetching or parsing the setting.json file:', error);
     }
