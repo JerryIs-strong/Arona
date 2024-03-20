@@ -77,6 +77,8 @@
 ![](/src/sample/vercel/screenshot-4.png)
 
 ## 💾 配置項
+> 你現在可以使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)快速和簡單地配置配置項!
+
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除`setting.json`配置文件以外的文件，以免發生錯誤
 ### Basic Environment 基本環境
 ```Json
