@@ -184,6 +184,18 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> ***V1.2.4[1][Important]: 重新構建數個重要的邏輯代碼(main,plugins-manager,debug,fercher)***
+> 受影響的文件: 
+> root
+> |-version.txt
+> |-src
+>    |-main.js
+>    |-plugins-manager.js
+>    |-plugins
+>       |-private
+>         |-debug.js
+>         |-fetcher.js
+
 > V1.2.3[1]: 修復數個bug
 
 > V1.2.2[1]: 重新構建Plugins的執行邏輯(這是一次大型的邏輯重構，你幾乎一定會遇到bug，如果遇到不可緩解的bug，請及時向我們報告)

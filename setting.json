@@ -17,12 +17,12 @@
             "url": ""
         },
         "signature":{
-            "enabled": "",
+            "enabled": false,
             "content": "",
             "auto-hide": ""
         },
         "music":{
-            "enabled": "",
+            "enabled": false,
             "data": {
                 "music-1":{
                     "name": "",
@@ -33,7 +33,7 @@
     },
     "Link": {
         "link-1": {
-            "enabled": "",
+            "enabled": false,
             "title": "",
             "name": "",
             "icon": "",
@@ -41,7 +41,7 @@
             "target": ""
         }, 
         "link-2": {
-            "enabled": "",
+            "enabled": false,
             "title": "",
             "name": "",
             "icon": "",
@@ -49,7 +49,7 @@
             "target": ""
         }, 
         "link-3": {
-            "enabled": "",
+            "enabled": false,
             "title": "",
             "name": "",
             "icon": "",
@@ -57,7 +57,7 @@
             "target": ""
         }, 
         "link-4": {
-            "enabled": "",
+            "enabled": false,
             "title": "",
             "name": "",
             "icon": "",
@@ -65,7 +65,7 @@
             "target": ""
         }, 
         "link-5": {
-            "enabled": "",
+            "enabled": false,
             "title": "",
             "name": "",
             "icon": "",

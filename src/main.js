@@ -4,123 +4,153 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function infiniteLoop() {
         setTimeout(() => {
-            if (shareCounter == 0) {
-                shareElement.scrollTop = 100;
-                shareCounter += 1;
-            } else {
-                shareElement.scrollTop = 0;
-                shareCounter -= 1;
-            }
-            infiniteLoop(); // Call the function again to create an infinite loop
+            shareElement.scrollTop = shareCounter === 0 ? 100 : 0;
+            shareCounter = shareCounter === 0 ? 1 : 0;
+            infiniteLoop();
         }, 6500);
     }
 
-    // Extract the settings from the JSON setting
-    const basicEnvironment = setting['basic environment'];
-    const linkSettings = setting['Link'];
-    const musicsetting = basicEnvironment['music']['data'];
-    const musicNumber = Object.keys(musicsetting).length;
-    const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
-    const musicKey = musicsetting[`music-${musicRandom}`];
-    const holderIcon = setting['basic environment']['holder icon'];
-    const backgroundUrl = setting['basic environment']['background'];
-    const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
-    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const sign = basicEnvironment['signature']
-    const music = basicEnvironment['music']
-    const urlParams = new URLSearchParams(window.location.search);
-    let linkCounter = 0;
-    let linkEnabled = 0;
+    function initializeApp() {
+        const settings = JSON.parse(localStorage.getItem('setting'));
+        const basicEnvironment = settings['basic environment'];
+        const linkSettings = settings['Link'];
+        const music = basicEnvironment['music'];
 
-    // Apply the basic environment settings to the HTML elements
-    document.querySelector('meta[name="description"]').setAttribute('content', basicEnvironment['meta description']);
-    document.title = basicEnvironment['website name'];
-    document.getElementById('title').innerText = "HEY! " + basicEnvironment['holder name'];
-    document.getElementById('description').innerText = basicEnvironment['subtitle'];
+        // Initialize basic environment
+        initializeBasicEnvironment(basicEnvironment, music);
 
-    if (sign['enabled'] === true) {
-        document.getElementById('sign').innerText = sign['content'];
-        debug(` 個性簽名已經加載✅`);
-        if (sign['auto-hide'] === true) {
-            document.getElementById('sign').classList.add("auto-hide");
-            debug(` 個性簽名自動隱藏開始運作⛔`, "info");
+        // Initialize links
+        initializeLinks(linkSettings);
+
+        // Start infinite loop for music
+        if (music['enabled']) {
+            infiniteLoop();
         }
-    } else if (sign['enabled'] === false) {
-        debug(` 個性簽名已禁用⛔`, "info");
-    } else {
-        debug(` 個性設置錯誤❌`, "error");
     }
 
-    if (music['enabled'] === true) {
-        document.getElementById('MusicName').innerText = musicKey['name'];
-        document.getElementById('MusicName').setAttribute('href', musicKey['url']);
-        document.getElementById('MusicName').setAttribute('title', musicKey['name']);
-        infiniteLoop();
-        document.getElementById('github').classList.add("github-loop");
-        debug(` 隨機歌曲已經加載✅`);
-    } else {
-        if (music['enabled'] === false) {
-            debug(` 隨機歌曲已禁用⛔`, "info");
+    function initializeBasicEnvironment(basicEnvironment, music) {
+        const musicsetting = basicEnvironment['music']['data'];
+        const musicNumber = Object.keys(musicsetting).length;
+        const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
+        const musicKey = musicsetting[`music-${musicRandom}`];
+        const holderIcon = basicEnvironment['holder icon'];
+        const backgroundUrl = basicEnvironment['background'];
+        const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
+        const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const sign = basicEnvironment['signature'];
+
+        // Apply settings to HTML elements
+        document.querySelector('meta[name="description"]').setAttribute('content', basicEnvironment['meta description']);
+        document.title = basicEnvironment['website name'];
+        document.getElementById('title').innerText = "HEY! " + basicEnvironment['holder name'];
+        document.getElementById('description').innerText = basicEnvironment['subtitle'];
+
+        handleSignature(sign);
+        handleMusic(music, musicKey);
+        handleBackground(backgroundUrl);
+        handleDarkMode(darkMode);
+        handleHolderIcon(holderIcon, gravatarUrl);
+    }
+
+    function handleSignature(sign) {
+        const signElement = document.getElementById('sign');
+        if (sign['enabled'] === true) {
+            signElement.innerText = sign['content'];
+            debug(` 個性簽名已經加載✅`);
+            if (sign['auto-hide'] === true) {
+                signElement.classList.add("auto-hide");
+                debug(` 個性簽名自動隱藏開始運作⛔`, "info");
+            }
+        } else if (sign['enabled'] === false) {
+            debug(` 個性簽名已禁用⛔`, "info");
         } else {
-            debug(` 隨機歌曲設置錯誤❌`, "error");
+            debug(` 個性設置錯誤❌`, "error");
         }
-        document.getElementById('music').remove()
     }
 
-    if (backgroundUrl['url'] != null || backgroundUrl['url'] != "") {
-        document.getElementById('background').style.backgroundImage = `url(${backgroundUrl["url"]})`;
-        debug(` 本地壁紙已經加載✅`);
-    } else {
-        debug(` 壁紙設置錯誤❌`, "error");
-    }
-
-    if (darkMode == true) {
-        document.documentElement.setAttribute("data-mode", "dark");
-        debug(` Dark Mode🌑`);
-    } else {
-        document.documentElement.setAttribute("data-mode", "light");
-        debug(` Light Mode🌕`);
-    }
-
-    if (holderIcon['method'] === "local") {
-        document.getElementById('img').style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;
-        debug(` 本地頭像已經加載✅`);
-    } else if (holderIcon['method'] === "gravatar") {
-        document.getElementById('img').style.backgroundImage = `url("${gravatarUrl}")`;
-        debug(` gravatar頭像已經加載✅`);
-    } else {
-        debug(` 頭像設置錯誤❌`, "error");
-    }
-
-    // Apply the link settings to the HTML elements
-    Object.keys(linkSettings).forEach(key => {
-        const link = linkSettings[key];
-        const linkElement = document.getElementById(`${key}`);
-        const linkName = link['name'];
-        linkCounter += 1;
-        if (link['enabled'] === true) {
-            linkElement.setAttribute('l-name', linkName);
-            if (linkElement.getAttribute('l-name') == urlParams.get('media')) {
-                linkElement.remove();
+    function handleMusic(music, musicKey) {
+        const musicElement = document.getElementById('MusicName');
+        if (music['enabled'] === true) {
+            musicElement.innerText = musicKey['name'];
+            musicElement.setAttribute('href', musicKey['url']);
+            musicElement.setAttribute('title', musicKey['name']);
+            document.getElementById('github').classList.add("github-loop");
+            debug(` 隨機歌曲已經加載✅`);
+        } else {
+            if (music['enabled'] === false) {
+                debug(` 隨機歌曲已禁用⛔`, "info");
             } else {
-                if (link['enabled'] === true) {
-                    linkElement.className = link["icon"];
-                    linkElement.target = link["target"];
-                    linkElement.setAttribute("title", link['title']);
-                    if (link['url'] != "") {
-                        linkElement.setAttribute('href', link['url']);
+                debug(` 隨機歌曲設置錯誤❌`, "error");
+            }
+            musicElement.parentNode.removeChild(musicElement);
+        }
+    }
+
+    function handleBackground(backgroundUrl) {
+        const backgroundElement = document.getElementById('background');
+        if (backgroundUrl['url'] != null && backgroundUrl['url'] != "") {
+            backgroundElement.style.backgroundImage = `url(${backgroundUrl["url"]})`;
+            debug(` 本地壁紙已經加載✅`);
+        } else {
+            debug(` 壁紙設置錯誤❌`, "error");
+        }
+    }
+
+    function handleDarkMode(darkMode) {
+        document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
+        debug(` ${darkMode ? "Dark Mode🌑" : "Light Mode🌕"}`);
+    }
+
+    function handleHolderIcon(holderIcon, gravatarUrl) {
+        const imgElement = document.getElementById('img');
+        if (holderIcon['method'] === "local") {
+            imgElement.style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;
+            debug(` 本地頭像已經加載✅`);
+        } else if (holderIcon['method'] === "gravatar") {
+            imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
+            debug(` gravatar頭像已經加載✅`);
+        } else {
+            debug(` 頭像設置錯誤❌`, "error");
+        }
+    }
+
+    function initializeLinks(linkSettings) {
+        const urlParams = new URLSearchParams(window.location.search);
+        let linkCounter = 0;
+        let linkEnabled = 0;
+
+        Object.keys(linkSettings).forEach(key => {
+            const link = linkSettings[key];
+            const linkElement = document.getElementById(`${key}`);
+            const linkName = link['name'];
+            linkCounter += 1;
+
+            if (link['enabled'] === true) {
+                linkElement.setAttribute('l-name', linkName);
+                if (linkElement.getAttribute('l-name') !== urlParams.get('media')) {
+                    if (link['enabled'] === true) {
+                        linkElement.className = link["icon"];
+                        linkElement.target = link["target"];
+                        linkElement.setAttribute("title", link['title']);
+                        if (link['url'] !== "") {
+                            linkElement.setAttribute('href', link['url']);
+                        }
+                        linkEnabled += 1;
                     }
-                    linkEnabled += 1;
+                    debug(` ${key}已經加載✅`, "info");
+                } else {
+                    linkElement.remove();
                 }
-                debug(` ${key}已經加載✅`, "info");
-            }
-        } else {
-            if (link['enabled'] === false) {
-                debug(` ${key}已禁用⛔`, "info");
             } else {
-                debug(` ${key}設置錯誤❌`, "error");
+                if (link['enabled'] === false) {
+                    debug(` ${key}已禁用⛔`, "info");
+                } else {
+                    debug(` ${key}設置錯誤❌`, "error");
+                }
+                linkElement.remove();
             }
-            linkElement.remove();
-        }
-    });
-})
+        });
+    }
+
+    initializeApp();
+});
