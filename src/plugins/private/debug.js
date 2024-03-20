@@ -10,10 +10,13 @@ function styleInfo(message1, message2, primary_color, second_color) {
 }
 
 function debug(DebugMessage, action = 'info') {
-    if (debugInfo === true) {
+    if (debugInfo) {
         styleInfo(debugCounter, DebugMessage, `${action === 'error' ? '#d57079' : '#6eaf91'}`, "#fff");
         debugCounter += 1;
     }
 }
 
 styleInfo("Personal-webpage", version, "#4d6491", "#fff");
+if (!debugInfo) {
+    styleInfo("Log process:", "disabled", `#d280e5`, "#fff");
+}

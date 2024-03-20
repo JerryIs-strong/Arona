@@ -25,11 +25,8 @@ fetch('https://raw.githubusercontent.com/JerryIs-strong/personal-webpage/main/ve
             return false;
         }
 
-        if (compareVersions(localVersion, cloudlArrs) === true) {
-            console.warn(
-                "[update-alert]New version available: " + cloudlArrs,
-                "\nUpdate from raw repository: https://github.com/JerryIs-strong/personal-webpage"
-            );
+        if (compareVersions(localVersion, cloudlArrs)) {
+            styleInfo("New version available:", cloudlArrs, "#b1a968", "#FFF")
         }
     })
     .catch(error => {
