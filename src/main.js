@@ -56,15 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const signElement = document.getElementById('sign');
         if (sign['enabled']) {
             signElement.innerText = sign['content'];
-            debug(` 個性簽名已經加載✅`);
+            debug(`個性簽名已經加載✅`);
             if (sign['auto-hide']) {
                 signElement.classList.add("auto-hide");
-                debug(` 個性簽名自動隱藏開始運作⛔`, "info");
+                debug(`個性簽名自動隱藏開始運作⛔`, "info");
             }
         } else if (sign['enabled'] === false) {
-            debug(` 個性簽名已禁用⛔`, "info");
+            debug(`個性簽名已禁用⛔`, "info");
         } else {
-            debug(` 個性設置錯誤❌`, "error");
+            debug(`個性設置錯誤❌`, "error");
         }
     }
 
@@ -75,12 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
             musicElement.setAttribute('href', musicKey['url']);
             musicElement.setAttribute('title', musicKey['name']);
             document.getElementById('github').classList.add("github-loop");
-            debug(` 隨機歌曲已經加載✅`);
+            debug(`隨機歌曲已經加載✅`);
         } else {
             if (!music['enabled']) {
-                debug(` 隨機歌曲已禁用⛔`, "info");
+                debug(`隨機歌曲已禁用⛔`, "info");
             } else {
-                debug(` 隨機歌曲設置錯誤❌`, "error");
+                debug(`隨機歌曲設置錯誤❌`, "error");
             }
             document.getElementById('share').remove();
         }
@@ -90,27 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const backgroundElement = document.getElementById('background');
         if (backgroundUrl['url'] != null && backgroundUrl['url'] != "") {
             backgroundElement.style.backgroundImage = `url(${backgroundUrl["url"]})`;
-            debug(` 本地壁紙已經加載✅`);
+            debug(`本地壁紙已經加載✅`);
         } else {
-            debug(` 壁紙設置錯誤❌`, "error");
+            debug(`壁紙設置錯誤❌`, "error");
         }
     }
 
     function handleDarkMode(darkMode) {
         document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
-        debug(` ${darkMode ? "Dark Mode🌑" : "Light Mode🌕"}`);
+        debug(`${darkMode ? "Dark Mode🌑" : "Light Mode🌕"}`);
     }
 
     function handleHolderIcon(holderIcon, gravatarUrl) {
         const imgElement = document.getElementById('img');
         if (holderIcon['method'] === "local") {
             imgElement.style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;
-            debug(` 本地頭像已經加載✅`);
+            debug(`本地頭像已經加載✅`);
         } else if (holderIcon['method'] === "gravatar") {
             imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
-            debug(` gravatar頭像已經加載✅`);
+            debug(`gravatar頭像已經加載✅`);
         } else {
-            debug(` 頭像設置錯誤❌`, "error");
+            debug(`頭像設置錯誤❌`, "error");
         }
     }
 
@@ -137,15 +137,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                         linkEnabled += 1;
                     }
-                    debug(` ${key}已經加載✅`, "info");
+                    debug(`${key}已經加載✅`, "info");
                 } else {
                     linkElement.remove();
                 }
             } else {
                 if (link['enabled'] === false) {
-                    debug(` ${key}已禁用⛔`, "info");
+                    debug(`${key}已禁用⛔`, "info");
                 } else {
-                    debug(` ${key}設置錯誤❌`, "error");
+                    debug(`${key}設置錯誤❌`, "error");
                 }
                 linkElement.remove();
             }

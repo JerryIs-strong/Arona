@@ -162,6 +162,8 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> V1.2.5[2]: 預設不再提供bing-api模組
+
 > V1.2.5[1]: 解決當網頁不在根目錄時，無法抓取version.txt的錯誤
 
 > V1.2.4[4]: 補丁更新
