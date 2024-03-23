@@ -6,7 +6,7 @@
     <a href="https://personal-webpage-demo-53of.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="#-模組" target="blank"><strong>🚛 模組</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <strong>💌 V1.2.5(推送版本)</strong>
     <br/>
     <br/>
