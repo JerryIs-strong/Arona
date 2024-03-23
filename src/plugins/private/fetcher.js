@@ -12,7 +12,7 @@
             window.location.reload();
         } else {
             localStorage.setItem('setting', JSON.stringify(data));
-            const response = await fetch('/version.txt');
+            const response = await fetch('version.txt');
             const text = await response.text();
             const setting = JSON.parse(localStorage.getItem('setting'));
             setting['version'] = text;

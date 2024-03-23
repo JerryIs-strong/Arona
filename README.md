@@ -97,7 +97,6 @@
         }
     },
     "background":{
-        "method": "bing", //1.Local/外部連結 | 2.Bing Api
         "url": "background.png" //1.Local: 填寫絕對路徑 e.g: background.png | 2.外部連結: 添加https://標頭 e.g: https://jerrypro.xyz/background.png
     },
     "signature":{
@@ -107,7 +106,8 @@
     },
     "music": { 
         "enabled": true, //true: 開啓 | false: 關閉
-        "data":{ //可添加多首歌曲，但music-$必須由1開始!
+        "Show Github Icon": false, //是否顯示Github Project
+        "data":{ //可添加多首歌曲，但music-$必須由1開始!(No limit)
             "music-1":{
                 "name": "那年 - 任然 • 任然精選集 • 2016",
                 "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
@@ -122,7 +122,7 @@
 ```
 ### Link 鏈接按鈕
 ```Json
-"Link": {
+"Link": { //Up to 5 limit
     "link-1": { 
         "enabled": true, //true: 開啓 | false: 關閉
         "title": "facebook",
@@ -137,30 +137,6 @@
         "name": "yt", //用於URL Parameters檢測
         "icon": "fa fa-youtube", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
         "url": "https://youtube.com", //連結目標
-        "target": "blank" //_blank | _self | _parent | _top
-    },
-    "link-3": {
-        "enabled": false, //true: 開啓 | false: 關閉
-        "title": "",
-        "name": "", //用於URL Parameters檢測
-        "icon": "", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "", //連結目標
-        "target": "" //_blank | _self | _parent | _top
-    },
-    "link-4": {
-        "enabled": true, //true: 開啓 | false: 關閉
-        "title": "instagram",
-        "name": "ig", //用於URL Parameters檢測
-        "icon": "fa fa-instagram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://instagram.com", //連結目標
-        "target": "blank" //_blank | _self | _parent | _top
-    },
-    "link-5": {
-        "enabled": true, //true: 開啓 | false: 關閉
-        "title": "telegram",
-        "name": "tg", //用於URL Parameters檢測
-        "icon": "fa  fa-telegram", //fontawesome取得icon的名稱 e.g:fa-brands fa-facebook
-        "url": "https://web.telegram.org/", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     }
 }
@@ -186,6 +162,8 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> V1.2.5[1]: 解決當網頁不在根目錄時，無法抓取version.txt的錯誤
+
 > V1.2.4[4]: 補丁更新
 
 > V1.2.4[3]: 重新構建debug的邏輯代碼與樣式\
