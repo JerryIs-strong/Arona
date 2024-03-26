@@ -1,10 +1,10 @@
 {
-    "basic environment": {
+    "basic information": {
         "website name": "",
         "subtitle": "",
-        "meta description": "",
-        "holder name": "",
-        "holder icon":{
+        "description": "",
+        "name": "",
+        "icon":{
             "method": "",
             "local":{
                 "url": ""
@@ -24,15 +24,10 @@
         "music":{
             "enabled": false,
             "Show Github Icon": false,
-            "data": {
-                "music-1":{
-                    "name": "",
-                    "url": ""
-                }
-            }
+            "data": {}
         }
     },
-    "Link": {
+    "Links": {
         "link-1": {
             "enabled": false,
             "title": "",
@@ -75,5 +70,5 @@
         }
     },
     "debug": false,
-    "plugins": ["update-alert"]
+    "plugins": []
 }

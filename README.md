@@ -164,6 +164,14 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> V1.2.6[1]: 已更新文件variable的名稱，故就有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。同時預設不再開啟update-alert模組，但我們仍強烈建議開啟，以取得重要的更新提示。
+> 受影響的名稱: 
+> 1. basic environment > basic information
+> 2. meta description > description
+> 3. holder name > name
+> 4. holder icon > icon
+> 5. Link > Links
+
 > V1.2.5[2]: 預設不再提供bing-api模組
 
 > V1.2.5[1]: 解決當網頁不在根目錄時，無法抓取version.txt的錯誤

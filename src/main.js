@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeApp() {
         const settings = JSON.parse(localStorage.getItem('setting'));
-        const basicEnvironment = settings['basic environment'];
-        const linkSettings = settings['Link'];
-        const music = basicEnvironment['music'];
+        const basicInformation = settings['basic information'];
+        const linkSettings = settings['Links'];
+        const music = basicInformation['music'];
 
-        // Initialize basic environment
-        initializeBasicEnvironment(basicEnvironment, music);
+        // Initialize basic information
+        initializeBasicInformation(basicInformation, music);
 
         // Initialize links
         initializeLinks(linkSettings);
@@ -28,22 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function initializeBasicEnvironment(basicEnvironment, music) {
-        const musicsetting = basicEnvironment['music']['data'];
+    function initializeBasicInformation(basicInformation, music) {
+        const musicsetting = basicInformation['music']['data'];
         const musicNumber = Object.keys(musicsetting).length;
         const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
         const musicKey = musicsetting[`music-${musicRandom}`];
-        const holderIcon = basicEnvironment['holder icon'];
-        const backgroundUrl = basicEnvironment['background'];
+        const holderIcon = basicInformation['icon'];
+        const backgroundUrl = basicInformation['background'];
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
         const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const sign = basicEnvironment['signature'];
+        const sign = basicInformation['signature'];
 
         // Apply settings to HTML elements
-        document.querySelector('meta[name="description"]').setAttribute('content', basicEnvironment['meta description']);
-        document.title = basicEnvironment['website name'];
-        document.getElementById('title').innerText = "HEY! " + basicEnvironment['holder name'];
-        document.getElementById('description').innerText = basicEnvironment['subtitle'];
+        document.querySelector('meta[name="description"]').setAttribute('content', basicInformation['description']);
+        document.title = basicInformation['website name'];
+        document.getElementById('title').innerText = "HEY! " + basicInformation['name'];
+        document.getElementById('description').innerText = basicInformation['subtitle'];
 
         handleSignature(sign);
         handleMusic(music, musicKey);
