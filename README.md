@@ -150,6 +150,8 @@ Case: 在Instagram中發放連結
 | https://jerrypro.netlify.app/?media=ig | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
 
 ## 🚛 模組
+> Go to ["Document | Get start"](https://jerryplanet.notion.site/Plugins-Document-f06cd809b10143c19a5ff86e070644b6?pvs=4) to read more about plugins development
+
 > 切記請勿移除與/plugins/private下的必須模組，移除有關模組可能會導致網頁出錯。
 
 在V1.2.1開始，PW已模組化。你可以隨意添加你需要的功能或組件，同時移除你無需使用的功能或組件以輕量化你的網頁! 一下是添加或移除相關功能或組件的方式:
