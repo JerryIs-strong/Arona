@@ -74,7 +74,6 @@
 4. 等待Git任務完成
 ![](/src/sample/vercel/screenshot-3.png)
 5. 部署成功
-![](/src/sample/vercel/screenshot-4.png)
 
 ## 💾 配置項
 > 你現在可以使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)快速和簡單地配置配置項!
