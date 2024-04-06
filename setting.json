@@ -23,11 +23,11 @@
         },
         "music":{
             "enabled": false,
-            "Show Github Icon": false,
+            "show_github_icon": false,
             "data": {}
         }
     },
-    "Links": {},
+    "links": {},
     "debug": false,
     "plugins": []
 }

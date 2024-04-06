@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeApp() {
         const settings = JSON.parse(localStorage.getItem('setting'));
         const basicInformation = settings['basic_information'];
-        const linkSettings = settings['Links'];
+        const linkSettings = settings['links'];
         const music = basicInformation['music'];
 
         // Initialize basic_information
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeLinks(linkSettings);
 
         // Start infinite loop for music
-        if (music['enabled'] && music['Show Github Icon']) {
+        if (music['enabled'] && music['show_github_icon']) {
             infiniteLoop();
         }
     }
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const musicsetting = basicInformation['music']['data'];
         const musicNumber = Object.keys(musicsetting).length;
         const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
-        const musicKey = musicsetting[`music-${musicRandom}`];
+        const musicKey = musicsetting[`music_${musicRandom}`];
         const holderIcon = basicInformation['icon'];
         const backgroundUrl = basicInformation['background'];
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;

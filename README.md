@@ -81,12 +81,12 @@
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除`setting.json`配置文件以外的文件，以免發生錯誤
 ### Basic Environment 基本環境
 ```Json
-"basic environment": {
-    "website name": "My SPACE", //網站標題(瀏覽器)
+"basic_information": {
+    "website_name": "My SPACE", //網站標題(瀏覽器)
     "subtitle": "海内存知己 天涯若比鄰", //網站副標題
-    "meta description": "JERRY's Homepage", //SEO description
-    "holder name": "SPACE", //作者名稱
-    "holder icon":{
+    "description": "JERRY's Homepage", //SEO description
+    "name": "SPACE", //作者名稱
+    "icon":{
         "method": "local", //作者頭像：1.local | 2.gravatar(自動獲取)
         "local":{
             "url": "/icon.png" //填寫絕對路徑 e.g: sub-background.png
@@ -116,13 +116,15 @@
                 "url": "https://music.youtube.com/watch?v=RR9w_ZSsTvM"
             }
         }
-    }
+    },
+    "debug": false, //true: 開啓 | false: 關閉 (除錯模式)
+    "plugins": [] //安裝組件
 }
 ```
 ### Link 鏈結按鈕
 ```Json
 "Link": { //Up to 5 limit
-    "link-1": { 
+    "link_1": { 
         "enabled": true, //true: 開啓 | false: 關閉
         "title": "facebook",
         "name": "fb", //用於URL Parameters檢測
@@ -130,7 +132,7 @@
         "url": "https://facebook.com", //連結目標
         "target": "blank" //_blank | _self | _parent | _top
     },
-    "link-2": {
+    "link_2": {
         "enabled": true, //true: 開啓 | false: 關閉
         "title": "youtube",
         "name": "yt", //用於URL Parameters檢測
@@ -163,6 +165,15 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> INFO:  V1.3.x的變量(統一)更新已完成，受影響的名稱共 ***11*** 個，請在可能的情況下酌情更新，以減低將來報錯的可能
+
+> V1.3.1[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
+> 受影響的名稱: 
+> 1. Link-${num.} > link_${num.}
+> 2. music-${num.} > music_${num.}
+> 3. Show Github Icon > show_github_icon
+> 4. Links > links
+
 > ***V1.3.0[2][Important]: 重新構建數個重要的邏輯代碼***
 > 1. 鏈結以"create"而非"remove"方式產生，因此現在你可以添加超過```5```個鏈結
 
