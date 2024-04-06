@@ -168,7 +168,7 @@ Case: 在Instagram中發放連結
 
 > V1.3.0[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
 > 受影響的名稱: 
-> 1. basic environment > basic_information
+> 1. basic information > basic_information
 > 2. website name > website_name
 
 > INFO:  V1.2.x更新生命期完結，共更新 ***10*** 次
