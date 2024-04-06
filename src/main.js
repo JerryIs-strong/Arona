@@ -1,3 +1,16 @@
+function createLink(id, className, target, title, url, linkName) {
+    const LinkBtn = document.createElement('a');
+    LinkBtn.id = id;
+    LinkBtn.className = className;
+    LinkBtn.target = target;
+    LinkBtn.setAttribute("title", title);
+    if (url !== "") {
+        LinkBtn.setAttribute('href', url);
+    }
+    LinkBtn.setAttribute('l-name', linkName);
+    return LinkBtn;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const shareElement = document.getElementById("share");
     let shareCounter = 0;
@@ -12,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeApp() {
         const settings = JSON.parse(localStorage.getItem('setting'));
-        const basicInformation = settings['basic information'];
+        const basicInformation = settings['basic_information'];
         const linkSettings = settings['Links'];
         const music = basicInformation['music'];
 
-        // Initialize basic information
+        // Initialize basic_information
         initializeBasicInformation(basicInformation, music);
 
         // Initialize links
@@ -41,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Apply settings to HTML elements
         document.querySelector('meta[name="description"]').setAttribute('content', basicInformation['description']);
-        document.title = basicInformation['website name'];
+        document.title = basicInformation['website_name'];
         document.getElementById('title').innerText = "HEY! " + basicInformation['name'];
         document.getElementById('description').innerText = basicInformation['subtitle'];
 
@@ -116,40 +129,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeLinks(linkSettings) {
         const urlParams = new URLSearchParams(window.location.search);
+        const linkGroup = document.getElementById('mediaBtn_wrapper');
         let linkCounter = 0;
-        let linkEnabled = 0;
 
-        Object.keys(linkSettings).forEach(key => {
-            const link = linkSettings[key];
-            const linkElement = document.getElementById(`${key}`);
-            const linkName = link['name'];
-            linkCounter += 1;
-
-            if (link['enabled']) {
-                linkElement.setAttribute('l-name', linkName);
-                if (linkElement.getAttribute('l-name') !== urlParams.get('media')) {
-                    if (link['enabled']) {
-                        linkElement.className = link["icon"];
-                        linkElement.target = link["target"];
-                        linkElement.setAttribute("title", link['title']);
-                        if (link['url'] !== "") {
-                            linkElement.setAttribute('href', link['url']);
-                        }
-                        linkEnabled += 1;
+        if (linkSettings != null && Object.keys(linkSettings).length > 0 && linkSettings != false) {
+            Object.keys(linkSettings).forEach(key => {
+                const link = linkSettings[key];
+                const linkName = link['name'];
+                linkCounter += 1;
+                if (link['enabled']) {
+                    linkGroup.appendChild(createLink(key, link["icon"], link["target"], link['title'], link['url'], linkName));
+                    if (document.getElementById(`${key}`).getAttribute('l-name') !== urlParams.get('media')) {
+                        debug(`${key}已經加載✅`, "info");
+                    } else {
+                        document.getElementById(`${key}`).remove();
                     }
-                    debug(`${key}已經加載✅`, "info");
                 } else {
-                    linkElement.remove();
+                    if (link['enabled'] === false) {
+                        debug(`${key}已禁用⛔`, "info");
+                    } else {
+                        debug(`${key}設置錯誤❌`, "error");
+                    }
                 }
-            } else {
-                if (link['enabled'] === false) {
-                    debug(`${key}已禁用⛔`, "info");
-                } else {
-                    debug(`${key}設置錯誤❌`, "error");
-                }
-                linkElement.remove();
-            }
-        });
+            });
+        } else {
+            document.getElementById('mediaBtn_wrapper').remove();
+            debug(`所有鏈接設置為空，可能存在設置錯誤⚠️`, "warn");
+        }
     }
 
     initializeApp();

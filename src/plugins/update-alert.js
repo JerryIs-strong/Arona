@@ -1,3 +1,4 @@
+styleInfo("Welcome to", "update-alert", "rgb(60 185 235)", "#fff");
 fetch('https://raw.githubusercontent.com/JerryIs-strong/personal-webpage/main/version.txt')
     .then(response => response.text())
     .then((text) => {

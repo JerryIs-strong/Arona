@@ -7,7 +7,7 @@
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.2.6(推送版本)</strong>
+    <strong>💌 V1.3.0(推送版本)</strong>
     <br/>
     <br/>
     <img src="/src/sample/demo.png">
@@ -119,7 +119,7 @@
     }
 }
 ```
-### Link 鏈接按鈕
+### Link 鏈結按鈕
 ```Json
 "Link": { //Up to 5 limit
     "link-1": { 
@@ -163,6 +163,16 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
+> ***V1.3.0[2][Important]: 重新構建數個重要的邏輯代碼***
+> 1. 鏈結以"create"而非"remove"方式產生，因此現在你可以添加超過```5```個鏈結
+
+> V1.3.0[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
+> 受影響的名稱: 
+> 1. basic environment > basic_information
+> 2. website name > website_name
+
+> INFO:  V1.2.x更新生命期完結，共更新 ***10*** 次
+
 > V1.2.6[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。同時預設不再開啟update-alert模組，但我們仍強烈建議開啟，以取得重要的更新提示。\
 > 受影響的名稱: 
 > 1. basic environment > basic information

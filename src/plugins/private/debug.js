@@ -11,7 +11,17 @@ function styleInfo(message1, message2, primary_color, second_color) {
 
 function debug(DebugMessage, action = 'info') {
     if (debugInfo) {
-        styleInfo(debugCounter, DebugMessage, `${action === 'error' ? '#d57079' : '#6eaf91'}`, "#fff");
+        let message;
+        if (action === 'error') {
+            message = `Error: ${DebugMessage}`;
+        } else if (action === 'warn') {
+            message = `Warning: ${DebugMessage}`;
+        } else if (action === 'info') {
+            message = `Info: ${DebugMessage}`;
+        } else {
+            message = DebugMessage;
+        }
+        styleInfo(debugCounter, message, `${action === 'error' ? '#d57079' : action === 'warn' ? '#e5c07b' : '#6eaf91'}`, "#fff");
         debugCounter += 1;
     }
 }

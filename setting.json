@@ -1,6 +1,6 @@
 {
-    "basic information": {
-        "website name": "",
+    "basic_information": {
+        "website_name": "",
         "subtitle": "",
         "description": "",
         "name": "",
@@ -27,48 +27,7 @@
             "data": {}
         }
     },
-    "Links": {
-        "link-1": {
-            "enabled": false,
-            "title": "",
-            "name": "",
-            "icon": "",
-            "url": "",
-            "target": ""
-        }, 
-        "link-2": {
-            "enabled": false,
-            "title": "",
-            "name": "",
-            "icon": "",
-            "url": "",
-            "target": ""
-        }, 
-        "link-3": {
-            "enabled": false,
-            "title": "",
-            "name": "",
-            "icon": "",
-            "url": "",
-            "target": ""
-        }, 
-        "link-4": {
-            "enabled": false,
-            "title": "",
-            "name": "",
-            "icon": "",
-            "url": "",
-            "target": ""
-        }, 
-        "link-5": {
-            "enabled": false,
-            "title": "",
-            "name": "",
-            "icon": "",
-            "url": "",
-            "target": ""
-        }
-    },
+    "Links": {},
     "debug": false,
     "plugins": []
 }
