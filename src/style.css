@@ -70,6 +70,7 @@ html {
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 
@@ -157,6 +158,29 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
     text-decoration: none;
 }
 
+#skills{
+    background: #3535358f;
+    width: fit-content;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    animation: skill-in 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+}
+
+.skill-icon{
+    margin: 0 10px;
+}
+
+#language{
+    color: #fff;
+}
+
+#learning{
+    color: rgba(255, 255, 255, 0.438);
+}
+
 @media screen and (max-width: 590px) {
     #main {
         flex-direction: column;
@@ -174,7 +198,6 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
 }
 
 @keyframes in {
-
     0%,
     40% {
         width: 0;
@@ -211,5 +234,17 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
     100%{
         opacity: 0.95;
         filter: blur(0);
+    }
+}
+
+@keyframes skill-in {
+    0%{
+        margin: 90px 0 10px 0;
+        padding: 8px 50px;
+    }
+
+    100%{
+        margin: 0 0 10px 0;
+        padding: 8px 18px;
     }
 }

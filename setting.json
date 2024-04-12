@@ -1,33 +1,70 @@
 {
-    "basic_information": {
-        "website_name": "",
-        "subtitle": "",
+    "profile": {
+        "website_name": "Welcome to pw",
+        "subtitle": "You can now configure your website",
         "description": "",
-        "name": "",
-        "icon":{
-            "method": "",
-            "local":{
-                "url": ""
+        "name": "You done it!",
+        "icon": {
+            "method": "local",
+            "local": {
+                "url": "/src/img/icon.png"
             },
             "gravatar": {
                 "email": ""
             }
         },
-        "background":{
-            "url": ""
-        },
-        "signature":{
+        "skills": {
             "enabled": false,
-            "content": "",
-            "auto-hide": ""
-        },
-        "music":{
-            "enabled": false,
-            "show_github_icon": false,
-            "data": {}
+            "language": ["html5","css3","js"],
+            "learning": ["vuejs","react"]
         }
     },
-    "links": {},
+    "display": {
+        "background": {
+            "url": "/src/img/wallpaper.png"
+        },
+        "signature": {
+            "enabled": true,
+            "content": "V.Arona",
+            "auto-hide": true
+        },
+        "share": {
+            "enabled": true,
+            "github_icon": {
+                "enabled": true,
+                "github_user_name": "",
+                "github_repo_name": ""
+            },
+            "music":{
+                "enabled": false,
+                "music_data": {}
+            }
+        }
+    },
+    "links": {
+        "link_1": {
+            "enabled": true,
+            "title": "quick start",
+            "icon": "fa-solid fa-gear",
+            "url": "https://github.com/JerryIs-strong/personal-webpage?tab=readme-ov-file#-%E9%85%8D%E7%BD%AE%E9%A0%85",
+            "target": "_blank"
+        },
+        "link_2": {
+            "enabled": true,
+            "title": "get plugins",
+            "icon": "fa-solid fa-puzzle-piece",
+            "url": "https://github.com/JerryIs-strong/pw-plugins-repo",
+            "target": "_blank"
+        },
+        "link_3": {
+            "enabled": true,
+            "title": "bug report",
+            "icon": "fa-solid fa-bug",
+            "url": "https://github.com/JerryIs-strong/personal-webpage/issues",
+            "target": "_blank"
+        }
+    },
     "debug": false,
-    "plugins": []
+    "plugins": [],
+    "theme": "default"
 }

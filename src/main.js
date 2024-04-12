@@ -11,6 +11,14 @@ function createLink(id, className, target, title, url, linkName) {
     return LinkBtn;
 }
 
+function createSkills(name) {
+    const skillBtn = document.createElement('i');
+    const styleTemp = "fa-brands fa-";
+    skillBtn.className = styleTemp + name;
+    skillBtn.classList.add("skill-icon");
+    return skillBtn;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const shareElement = document.getElementById("share");
     let shareCounter = 0;
@@ -25,41 +33,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeApp() {
         const settings = JSON.parse(localStorage.getItem('setting'));
-        const basicInformation = settings['basic_information'];
+        const profile = settings['profile'];
         const linkSettings = settings['links'];
-        const music = basicInformation['music'];
+        const skillSettings = profile['skills']
+        const display = settings['display'];
+        const github = display['share']['github_icon'];
+        const music = display['share']['music'];
 
-        // Initialize basic_information
-        initializeBasicInformation(basicInformation, music);
-
-        // Initialize links
+        initializeProfile(profile, music, display);
         initializeLinks(linkSettings);
+        initializeSkills(skillSettings)
+        initializeGithubIcon(display)
 
         // Start infinite loop for music
-        if (music['enabled'] && music['show_github_icon']) {
+        if (music['enabled'] && github['enabled']) {
             infiniteLoop();
         }
     }
 
-    function initializeBasicInformation(basicInformation, music) {
-        const musicsetting = basicInformation['music']['data'];
-        const musicNumber = Object.keys(musicsetting).length;
-        const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
-        const musicKey = musicsetting[`music_${musicRandom}`];
-        const holderIcon = basicInformation['icon'];
-        const backgroundUrl = basicInformation['background'];
+    function initializeProfile(profile, music, display) {
+        const musicSetting = music['music_data'];
+        const holderIcon = profile['icon'];
+        const backgroundUrl = display['background'];
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
         const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const sign = basicInformation['signature'];
+        const sign = display['signature'];
 
         // Apply settings to HTML elements
-        document.querySelector('meta[name="description"]').setAttribute('content', basicInformation['description']);
-        document.title = basicInformation['website_name'];
-        document.getElementById('title').innerText = "HEY! " + basicInformation['name'];
-        document.getElementById('description').innerText = basicInformation['subtitle'];
+        document.querySelector('meta[name="description"]').setAttribute('content', profile['description']);
+        document.title = profile['website_name'];
+        document.getElementById('title').innerText = "HEY! " + profile['name'];
+        document.getElementById('description').innerText = profile['subtitle'];
 
         handleSignature(sign);
-        handleMusic(music, musicKey);
+        handleMusic(music, musicSetting);
         handleBackground(backgroundUrl);
         handleDarkMode(darkMode);
         handleHolderIcon(holderIcon, gravatarUrl);
@@ -81,13 +88,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleMusic(music, musicKey) {
+    function handleMusic(music, musicSetting) {
         const musicElement = document.getElementById('MusicName');
         if (music['enabled']) {
+            const musicNumber = Object.keys(musicSetting).length;
+            const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
+            const musicKey = musicSetting[`music_${musicRandom}`];
             musicElement.innerText = musicKey['name'];
             musicElement.setAttribute('href', musicKey['url']);
             musicElement.setAttribute('title', musicKey['name']);
-            document.getElementById('github').classList.add("github-loop");
             debug(`隨機歌曲已經加載✅`);
         } else {
             if (!music['enabled']) {
@@ -95,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 debug(`隨機歌曲設置錯誤❌`, "error");
             }
-            document.getElementById('share').remove();
+            document.getElementById('music').remove();
         }
     }
 
@@ -124,6 +133,35 @@ document.addEventListener('DOMContentLoaded', () => {
             debug(`gravatar頭像已經加載✅`);
         } else {
             debug(`頭像設置錯誤❌`, "error");
+        }
+    }
+
+    function initializeGithubIcon(display) {
+        githubProject = document.getElementById("githubProject")
+        if (display['share']['enabled']) {
+            if (display['share']['github_icon']['enabled']) {
+                githubProject.classList.add("github-loop");
+                if (display['share']['github_icon']['github_user_name'] && display['share']['github_icon']['github_repo_name']) {
+                    githubProject.innerText = `${display['share']['github_icon']['github_user_name']}/${display['share']['github_icon']['github_repo_name']}`
+                }
+            } else {
+                document.getElementById("github").remove();
+            }
+        } else {
+            document.getElementById("share").remove();
+        }
+    }
+
+    function initializeSkills(skillSettings) {
+        if (Object.values(skillSettings).some(skills => Object.keys(skills).length > 0)) {
+            Object.entries(skillSettings).forEach(([key, skills]) => {
+                const skillGroup = document.getElementById(key);
+                Object.values(skills).forEach(skill => {
+                    skillGroup.appendChild(createSkills(skill));
+                });
+            });
+        } else {
+            document.getElementById("skills").remove();
         }
     }
 

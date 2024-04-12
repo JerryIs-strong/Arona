@@ -6,8 +6,9 @@
     <a href="https://personal-webpage-demo-53of.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="#-更新日志" target="blank"><strong>📄 日志</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.3.0(推送版本)</strong>
+    <strong>💌 V1.4.0(推送版本)</strong>
     <br/>
     <br/>
     <img src="/src/sample/demo.png">
@@ -81,7 +82,8 @@
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除`setting.json`配置文件以外的文件，以免發生錯誤
 ### Basic Environment 基本環境
 ```Json
-"basic_information": {
+{
+"profile": {
     "website_name": "My SPACE", //網站標題(瀏覽器)
     "subtitle": "海内存知己 天涯若比鄰", //網站副標題
     "description": "JERRY's Homepage", //SEO description
@@ -94,7 +96,9 @@
         "gravatar": {
             "email": "" //作者gravatar電郵
         }
-    },
+    }
+},
+"display": {
     "background":{
         "url": "background.png" //1.Local: 填寫絕對路徑 e.g: background.png | 2.外部連結: 添加https://標頭 e.g: https://jerrypro.xyz/background.png
     },
@@ -107,22 +111,24 @@
         "enabled": true, //true: 開啓 | false: 關閉
         "Show Github Icon": false, //是否顯示Github Project
         "data":{ //可添加多首歌曲，但music-$必須由1開始!(No limit)
-            "music-1":{
+            "music_1":{
                 "name": "那年 - 任然 • 任然精選集 • 2016",
                 "url": "https://music.youtube.com/watch?v=LXBiGyEQmZw"
             },
-            "music-2":{
+            "music_2":{
                 "name": "圈住你 - 一口甜 • 圈住你 • 2019",
                 "url": "https://music.youtube.com/watch?v=RR9w_ZSsTvM"
             }
         }
     },
-    "debug": false, //true: 開啓 | false: 關閉 (除錯模式)
-    "plugins": [] //安裝組件
+},
+"debug": false, //true: 開啓 | false: 關閉 (除錯模式)
+"plugins": [] //安裝組件
 }
 ```
 ### Link 鏈結按鈕
 ```Json
+{
 "Link": { //Up to 5 limit
     "link_1": { 
         "enabled": true, //true: 開啓 | false: 關閉
@@ -141,14 +147,16 @@
         "target": "blank" //_blank | _self | _parent | _top
     }
 }
+}
 ```
 ## 🔗 URL Parameters
 syntax: ```url + ?media=```
 
-Case: 在Instagram中發放連結
+Case: 在blog中發放連結
 | Url | NEW | OLD |
 | :---: | :---: | :---: |
-| https://jerrypro.netlify.app/?media=ig | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
+| https://demo.webpage.com/?media=blog | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
+| blog icon | ❎ | ✅ |
 
 ## 🚛 模組
 > Go to ["Document | Get start"](https://jerryplanet.notion.site/Plugins-Document-f06cd809b10143c19a5ff86e070644b6?pvs=4) to read more about plugins development
@@ -165,27 +173,69 @@ Case: 在Instagram中發放連結
 [![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
 
 ## 🎀 更新日志
-> INFO:  V1.3.x的變量(統一)更新已完成，受影響的名稱共 ***11*** 個，請在可能的情況下酌情更新，以減低將來報錯的可能
+建議覆蓋安裝/更新帶有```[!Important]```字樣的版本更新。
+
+- [V1.0.x](#V1.0.X)
+- [V1.2.x](#V1.2.X)
+- [V1.3.x](#V1.3.X)
+- [V1.4.x](#V1.4.X)
+
+----
+### V1.4.X_[Arona](#-)
+
+> V1.4.0[2]: 有數個錯誤已被修正
+> - Github Icon無法被禁用
+> - Music被禁用時，父元素share被移除
+
+> V1.4.0[1]: 有數個功能上的更新
+> - 支持顯示不同語言的編程語言icon
+> - update-alert已被整合至默認插件
+> - 添加每期更新的默認壁紙
+
+----
+
+### V1.3.X(#-)
+
+> INFO:  V1.3.x的變量(統一)更新已完成，受影響的變量名稱共 ***14*** 個，請在可能的情況下酌情更新，以減低將來報錯的可能性
+
+> V1.3.2[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
+> [-] 受影響的變量名稱: 
+> 1. basic information > profile
+> 2. music > share
+> 3. data > music_data
+> 4. show_github_icon > enabled
+>
+> [+] 添加的變量名稱: 
+> 1. display
+> 2. skills
+> 3. github_icon
+> 4. github_user_name
+> 5. github_repo_name
 
 > V1.3.1[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
-> 受影響的名稱: 
+> [-] 受影響的變量名稱: 
 > 1. Link-${num.} > link_${num.}
 > 2. music-${num.} > music_${num.}
 > 3. Show Github Icon > show_github_icon
 > 4. Links > links
 
-> ***V1.3.0[2][Important]: 重新構建數個重要的邏輯代碼***
+> INFO: 現在可以於```Release page```下載V1.3.X往後的歷史版本
+
+> ***V1.3.0[2][!Important]: 重新構建數個重要的邏輯代碼***
 > 1. 鏈結以"create"而非"remove"方式產生，因此現在你可以添加超過```5```個鏈結
 
 > V1.3.0[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
-> 受影響的名稱: 
+> [-] 受影響的變量名稱: 
 > 1. basic information > basic_information
 > 2. website name > website_name
+
+----
+### V1.2.X(#10)
 
 > INFO:  V1.2.x更新生命期完結，共更新 ***10*** 次
 
 > V1.2.6[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。同時預設不再開啟update-alert模組，但我們仍強烈建議開啟，以取得重要的更新提示。\
-> 受影響的名稱: 
+> [-] 受影響的變量名稱: 
 > 1. basic environment > basic information
 > 2. meta description > description
 > 3. holder name > name
@@ -210,7 +260,7 @@ Case: 在Instagram中發放連結
 
 > V1.2.4[2]: 補丁更新，增加隱藏Github Icon的設置
 
-> ***V1.2.4[1][Important]: 重新構建數個重要的邏輯代碼***\
+> ***V1.2.4[1][!Important]: 重新構建數個重要的邏輯代碼***\
 > 受影響的文件: \
 > root\
 > &ensp;|_ version.txt\
@@ -228,13 +278,12 @@ Case: 在Instagram中發放連結
 
 > V1.2.1[1]: 加入模組化，開發者能夠隨時且輕易地管理網頁的各項功能與組件
 
+----
+### V1.0.X(#8)
+
 > INFO:  V1.0.x更新生命期完結，共更新 ***8*** 次
 
-> INFO:  V1.0.5更新生命期完結，共更新 ***1*** 次
-
 > V1.0.5[1]: 解決Android設備背景錯位的問題
-
-> INFO: V1.0.4更新生命期完結，共更新 ***6*** 次
 
 > V1.0.4[6]: 優化SEO，增加對description meta tag的設置項，解決未啟用音樂分享時的錯位問題，增加noscript tag，重命名website description設置項為subtitle
 
