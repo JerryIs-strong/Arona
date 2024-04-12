@@ -11,11 +11,14 @@ function createLink(id, className, target, title, url, linkName) {
     return LinkBtn;
 }
 
-function createSkills(name) {
+function createSkills(name, breath) {
     const skillBtn = document.createElement('i');
     const styleTemp = "fa-brands fa-";
     skillBtn.className = styleTemp + name;
     skillBtn.classList.add("skill-icon");
+    if(breath) {
+        skillBtn.classList.add("skill-breath");
+    }
     return skillBtn;
 }
 
@@ -157,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Object.entries(skillSettings).forEach(([key, skills]) => {
                 const skillGroup = document.getElementById(key);
                 Object.values(skills).forEach(skill => {
-                    skillGroup.appendChild(createSkills(skill));
+                    skillGroup.appendChild(createSkills(skill,skillSettings['breath']));
                 });
             });
         } else {

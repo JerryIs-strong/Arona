@@ -15,6 +15,7 @@
         },
         "skills": {
             "enabled": false,
+            "breath": true,
             "language": ["html5","css3","js"],
             "learning": ["vuejs","react"]
         }

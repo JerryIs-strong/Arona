@@ -184,6 +184,9 @@ Case: 在blog中發放連結
 
 ### V1.4.X_\[Arona\](#-)
 
+> V1.4.0[3]: 有數個功能上的更新
+> - Added breath effect to skill icon
+
 > V1.4.0[2]: 有數個錯誤已被修正
 > - Github Icon無法被禁用
 > - Music被禁用時，父元素share被移除
@@ -192,6 +195,7 @@ Case: 在blog中發放連結
 > - 支持顯示不同語言的編程語言icon
 > - update-alert已被整合至默認插件
 > - 添加每期更新的默認壁紙
+> - 自定義倉庫的名稱
 
 ----
 

@@ -171,6 +171,16 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
 
 .skill-icon{
     margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.04, 0, 0.89);
+}
+
+.skill-breath{
+    animation: breath 4s ease-in-out infinite;
+}
+
+.skill-icon:hover{
+    font-size: 20px;
 }
 
 #language{
@@ -246,5 +256,19 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
     100%{
         margin: 0 0 10px 0;
         padding: 8px 18px;
+    }
+}
+
+@keyframes breath {
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0.4;
+    }
+
+    100%{
+        opacity: 1;
     }
 }
