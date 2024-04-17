@@ -11,6 +11,12 @@
     <strong>💌 V1.4.0(推送版本)</strong>
     <br/>
     <br/>
+    <div>
+        <a href="https://github.com/JerryIs-strong/personal-webpage/releases/">
+            <img src="https://img.shields.io/github/v/release/JerryIs-strong/personal-webpage.svg"/>
+        </a>
+    </div>
+    <br/>
     <img src="/src/sample/demo.png">
 </div>
 
