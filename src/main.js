@@ -1,11 +1,35 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const settings = JSON.parse(localStorage.getItem('setting'));
+    const { profile, SEO, links, display, alert } = settings;
+    const { skills } = profile;
+    const { github_icon, music } = display.share;
+    initializeProfile(profile, music, display, SEO);
+    initializeLinks(links);
+    initializeSkills(skills);
+    initializeGithubIcon(github_icon);
+    if (music.enabled && github_icon.enabled) {
+        infiniteLoop();
+    }
+    if(alert.enabled){
+        if(alert.https){
+            if(window.location.protocol === 'https:'){
+                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', 8000, "#6ac97f", "fa-solid", "fa-lock");
+            }else{
+                showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', 10000, "#d55757", "fa-solid", "fa-lock-open");
+            }
+        }
+        initializeAlert(alert['data'])
+    }
+});
+
 function createLink(id, className, target, title, url, linkName) {
     const LinkBtn = document.createElement('a');
     LinkBtn.id = id;
     LinkBtn.className = className;
     LinkBtn.target = target;
-    LinkBtn.setAttribute("title", title);
-    if (url !== "") {
-        LinkBtn.setAttribute('href', url);
+    LinkBtn.title = title;
+    if (url) {
+        LinkBtn.href = url;
     }
     LinkBtn.setAttribute('l-name', linkName);
     return LinkBtn;
@@ -14,190 +38,139 @@ function createLink(id, className, target, title, url, linkName) {
 function createSkills(name, breath) {
     const skillBtn = document.createElement('i');
     const styleTemp = "fa-brands fa-";
-    skillBtn.className = styleTemp + name;
-    skillBtn.classList.add("skill-icon");
-    if(breath) {
-        skillBtn.classList.add("skill-breath");
-    }
+    skillBtn.className = `${styleTemp}${name} skill-icon${breath ? ' skill-breath' : ''}`;
     return skillBtn;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const shareElement = document.getElementById("share");
+function infiniteLoop() {
     let shareCounter = 0;
+    const shareElement = document.getElementById("share");
+    const loop = () => {
+        shareElement.scrollTop = shareCounter === 0 ? 100 : 0;
+        shareCounter = shareCounter === 0 ? 1 : 0;
+        requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
+}
 
-    function infiniteLoop() {
-        setTimeout(() => {
-            shareElement.scrollTop = shareCounter === 0 ? 100 : 0;
-            shareCounter = shareCounter === 0 ? 1 : 0;
-            infiniteLoop();
-        }, 6500);
-    }
+function initializeProfile(profile, music, display, SEO) {
+    const { icon, skills: skillSettings } = profile;
+    const { background, signature } = display;
+    const { language, description, keywords } = SEO;
+    const { music_data: musicSetting } = music;
+    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const gravatarUrl = `https://www.gravatar.com/avatar/${md5(icon.gravatar.email)}?size=500`;
 
-    function initializeApp() {
-        const settings = JSON.parse(localStorage.getItem('setting'));
-        const profile = settings['profile'];
-        const linkSettings = settings['links'];
-        const skillSettings = profile['skills']
-        const display = settings['display'];
-        const github = display['share']['github_icon'];
-        const music = display['share']['music'];
+    document.documentElement.lang = language || 'zh-TW';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/personal-webpage');
+    document.querySelector('meta[name="keywords"]')?.setAttribute('content', keywords || 'webpage');
+    document.title = profile.website_name;
+    document.getElementById('title').innerText = `HEY! ${profile.name}`;
+    document.getElementById('description').innerText = profile.subtitle;
 
-        initializeProfile(profile, music, display);
-        initializeLinks(linkSettings);
-        initializeSkills(skillSettings)
-        initializeGithubIcon(display)
+    handleSignature(signature);
+    handleMusic(music, musicSetting);
+    handleBackground(background.url);
+    handleDarkMode(darkMode);
+    handleHolderIcon(icon, gravatarUrl);
+}
 
-        // Start infinite loop for music
-        if (music['enabled'] && github['enabled']) {
-            infiniteLoop();
+function handleSignature({ enabled, content, auto_hide }) {
+    const signElement = document.getElementById('sign');
+    if (enabled) {
+        signElement.innerText = content;
+        if (auto_hide) {
+            signElement.classList.add("auto-hide");
         }
     }
+}
 
-    function initializeProfile(profile, music, display) {
-        const musicSetting = music['music_data'];
-        const holderIcon = profile['icon'];
-        const backgroundUrl = display['background'];
-        const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon['gravatar']['email'])}?size=500`;
-        const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const sign = display['signature'];
-
-        // Apply settings to HTML elements
-        document.querySelector('meta[name="description"]').setAttribute('content', profile['description']);
-        document.title = profile['website_name'];
-        document.getElementById('title').innerText = "HEY! " + profile['name'];
-        document.getElementById('description').innerText = profile['subtitle'];
-
-        handleSignature(sign);
-        handleMusic(music, musicSetting);
-        handleBackground(backgroundUrl);
-        handleDarkMode(darkMode);
-        handleHolderIcon(holderIcon, gravatarUrl);
+function handleMusic(music, musicSetting) {
+    const musicElement = document.getElementById('MusicName');
+    if (music.enabled) {
+        const musicNumber = Object.keys(musicSetting).length;
+        const musicRandom = Math.floor(Math.random() * musicNumber) + 1;
+        const musicKey = musicSetting[`music_${musicRandom}`];
+        musicElement.innerText = musicKey.name;
+        musicElement.href = musicKey.url;
+        musicElement.title = musicKey.name;
+    } else {
+        document.getElementById('music').remove();
     }
+}
 
-    function handleSignature(sign) {
-        const signElement = document.getElementById('sign');
-        if (sign['enabled']) {
-            signElement.innerText = sign['content'];
-            debug(`個性簽名已經加載✅`);
-            if (sign['auto-hide']) {
-                signElement.classList.add("auto-hide");
-                debug(`個性簽名自動隱藏開始運作⛔`, "info");
-            }
-        } else if (sign['enabled'] === false) {
-            debug(`個性簽名已禁用⛔`, "info");
-        } else {
-            debug(`個性設置錯誤❌`, "error");
+function handleBackground(backgroundUrl) {
+    const backgroundElement = document.getElementById('background');
+    if (backgroundUrl) {
+        backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
+    }
+}
+
+function handleDarkMode(darkMode) {
+    document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
+}
+
+function handleHolderIcon(holderIcon, gravatarUrl) {
+    const imgElement = document.getElementById('img');
+    if (holderIcon.method === "local") {
+        imgElement.style.backgroundImage = `url("${holderIcon.local.url}")`;
+    } else if (holderIcon.method === "gravatar") {
+        imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
+    }
+}
+
+function initializeGithubIcon(github_icon) {
+    const githubProject = document.getElementById("githubProject");
+    if (github_icon.enabled) {
+        githubProject.classList.add("github-loop");
+        if (github_icon.github_user_name && github_icon.github_repo_name) {
+            githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
+    } else {
+        document.getElementById("github").remove();
     }
+}
 
-    function handleMusic(music, musicSetting) {
-        const musicElement = document.getElementById('MusicName');
-        if (music['enabled']) {
-            const musicNumber = Object.keys(musicSetting).length;
-            const musicRandom = Math.floor(Math.random() * (musicNumber - 1 + 1) + 1);
-            const musicKey = musicSetting[`music_${musicRandom}`];
-            musicElement.innerText = musicKey['name'];
-            musicElement.setAttribute('href', musicKey['url']);
-            musicElement.setAttribute('title', musicKey['name']);
-            debug(`隨機歌曲已經加載✅`);
-        } else {
-            if (!music['enabled']) {
-                debug(`隨機歌曲已禁用⛔`, "info");
-            } else {
-                debug(`隨機歌曲設置錯誤❌`, "error");
-            }
-            document.getElementById('music').remove();
-        }
-    }
-
-    function handleBackground(backgroundUrl) {
-        const backgroundElement = document.getElementById('background');
-        if (backgroundUrl['url'] != null && backgroundUrl['url'] != "") {
-            backgroundElement.style.backgroundImage = `url(${backgroundUrl["url"]})`;
-            debug(`本地壁紙已經加載✅`);
-        } else {
-            debug(`壁紙設置錯誤❌`, "error");
-        }
-    }
-
-    function handleDarkMode(darkMode) {
-        document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
-        debug(`${darkMode ? "Dark Mode🌑" : "Light Mode🌕"}`);
-    }
-
-    function handleHolderIcon(holderIcon, gravatarUrl) {
-        const imgElement = document.getElementById('img');
-        if (holderIcon['method'] === "local") {
-            imgElement.style.backgroundImage = `url("${holderIcon["local"]["url"]}")`;
-            debug(`本地頭像已經加載✅`);
-        } else if (holderIcon['method'] === "gravatar") {
-            imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
-            debug(`gravatar頭像已經加載✅`);
-        } else {
-            debug(`頭像設置錯誤❌`, "error");
-        }
-    }
-
-    function initializeGithubIcon(display) {
-        githubProject = document.getElementById("githubProject")
-        if (display['share']['enabled']) {
-            if (display['share']['github_icon']['enabled']) {
-                githubProject.classList.add("github-loop");
-                if (display['share']['github_icon']['github_user_name'] && display['share']['github_icon']['github_repo_name']) {
-                    githubProject.innerText = `${display['share']['github_icon']['github_user_name']}/${display['share']['github_icon']['github_repo_name']}`
-                }
-            } else {
-                document.getElementById("github").remove();
-            }
-        } else {
-            document.getElementById("share").remove();
-        }
-    }
-
-    function initializeSkills(skillSettings) {
-        if (Object.values(skillSettings).some(skills => Object.keys(skills).length > 0)) {
-            Object.entries(skillSettings).forEach(([key, skills]) => {
-                const skillGroup = document.getElementById(key);
-                Object.values(skills).forEach(skill => {
-                    skillGroup.appendChild(createSkills(skill,skillSettings['breath']));
-                });
+function initializeSkills(skillSettings) {
+    const hasSkills = Object.values(skillSettings).some(skills => Object.keys(skills).length > 0);
+    if (hasSkills) {
+        Object.entries(skillSettings).forEach(([key, skills]) => {
+            const skillGroup = document.getElementById(key);
+            Object.values(skills).forEach(skill => {
+                skillGroup.appendChild(createSkills(skill, skillSettings.breath));
             });
-        } else {
-            document.getElementById("skills").remove();
-        }
+        });
+    } else {
+        document.getElementById("skills").remove();
     }
+}
 
-    function initializeLinks(linkSettings) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const linkGroup = document.getElementById('mediaBtn_wrapper');
-        let linkCounter = 0;
+function initializeLinks(linkSettings) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const linkGroup = document.getElementById('mediaBtn_wrapper');
 
-        if (linkSettings != null && Object.keys(linkSettings).length > 0 && linkSettings != false) {
-            Object.keys(linkSettings).forEach(key => {
-                const link = linkSettings[key];
-                const linkName = link['name'];
-                linkCounter += 1;
-                if (link['enabled']) {
-                    linkGroup.appendChild(createLink(key, link["icon"], link["target"], link['title'], link['url'], linkName));
-                    if (document.getElementById(`${key}`).getAttribute('l-name') !== urlParams.get('media')) {
-                        debug(`${key}已經加載✅`, "info");
-                    } else {
-                        document.getElementById(`${key}`).remove();
-                    }
-                } else {
-                    if (link['enabled'] === false) {
-                        debug(`${key}已禁用⛔`, "info");
-                    } else {
-                        debug(`${key}設置錯誤❌`, "error");
-                    }
+    if (linkSettings && Object.keys(linkSettings).length > 0) {
+        Object.keys(linkSettings).forEach(key => {
+            const link = linkSettings[key];
+            if (link.enabled) {
+                const linkElement = createLink(key, link.icon, link.target, link.title, link.url, link.name);
+                if (linkElement.getAttribute('l-name') !== urlParams.get('media')) {
+                    linkGroup.appendChild(linkElement);
                 }
-            });
-        } else {
-            document.getElementById('mediaBtn_wrapper').remove();
-            debug(`所有鏈接設置為空，可能存在設置錯誤⚠️`, "warn");
-        }
+            }
+        });
+    } else {
+        document.getElementById('mediaBtn_wrapper').remove();
     }
+}
 
-    initializeApp();
-});
+function initializeAlert(alertSettings){
+    if (alertSettings && Object.keys(alertSettings).length > 0) {
+        Object.keys(alertSettings).forEach(key => {
+            const message = alertSettings[key];
+            showSnackbar(message.content, message.duration, message.color, message.iconType, message.iconName);
+        });
+    } else {
+        document.getElementById('mediaBtn_wrapper').remove();
+    }
+}

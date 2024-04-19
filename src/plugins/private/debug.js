@@ -26,6 +26,41 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
+function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "fa-regular", iconName = "fa-bell") {
+    const wrapper = document.getElementById('notification');
+    const snackbar = document.createElement('div');
+    snackbar.id = 'notification_wrapper';
+    snackbar.classList.add('notification_wrapper', 'snackbar');
+    snackbar.style.backgroundColor = color;
+
+    const contentDiv = document.createElement('div');
+    contentDiv.id = 'notification_content';
+    contentDiv.className = 'notification_content';
+
+    const iconDiv = document.createElement('div');
+    iconDiv.className = "notification_icon";
+    const iconElement = document.createElement('i');
+    iconElement.classList.add(iconType, iconName);
+
+    const textNode = document.createTextNode(message);
+
+    contentDiv.appendChild(textNode);
+    iconDiv.appendChild(iconElement);
+
+    snackbar.appendChild(iconDiv);
+    snackbar.appendChild(contentDiv);
+    wrapper.appendChild(snackbar);
+    snackbar.classList.add('snackbar-show');
+
+    setTimeout(function () {
+        snackbar.classList.remove('snackbar-show');
+        snackbar.classList.add('snackbar-hide');
+        setTimeout(function () {
+            wrapper.removeChild(snackbar);
+        }, 300); 
+    }, duration);
+}
+
 styleInfo("Personal-webpage", version, "#4d6491", "#fff");
 if (!debugInfo) {
     styleInfo("Log process:", "disabled", `#d280e5`, "#fff");

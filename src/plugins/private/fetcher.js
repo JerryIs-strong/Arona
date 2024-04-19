@@ -19,6 +19,6 @@
             localStorage.setItem('setting', JSON.stringify(setting));
         }
     } catch (error) {
-        console.error('Error fetching or parsing the setting.json file:', error);
+        showSnackbar("The dataset may be corrupted", 10000, "#d55757", "fa-solid", "fa-bomb");
     }
 })();

@@ -8,7 +8,7 @@
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-更新日志" target="blank"><strong>📄 日志</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.4.0(推送版本)</strong>
+    <strong>💌 V1.4.1(推送版本)</strong>
     <br/>
     <br/>
     <div>
@@ -184,11 +184,14 @@ Case: 在blog中發放連結
 - [V1.0.x](#v10x8)
 - [V1.2.x](#v12x10)
 - [V1.3.x](#v13x4)
-- [V1.4.x](#V1.4.X)
+- [V1.4.x](#v14x_arona-)
 
 ----
 
 ### V1.4.X_\[Arona\](#-)
+> V1.4.1[1]: 有數個功能上的更新
+> - 增添更多關於SEO的選項
+> - 支援彈幕通知功能
 
 > V1.4.0[3]: 有數個功能上的更新
 > - Added breath effect to skill icon

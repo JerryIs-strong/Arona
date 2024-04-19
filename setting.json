@@ -1,8 +1,7 @@
 {
     "profile": {
-        "website_name": "Welcome to pw",
+        "website_name": "My Personal website",
         "subtitle": "You can now configure your website",
-        "description": "",
         "name": "You done it!",
         "icon": {
             "method": "local",
@@ -19,6 +18,11 @@
             "language": ["html5","css3","js"],
             "learning": ["vuejs","react"]
         }
+    },
+    "SEO": {
+        "description": "",
+        "language": "",
+        "keywords": ""
     },
     "display": {
         "background": {
@@ -67,5 +71,17 @@
     },
     "debug": false,
     "plugins": [],
+    "alert": {
+        "enabled": true,
+        "https": true,
+        "data":{
+            "alert_1":{
+                "content": "We understand your needs and work hard to protect your data privacy",
+                "iconType": "fa-solid",
+                "iconName": "fa-shield-halved",
+                "duration": 5000
+            }
+        }
+    },
     "theme": "default"
 }

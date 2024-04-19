@@ -109,7 +109,7 @@ html {
     box-shadow: 0 0 var(--font-color);
 }
 
-.sign{
+.sign {
     bottom: 0;
     position: absolute;
     right: 20px;
@@ -119,12 +119,13 @@ html {
     font-family: "Protest Riot", Microsoft Yahei, sans-serif;
 }
 
-.musicIcon, .githubIcon{
+.musicIcon,
+.githubIcon {
     font-size: 20px;
     margin-right: 5px;
 }
 
-.share{
+.share {
     color: rgb(255, 255, 255);
     z-index: 10;
     position: absolute;
@@ -144,21 +145,22 @@ html {
     display: none;
 }
 
-.MusicName{
+.MusicName {
     cursor: pointer;
 }
 
-.github-loop{
+.github-loop {
     margin-top: 10px;
 }
 
-a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
+a.MusicName:-webkit-any-link,
+a.githubProject:-webkit-any-link {
     color: unset;
     cursor: pointer;
     text-decoration: none;
 }
 
-#skills{
+#skills {
     background: #3535358f;
     width: fit-content;
     padding: 8px 18px;
@@ -169,26 +171,64 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
     animation: skill-in 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
 }
 
-.skill-icon{
+.skill-icon {
     margin: 0 10px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.04, 0, 0.89);
 }
 
-.skill-breath{
+.skill-breath {
     animation: breath 4s ease-in-out infinite;
 }
 
-.skill-icon:hover{
+.skill-icon:hover {
     font-size: 20px;
 }
 
-#language{
+#language {
     color: #fff;
 }
 
-#learning{
+#learning {
     color: rgba(255, 255, 255, 0.438);
+}
+
+.notification{
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+
+.notification_wrapper {
+    position: relative;
+    width: fit-content;
+    color: #fff;
+    background-color: #4388d9;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.notification_icon {
+    margin: 0 10px 0 0;
+}
+
+.notification_content {
+    max-width: 350px;
+}
+
+.snackbar-show {
+    animation: snackIn 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+}
+
+.snackbar-hide {
+    animation: snackOut 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
 }
 
 @media screen and (max-width: 590px) {
@@ -208,6 +248,7 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
 }
 
 @keyframes in {
+
     0%,
     40% {
         width: 0;
@@ -236,39 +277,63 @@ a.MusicName:-webkit-any-link,a.githubProject:-webkit-any-link {
 
 
 @keyframes bgFadeIn {
-    0%{
+    0% {
         opacity: 0;
         filter: blur(20px);
     }
 
-    100%{
+    100% {
         opacity: 0.95;
         filter: blur(0);
     }
 }
 
 @keyframes skill-in {
-    0%{
+    0% {
         margin: 90px 0 10px 0;
         padding: 8px 50px;
     }
 
-    100%{
+    100% {
         margin: 0 0 10px 0;
         padding: 8px 18px;
     }
 }
 
 @keyframes breath {
-    0%{
+    0% {
         opacity: 1;
     }
 
-    50%{
+    50% {
         opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes snackIn {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
     }
 
     100%{
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes snackOut {
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    100%{
+        opacity: 0;
+        transform: translateY(100%);
     }
 }
