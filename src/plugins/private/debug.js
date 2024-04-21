@@ -36,17 +36,14 @@ function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "f
     const contentDiv = document.createElement('div');
     contentDiv.id = 'notification_content';
     contentDiv.className = 'notification_content';
+    contentDiv.innerHTML = message;
 
     const iconDiv = document.createElement('div');
     iconDiv.className = "notification_icon";
     const iconElement = document.createElement('i');
     iconElement.classList.add(iconType, iconName);
 
-    const textNode = document.createTextNode(message);
-
-    contentDiv.appendChild(textNode);
     iconDiv.appendChild(iconElement);
-
     snackbar.appendChild(iconDiv);
     snackbar.appendChild(contentDiv);
     wrapper.appendChild(snackbar);
@@ -56,7 +53,7 @@ function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "f
         snackbar.classList.remove('snackbar-show');
         snackbar.classList.add('snackbar-hide');
         setTimeout(function () {
-            wrapper.removeChild(snackbar);
+            // wrapper.removeChild(snackbar);
         }, 300); 
     }, duration);
 }
