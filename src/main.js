@@ -42,15 +42,15 @@ function createSkills(name, breath) {
     return skillBtn;
 }
 
+const shareElement = document.getElementById("share");
+let shareCounter = 0;
+
 function infiniteLoop() {
-    let shareCounter = 0;
-    const shareElement = document.getElementById("share");
-    const loop = () => {
+    setTimeout(() => {
         shareElement.scrollTop = shareCounter === 0 ? 100 : 0;
         shareCounter = shareCounter === 0 ? 1 : 0;
-        requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
+        infiniteLoop();
+    }, 6500);
 }
 
 function initializeProfile(profile, music, display, SEO) {
@@ -123,7 +123,7 @@ function initializeGithubIcon(github_icon) {
     const githubProject = document.getElementById("githubProject");
     if (github_icon.enabled) {
         githubProject.classList.add("github-loop");
-        if (github_icon.github_user_name && github_icon.github_repo_name) {
+        if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
             githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
     } else {
@@ -178,6 +178,6 @@ function initializeAlert(alertSettings) {
             showSnackbar(message.content, message.duration, message.color, message.iconType, message.iconName);
         });
     } else {
-        document.getElementById('mediaBtn_wrapper').remove();
+        document.getElementById('notification').remove();
     }
 }
