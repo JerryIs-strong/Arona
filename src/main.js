@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', 10000, "#d55757", "fa-solid", "fa-lock-open");
             }
         }
-        initializeAlert(alert['data'])
+        initializeAlert(alert.data)
+    } else {
+        document.getElementById('notification').remove();
     }
 });
 
@@ -177,7 +179,5 @@ function initializeAlert(alertSettings) {
             const message = alertSettings[key];
             showSnackbar(message.content, message.duration, message.color, message.iconType, message.iconName);
         });
-    } else {
-        document.getElementById('notification').remove();
     }
 }
