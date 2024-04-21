@@ -13,7 +13,7 @@
             }
         },
         "skills": {
-            "enabled": false,
+            "enabled": true,
             "breath": true,
             "language": ["html5","css3","js"],
             "learning": ["vuejs","react"]

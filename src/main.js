@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (music.enabled && github_icon.enabled) {
         infiniteLoop();
     }
-    if(alert.enabled){
-        if(alert.https){
-            if(window.location.protocol === 'https:'){
+    if (alert.enabled) {
+        if (alert.https) {
+            if (window.location.protocol === 'https:') {
                 showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', 8000, "#6ac97f", "fa-solid", "fa-lock");
-            }else{
+            } else {
                 showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', 10000, "#d55757", "fa-solid", "fa-lock-open");
             }
         }
@@ -54,7 +54,7 @@ function infiniteLoop() {
 }
 
 function initializeProfile(profile, music, display, SEO) {
-    const { icon, skills: skillSettings } = profile;
+    const { icon } = profile;
     const { background, signature } = display;
     const { language, description, keywords } = SEO;
     const { music_data: musicSetting } = music;
@@ -132,14 +132,21 @@ function initializeGithubIcon(github_icon) {
 }
 
 function initializeSkills(skillSettings) {
-    const hasSkills = Object.values(skillSettings).some(skills => Object.keys(skills).length > 0);
-    if (hasSkills) {
-        Object.entries(skillSettings).forEach(([key, skills]) => {
-            const skillGroup = document.getElementById(key);
-            Object.values(skills).forEach(skill => {
-                skillGroup.appendChild(createSkills(skill, skillSettings.breath));
+    const languageSkills = skillSettings.language || {};
+    const learningSkills = skillSettings.learning || {};
+    const languageContainer = document.getElementById("language");
+    const learningContainer = document.getElementById("learning");
+    if (skillSettings.enabled) {
+        if (skillSettings.language != null || skillSettings.learning != null) {
+            Object.keys(languageSkills).forEach(key => {
+                languageContainer.appendChild(createSkills(languageSkills[key], skillSettings.breath));
             });
-        });
+            Object.keys(learningSkills).forEach(key => {
+                learningContainer.appendChild(createSkills(learningSkills[key], skillSettings.breath));
+            });
+        } else {
+            document.getElementById("skills").remove();
+        }
     } else {
         document.getElementById("skills").remove();
     }
@@ -164,7 +171,7 @@ function initializeLinks(linkSettings) {
     }
 }
 
-function initializeAlert(alertSettings){
+function initializeAlert(alertSettings) {
     if (alertSettings && Object.keys(alertSettings).length > 0) {
         Object.keys(alertSettings).forEach(key => {
             const message = alertSettings[key];
