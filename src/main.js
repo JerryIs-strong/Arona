@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const settings = JSON.parse(localStorage.getItem('setting'));
+    const settings = JSON.parse(sessionStorage.getItem('setting'));
     const { profile, SEO, links, display, alert } = settings;
     const { skills } = profile;
     const { github_icon, music } = display.share;
