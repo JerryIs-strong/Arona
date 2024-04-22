@@ -181,10 +181,6 @@ a.githubProject:-webkit-any-link {
     animation: breath 4s ease-in-out infinite;
 }
 
-.skill-icon:hover {
-    font-size: 20px;
-}
-
 #language {
     color: #fff;
 }
