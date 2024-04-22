@@ -173,7 +173,6 @@ a.githubProject:-webkit-any-link {
 
 .skill-icon {
     margin: 0 10px;
-    cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.04, 0, 0.89);
 }
 
