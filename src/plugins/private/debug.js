@@ -52,7 +52,7 @@ function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "f
         snackbar.classList.remove('snackbar-show');
         snackbar.classList.add('snackbar-hide');
         setTimeout(function () {
-            // wrapper.removeChild(snackbar);
+            wrapper.removeChild(snackbar);
         }, 300); 
     }, duration);
 }
