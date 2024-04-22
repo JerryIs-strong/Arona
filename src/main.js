@@ -122,7 +122,7 @@ function handleHolderIcon(holderIcon, gravatarUrl) {
 }
 
 function initializeGithubIcon(github_icon) {
-    const githubProject = document.getElementById("githubProject");
+    const githubProject = document.getElementById("github");
     if (github_icon.enabled) {
         githubProject.classList.add("github-loop");
         if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {

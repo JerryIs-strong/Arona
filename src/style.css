@@ -264,6 +264,14 @@ a.githubProject:-webkit-any-link {
     div.notification_icon{
         opacity: 0.4;
     }
+
+    div.snackbar-show {
+        animation: snackInMobile 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    }
+
+    div.snackbar-hide {
+        animation: snackOutMobile 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    }
 }
 
 @keyframes in {
@@ -362,5 +370,27 @@ a.githubProject:-webkit-any-link {
     }
     100% {
         transform: translateX(calc(-100% - 50px));
+    }
+}
+
+@keyframes snackInMobile {
+    0%{
+        width: 10px;
+        opacity: 0;
+    }
+    100%{
+        width: 250px;
+        opacity: 1;
+    }
+}
+
+@keyframes snackOutMobile {
+    0%{
+        width: 250px;
+        opacity: 1;
+    }
+    100%{
+        width: 10px;
+        opacity: 0;
     }
 }
