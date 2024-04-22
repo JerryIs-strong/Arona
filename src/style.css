@@ -220,7 +220,7 @@ a.githubProject:-webkit-any-link {
 }
 
 .notification_content {
-    max-width: 350px;
+    width: 350px;
 }
 
 .snackbar-show {
@@ -245,10 +245,28 @@ a.githubProject:-webkit-any-link {
     div.auto-hide {
         display: none;
     }
+
+    div.notification_wrapper{
+        width: 250px;
+        height: 20px;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    div.notification_content{
+        width: fit-content;
+        padding-left: 20px;
+        white-space: nowrap;
+        animation: scrollText var(--scroll-time) linear forwards;
+        z-index: 10;
+    }
+
+    div.notification_icon{
+        opacity: 0.4;
+    }
 }
 
 @keyframes in {
-
     0%,
     40% {
         width: 0;
@@ -334,6 +352,15 @@ a.githubProject:-webkit-any-link {
     
     100%{
         opacity: 0;
-        transform: translateY(100%);
+        transform: translateY(200%);
+    }
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - 50px));
     }
 }
