@@ -188,7 +188,7 @@ a.githubProject:-webkit-any-link {
     color: rgba(255, 255, 255, 0.438);
 }
 
-.notification{
+.notification {
     z-index: 999;
     width: 100%;
     display: flex;
@@ -208,6 +208,7 @@ a.githubProject:-webkit-any-link {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    backdrop-filter: blur(20px);
 }
 
 .notification_icon {
@@ -241,22 +242,21 @@ a.githubProject:-webkit-any-link {
         display: none;
     }
 
-    div.notification_wrapper{
+    div.notification_wrapper {
         width: 250px;
         height: 20px;
         border-radius: 30px;
         overflow: hidden;
     }
 
-    div.notification_content{
+    div.notification_content {
         width: fit-content;
         padding-left: 20px;
         white-space: nowrap;
-        animation: scrollText var(--scroll-time) linear forwards;
         z-index: 10;
     }
 
-    div.notification_icon{
+    div.notification_icon {
         opacity: 0.4;
     }
 
@@ -267,9 +267,21 @@ a.githubProject:-webkit-any-link {
     div.snackbar-hide {
         animation: snackOutMobile 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
     }
+
+    div.mobile-scroll {
+        animation: scrollText var(--scroll-time) linear forwards;
+    }
+
+    div.mobile-center {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 @keyframes in {
+
     0%,
     40% {
         width: 0;
@@ -336,24 +348,24 @@ a.githubProject:-webkit-any-link {
 }
 
 @keyframes snackIn {
-    0%{
+    0% {
         opacity: 0;
         transform: translateY(100%);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
 @keyframes snackOut {
-    0%{
+    0% {
         opacity: 1;
         transform: translateY(0);
     }
-    
-    100%{
+
+    100% {
         opacity: 0;
         transform: translateY(200%);
     }
@@ -363,28 +375,31 @@ a.githubProject:-webkit-any-link {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(calc(-100% - 50px));
     }
 }
 
 @keyframes snackInMobile {
-    0%{
+    0% {
         width: 10px;
         opacity: 0;
     }
-    100%{
+
+    100% {
         width: 250px;
         opacity: 1;
     }
 }
 
 @keyframes snackOutMobile {
-    0%{
+    0% {
         width: 250px;
         opacity: 1;
     }
-    100%{
+
+    100% {
         width: 10px;
         opacity: 0;
     }

@@ -26,7 +26,7 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "fa-regular", iconName = "fa-bell") {
+function showSnackbar(message, scroll = true, duration = 3000, color = "#4388d9", iconType = "fa-regular", iconName = "fa-bell") {
     const wrapper = document.getElementById('notification');
     const snackbar = document.createElement('div');
     snackbar.classList.add('notification_wrapper', 'snackbar');
@@ -35,7 +35,12 @@ function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "f
     const contentDiv = document.createElement('div');
     contentDiv.className = 'notification_content';
     contentDiv.innerHTML = message;
-    contentDiv.style.setProperty('--scroll-time', (duration/1000)-1 + 's');
+    contentDiv.style.setProperty('--scroll-time', (duration / 1000) - 1 + 's');
+    if (scroll) {
+        contentDiv.classList.add("mobile-scroll")
+    } else {
+        contentDiv.classList.add("mobile-center")
+    }
 
     const iconDiv = document.createElement('div');
     iconDiv.className = "notification_icon";
@@ -52,8 +57,8 @@ function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "f
         snackbar.classList.remove('snackbar-show');
         snackbar.classList.add('snackbar-hide');
         setTimeout(function () {
-            wrapper.removeChild(snackbar);
-        }, 300); 
+            // wrapper.removeChild(snackbar);
+        }, 300);
     }, duration);
 }
 

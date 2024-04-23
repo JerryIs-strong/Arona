@@ -13,15 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (alert.enabled) {
         if (alert.https) {
             if (window.location.protocol === 'https:') {
-                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', 8000, "#6ac97f", "fa-solid", "fa-lock");
+                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', true, 8000, "#6ac97f", "fa-solid", "fa-lock");
             } else {
-                showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', 10000, "#d55757", "fa-solid", "fa-lock-open");
+                showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', true, 10000, "#d55757", "fa-solid", "fa-lock-open");
             }
         }
         initializeAlert(alert.data)
     } else {
         document.getElementById('notification').remove();
     }
+    showSnackbar(settings.version, false)
 });
 
 function createLink(id, className, target, title, url, linkName) {
@@ -177,7 +178,7 @@ function initializeAlert(alertSettings) {
     if (alertSettings && Object.keys(alertSettings).length > 0) {
         Object.keys(alertSettings).forEach(key => {
             const message = alertSettings[key];
-            showSnackbar(message.content, message.duration, message.color, message.iconType, message.iconName);
+            showSnackbar(message.content, message.scroll, message.duration, message.color, message.iconType, message.iconName);
         });
     }
 }

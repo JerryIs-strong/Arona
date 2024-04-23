@@ -79,7 +79,8 @@
                 "content": "We understand your needs and work hard to protect your data privacy",
                 "iconType": "fa-solid",
                 "iconName": "fa-shield-halved",
-                "duration": 5000
+                "duration": 5000,
+                "scroll": true
             }
         }
     },
