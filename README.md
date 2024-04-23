@@ -21,6 +21,9 @@
 
 ---
 歡迎使用JerryIs-strong/Arona，你將瞭解如何部署此項目，並簡單地配置網頁的必要設置。請放心，我們將會一切從簡。
+## ❓ "Arona"
+名字的由來來自[這裏](https://bluearchive.fandom.com/wiki/Arona)
+
 ## ✨ 特性
 - ⚡簡易性: 一切基於setting.json文件進行配置
 - 🚀高性能: 去除一切其他的功能，只做一個純粹的個人主頁
