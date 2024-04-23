@@ -57,7 +57,7 @@ function showSnackbar(message, scroll = true, duration = 3000, color = "#4388d9"
         snackbar.classList.remove('snackbar-show');
         snackbar.classList.add('snackbar-hide');
         setTimeout(function () {
-            // wrapper.removeChild(snackbar);
+            wrapper.removeChild(snackbar);
         }, 300);
     }, duration);
 }

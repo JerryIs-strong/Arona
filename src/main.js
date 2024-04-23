@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.getElementById('notification').remove();
     }
-    showSnackbar(settings.version, false)
 });
 
 function createLink(id, className, target, title, url, linkName) {
