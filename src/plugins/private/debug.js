@@ -57,7 +57,7 @@ function showSnackbar(message, duration = 3000, color = "#4388d9", iconType = "f
     }, duration);
 }
 
-styleInfo("Personal-webpage", version, "#4d6491", "#fff");
+styleInfo("Arona", version, "#4d6491", "#fff");
 if (!debugInfo) {
     styleInfo("Log process:", "disabled", `#d280e5`, "#fff");
 }

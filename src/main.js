@@ -64,7 +64,7 @@ function initializeProfile(profile, music, display, SEO) {
     const gravatarUrl = `https://www.gravatar.com/avatar/${md5(icon.gravatar.email)}?size=500`;
 
     document.documentElement.lang = language || 'zh-TW';
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/personal-webpage');
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
     document.querySelector('meta[name="keywords"]')?.setAttribute('content', keywords || 'webpage');
     document.title = profile.website_name;
     document.getElementById('title').innerText = `HEY! ${profile.name}`;

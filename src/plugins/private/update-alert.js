@@ -1,6 +1,6 @@
 const fetchAndCompareVersion = async () => {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/JerryIs-strong/personal-webpage/main/version.txt');
+        const response = await fetch('https://raw.githubusercontent.com/JerryIs-strong/Arona/main/version.txt');
         const text = await response.text();
         const cloudVersion = text.match(/V([\d.]+)/)[1];
         const localVersion = setting['version'].match(/V([\d.]+)/)[1];

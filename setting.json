@@ -51,7 +51,7 @@
             "enabled": true,
             "title": "quick start",
             "icon": "fa-solid fa-gear",
-            "url": "https://github.com/JerryIs-strong/personal-webpage?tab=readme-ov-file#-%E9%85%8D%E7%BD%AE%E9%A0%85",
+            "url": "https://github.com/JerryIs-strong/Arona?tab=readme-ov-file#-%E9%85%8D%E7%BD%AE%E9%A0%85",
             "target": "_blank"
         },
         "link_2": {
@@ -65,7 +65,7 @@
             "enabled": true,
             "title": "bug report",
             "icon": "fa-solid fa-bug",
-            "url": "https://github.com/JerryIs-strong/personal-webpage/issues",
+            "url": "https://github.com/JerryIs-strong/Arona/issues",
             "target": "_blank"
         }
     },

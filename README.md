@@ -1,6 +1,7 @@
+> [!IMPORTANT]  
+> The project has now been renamed "Arona", older versions of update-alert may no longer work, please update from plugins-repo or the full version of the update page.
 <br/>
 <div align="center">
-    <img src="/src/sample/demo.png">
     <br/>
     <br/>
     <a href="https://magnificent-semolina-9a835b.netlify.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -8,18 +9,20 @@
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-更新日志" target="blank"><strong>📄 日志</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.4.3(推送版本)</strong>
+    <strong>💌 V1.4.4(推送版本)</strong>
     <br/>
     <br/>
     <div>
-        <a href="https://github.com/JerryIs-strong/personal-webpage/releases/">
-            <img src="https://img.shields.io/github/v/release/JerryIs-strong/personal-webpage.svg"/>
+        <a href="https://github.com/JerryIs-strong/Arona/releases/">
+            <img src="https://img.shields.io/github/v/release/JerryIs-strong/Arona.svg"/>
         </a>
     </div>
+    <br/>
+    <img src="/src/sample/demo.png">
 </div>
 
 ---
-歡迎使用JerryIs-strong/personal-webpage，你將瞭解如何部署此項目，並簡單地配置網頁的必要設置。請放心，我們將會一切從簡。
+歡迎使用JerryIs-strong/Arona，你將瞭解如何部署此項目，並簡單地配置網頁的必要設置。請放心，我們將會一切從簡。
 ## ✨ 特性
 - ⚡簡易性: 一切基於setting.json文件進行配置
 - 🚀高性能: 去除一切其他的功能，只做一個純粹的個人主頁
@@ -40,7 +43,7 @@
 ## ⚙️ 以NetLify開始
 歡迎使用NetLify部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
 <br/>
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JerryIs-strong/personal-webpage)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JerryIs-strong/Arona)
 <br/>
 1. 點擊以上的```Deploy to Netlify```按鈕
 2. 點擊```Connect to GitHub```
@@ -69,7 +72,7 @@
 ## ⚙️ 以Vercel開始
 歡迎使用Vercel部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至Vercel的伺服器。<br/>
 <br/>
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JerryIs-strong/personal-webpage.git)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JerryIs-strong/Arona.git)
 <br/>
 1. 點擊以上的```deploy```按鈕
 2. 在"Create Git Repository"一欄中，選擇一個Git儲存庫(推介GitHub)
@@ -174,7 +177,7 @@ Case: 在blog中發放連結
 
 ## ✨ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/personal-webpage&type=Date)](https://star-history.com/#JerryIs-strong/personal-webpage&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=JerryIs-strong/Arona&type=Date)](https://star-history.com/#JerryIs-strong/Arona&Date)
 
 ## 🎀 更新日志
 建議覆蓋安裝/更新帶有```[!Important]```字樣的版本更新。
