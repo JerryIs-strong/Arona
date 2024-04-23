@@ -1,5 +1,5 @@
 > [!IMPORTANT]  
-> The project has now been renamed ***"Arona"***, older versions of ***update-alert*** may no longer work, please update from ***plugins-repo***.
+> The project has now been renamed ***"Arona"***, older versions of ***update-alert*** may no longer work, please update from ***Plugins Store***.
 <br/>
 <div align="center">
     <img src="/src/sample/demo.png">
