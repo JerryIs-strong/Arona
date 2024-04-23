@@ -1,6 +1,6 @@
 <br/>
 <div align="center">
-    <img src="/src/sample/banner.png" width=85%>
+    <img src="/src/sample/demo.png">
     <br/>
     <br/>
     <a href="https://magnificent-semolina-9a835b.netlify.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -16,8 +16,6 @@
             <img src="https://img.shields.io/github/v/release/JerryIs-strong/personal-webpage.svg"/>
         </a>
     </div>
-    <br/>
-    <img src="/src/sample/demo.png">
 </div>
 
 ---
