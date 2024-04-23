@@ -2,7 +2,7 @@
 > The project has now been renamed "Arona", older versions of update-alert may no longer work, please update from plugins-repo or the full version of the update page.
 <br/>
 <div align="center">
-    <br/>
+    <img src="/src/sample/demo.png">
     <br/>
     <a href="https://magnificent-semolina-9a835b.netlify.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -17,8 +17,6 @@
             <img src="https://img.shields.io/github/v/release/JerryIs-strong/Arona.svg"/>
         </a>
     </div>
-    <br/>
-    <img src="/src/sample/demo.png">
 </div>
 
 ---
