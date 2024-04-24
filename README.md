@@ -195,7 +195,7 @@ Case: 在blog中發放連結
 
 ### V1.4.X_\[Arona\](#-)
 
-> V1.4.0[2]: 有數個錯誤已被修正
+> V1.4.4[1]: 有數個錯誤已被修正
 > - Github Icon位置錯誤
 > - signature auto-hide功能無法被正確調用
 > - debug功能失效
