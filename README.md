@@ -1,5 +1,7 @@
 > [!IMPORTANT]  
 > The project has now been renamed ***"Arona"***, older versions of ***update-alert*** may no longer work, please update from ***Plugins Store***.
+> [!CAUTION]
+> Our privacy policy has been enhanced and all scripts containing any third-party APIs will no longer be used but will instead be provided via ***plugins***.
 <br/>
 <div align="center">
     <img src="/src/sample/demo.png">
@@ -191,6 +193,11 @@ Case: 在blog中發放連結
 ----
 
 ### V1.4.X_\[Arona\](#-)
+
+> V1.4.0[2]: 有數個錯誤已被修正
+> - Github Icon位置錯誤
+> - signature auto-hide功能無法被正確調用
+> - debug功能失效
 
 > V1.4.3[1]: 有數個功能上的更新
 > - notification now have a new style in mobile device

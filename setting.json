@@ -31,7 +31,7 @@
         "signature": {
             "enabled": true,
             "content": "V.Arona",
-            "auto-hide": true
+            "auto_hide": true
         },
         "share": {
             "enabled": true,
@@ -69,7 +69,7 @@
             "target": "_blank"
         }
     },
-    "debug": false,
+    "debug": true,
     "plugins": [],
     "alert": {
         "enabled": true,

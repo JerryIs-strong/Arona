@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const { profile, SEO, links, display, alert } = settings;
     const { skills } = profile;
     const { github_icon, music } = display.share;
-    initializeProfile(profile, music, display, SEO);
+    initializeProfile(profile, music, display, SEO, settings.plugins);
     initializeLinks(links);
     initializeSkills(skills);
-    initializeGithubIcon(github_icon);
     if (music.enabled && github_icon.enabled) {
+        initializeGithubIcon(github_icon, true);
         infiniteLoop();
     }
     if (alert.enabled) {
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         initializeAlert(alert.data)
     } else {
+        debug("彈幕通知已禁用","info")
         document.getElementById('notification').remove();
     }
 });
@@ -55,13 +56,12 @@ function infiniteLoop() {
     }, 6500);
 }
 
-function initializeProfile(profile, music, display, SEO) {
+function initializeProfile(profile, music, display, SEO, plugins_list) {
     const { icon } = profile;
     const { background, signature } = display;
     const { language, description, keywords } = SEO;
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const gravatarUrl = `https://www.gravatar.com/avatar/${md5(icon.gravatar.email)}?size=500`;
 
     document.documentElement.lang = language || 'zh-TW';
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
@@ -74,7 +74,7 @@ function initializeProfile(profile, music, display, SEO) {
     handleMusic(music, musicSetting);
     handleBackground(background.url);
     handleDarkMode(darkMode);
-    handleHolderIcon(icon, gravatarUrl);
+    handleHolderIcon(icon, plugins_list);
 }
 
 function handleSignature({ enabled, content, auto_hide }) {
@@ -83,7 +83,11 @@ function handleSignature({ enabled, content, auto_hide }) {
         signElement.innerText = content;
         if (auto_hide) {
             signElement.classList.add("auto-hide");
+        }else{
+            debug("個性簽名[auto-hide]已禁用","info")
         }
+    }else{
+        debug("個性簽名已禁用","info")
     }
 }
 
@@ -97,14 +101,17 @@ function handleMusic(music, musicSetting) {
         musicElement.href = musicKey.url;
         musicElement.title = musicKey.name;
     } else {
+        debug("音樂已禁用","info")
         document.getElementById('music').remove();
     }
 }
 
 function handleBackground(backgroundUrl) {
     const backgroundElement = document.getElementById('background');
-    if (backgroundUrl) {
+    if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
         backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
+    }else{
+        debug("本地壁紙設置錯誤","warn")
     }
 }
 
@@ -112,23 +119,29 @@ function handleDarkMode(darkMode) {
     document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
 }
 
-function handleHolderIcon(holderIcon, gravatarUrl) {
+function handleHolderIcon(holderIcon, plugins_list) {
     const imgElement = document.getElementById('img');
     if (holderIcon.method === "local") {
         imgElement.style.backgroundImage = `url("${holderIcon.local.url}")`;
     } else if (holderIcon.method === "gravatar") {
+        const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon.gravatar.email)}?size=500`;
         imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
+    }else{
+        debug("頭像設置錯誤","warn")
     }
 }
 
-function initializeGithubIcon(github_icon) {
+function initializeGithubIcon(github_icon, margin = false) {
     const githubProject = document.getElementById("github");
     if (github_icon.enabled) {
-        githubProject.classList.add("github-loop");
+        if (margin) {
+            githubProject.classList.add("github-loop");
+        }
         if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
             githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
     } else {
+        debug("Github Icon已禁用","info")
         document.getElementById("github").remove();
     }
 }
@@ -150,6 +163,7 @@ function initializeSkills(skillSettings) {
             document.getElementById("skills").remove();
         }
     } else {
+        debug("技能已禁用","info")
         document.getElementById("skills").remove();
     }
 }
@@ -169,6 +183,7 @@ function initializeLinks(linkSettings) {
             }
         });
     } else {
+        debug("連結設置錯誤","warn")
         document.getElementById('mediaBtn_wrapper').remove();
     }
 }
