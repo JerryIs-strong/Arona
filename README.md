@@ -1,5 +1,6 @@
 > [!IMPORTANT]  
 > The project has now been renamed ***"Arona"***, older versions of ***update-alert*** may no longer work, please update from ***Plugins Store***.
+
 > [!CAUTION]
 > Our privacy policy has been enhanced and all scripts containing any third-party APIs will no longer be used but will instead be provided via ***plugins***.
 <br/>
