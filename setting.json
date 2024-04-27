@@ -69,7 +69,7 @@
             "target": "_blank"
         }
     },
-    "debug": true,
+    "debug": false,
     "plugins": [],
     "alert": {
         "enabled": true,

@@ -195,6 +195,11 @@ Case: 在blog中發放連結
 
 ### V1.4.X_\[Arona\](#-)
 
+> V1.4.5[1]: 有數個功能得到改進
+> - index.html(add wrapper for plugins to inject)
+> - setting.json(improve music setting: now you can set artist and album for the music)
+> - open more api for plugins
+
 > V1.4.4[1]: 有數個錯誤已被修正
 > - Github Icon位置錯誤
 > - signature auto-hide功能無法被正確調用

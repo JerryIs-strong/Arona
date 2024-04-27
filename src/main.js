@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         initializeAlert(alert.data)
     } else {
-        debug("彈幕通知已禁用","info")
+        debug("彈幕通知已禁用", "info")
         document.getElementById('notification').remove();
     }
 });
@@ -83,11 +83,11 @@ function handleSignature({ enabled, content, auto_hide }) {
         signElement.innerText = content;
         if (auto_hide) {
             signElement.classList.add("auto-hide");
-        }else{
-            debug("個性簽名[auto-hide]已禁用","info")
+        } else {
+            debug("個性簽名[auto-hide]已禁用", "info")
         }
-    }else{
-        debug("個性簽名已禁用","info")
+    } else {
+        debug("個性簽名已禁用", "info")
     }
 }
 
@@ -99,9 +99,22 @@ function handleMusic(music, musicSetting) {
         const musicKey = musicSetting[`music_${musicRandom}`];
         musicElement.innerText = musicKey.name;
         musicElement.href = musicKey.url;
-        musicElement.title = musicKey.name;
+        if (musicKey.album != null || musicKey.artist != null) {
+            if (musicKey.album.length > 0) {
+                var musicKeyName = `${musicKey.name} - ${musicKey.artist} • ${musicKey.album}`;
+            } else {
+                var musicKeyName = `${musicKey.name} - ${musicKey.artist}`;
+            }
+        }
+        musicElement.innerText = musicKeyName;
+        musicElement.title = musicKeyName;
+        const currentMusic = {
+            name: musicKey.name,
+            artist: musicKey.artist
+        }
+        sessionStorage.setItem('current-music', JSON.stringify(currentMusic));
     } else {
-        debug("音樂已禁用","info")
+        debug("音樂已禁用", "info")
         document.getElementById('music').remove();
     }
 }
@@ -110,8 +123,8 @@ function handleBackground(backgroundUrl) {
     const backgroundElement = document.getElementById('background');
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
         backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
-    }else{
-        debug("本地壁紙設置錯誤","warn")
+    } else {
+        debug("本地壁紙設置錯誤", "warn")
     }
 }
 
@@ -119,15 +132,15 @@ function handleDarkMode(darkMode) {
     document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
 }
 
-function handleHolderIcon(holderIcon, plugins_list) {
+function handleHolderIcon(holderIcon) {
     const imgElement = document.getElementById('img');
     if (holderIcon.method === "local") {
         imgElement.style.backgroundImage = `url("${holderIcon.local.url}")`;
     } else if (holderIcon.method === "gravatar") {
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon.gravatar.email)}?size=500`;
         imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
-    }else{
-        debug("頭像設置錯誤","warn")
+    } else {
+        debug("頭像設置錯誤", "warn")
     }
 }
 
@@ -141,7 +154,7 @@ function initializeGithubIcon(github_icon, margin = false) {
             githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
     } else {
-        debug("Github Icon已禁用","info")
+        debug("Github Icon已禁用", "info")
         document.getElementById("github").remove();
     }
 }
@@ -163,7 +176,7 @@ function initializeSkills(skillSettings) {
             document.getElementById("skills").remove();
         }
     } else {
-        debug("技能已禁用","info")
+        debug("技能已禁用", "info")
         document.getElementById("skills").remove();
     }
 }
@@ -183,7 +196,7 @@ function initializeLinks(linkSettings) {
             }
         });
     } else {
-        debug("連結設置錯誤","warn")
+        debug("連結設置錯誤", "warn")
         document.getElementById('mediaBtn_wrapper').remove();
     }
 }
