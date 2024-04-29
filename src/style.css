@@ -147,6 +147,20 @@ html {
 
 .MusicName {
     cursor: pointer;
+    max-width: 270px;
+    height: 21px;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.musicNameWrapper{
+    display: flex;
+    flex-direction: row;
+    right: 0;
+    position: relative;
+    text-align: end;
 }
 
 .github-loop {
