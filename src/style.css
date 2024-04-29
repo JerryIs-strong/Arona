@@ -147,7 +147,7 @@ html {
 
 .MusicName {
     cursor: pointer;
-    max-width: 270px;
+    max-width: 70vw;
     height: 21px;
     overflow: hidden;
     display: block;
