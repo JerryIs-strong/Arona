@@ -195,6 +195,9 @@ Case: 在blog中發放連結
 
 ### V1.4.X_\[Arona\](#-)
 
+> V1.4.5[2]: 有數個錯誤已被修正
+> - Fixed display error on mobile terminal
+
 > V1.4.5[1]: 有數個功能得到改進
 > - index.html(add wrapper for plugins to inject)
 > - setting.json(improve music setting: now you can set artist and album for the music)
