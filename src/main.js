@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         debug("彈幕通知已禁用", "info")
         document.getElementById('notification').remove();
     }
+    if(!display.blur){
+        document.body.style.setProperty('--global-blur', 'blur(0)');
+    }
 });
 
 function createLink(id, className, target, title, url, linkName) {

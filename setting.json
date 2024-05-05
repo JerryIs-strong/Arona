@@ -2,7 +2,7 @@
     "profile": {
         "website_name": "My Personal website",
         "subtitle": "You can now configure your website",
-        "name": "You done it!",
+        "name": "You did it!",
         "icon": {
             "method": "local",
             "local": {
@@ -44,7 +44,8 @@
                 "enabled": false,
                 "music_data": {}
             }
-        }
+        },
+        "blur": true
     },
     "links": {
         "link_1": {
