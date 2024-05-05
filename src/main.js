@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (music.enabled && github_icon.enabled) {
         initializeGithubIcon(github_icon, true);
         infiniteLoop();
-    }
+    };
     if (alert.enabled) {
         if (alert.https) {
             if (window.location.protocol === 'https:') {
@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', true, 10000, "#d55757", "fa-solid", "fa-lock-open");
             }
         }
-        initializeAlert(alert.data)
+        initializeAlert(alert.data);
     } else {
         debug("彈幕通知已禁用", "info")
         document.getElementById('notification').remove();
-    }
+    };
     if(!display.blur){
         document.body.style.setProperty('--global-blur', 'blur(0)');
-    }
+    };
 });
 
 function createLink(id, className, target, title, url, linkName) {
@@ -154,7 +154,7 @@ function initializeGithubIcon(github_icon, margin = false) {
             githubProject.classList.add("github-loop");
         }
         if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
-            githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
+            document.getElementById("githubProject").innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
     } else {
         debug("Github Icon已禁用", "info")
