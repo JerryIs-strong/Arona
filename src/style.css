@@ -1,4 +1,4 @@
-[data-mode='dark'] {
+[dark="true"] {
     --background-color: #101010b0;
     --font-color: #fff;
     --font-secondary-color: #d6d6d6;
@@ -6,7 +6,7 @@
     --font-sign-color: #ffffff15;
 }
 
-[data-mode='light'] {
+[dark="false"] {
     --background-color: #ffffffa3;
     --font-color: #000;
     --font-secondary-color: #252525;

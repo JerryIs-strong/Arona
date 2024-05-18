@@ -132,7 +132,7 @@ function handleBackground(backgroundUrl) {
 }
 
 function handleDarkMode(darkMode) {
-    document.documentElement.setAttribute("data-mode", darkMode ? "dark" : "light");
+    document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
 }
 
 function handleHolderIcon(holderIcon) {
