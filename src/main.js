@@ -3,29 +3,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const { profile, SEO, links, display, alert } = settings;
     const { skills } = profile;
     const { github_icon, music } = display.share;
-    initializeProfile(profile, music, display, SEO, settings.plugins);
+    const notificationElement = document.querySelector('.notification');
+    const observer = new MutationObserver((mutations) => {
+        if (notificationElement.children.length === 0) {
+            document.querySelector('.aplayer-body').setAttribute('show', 'true');
+        } else {
+            document.querySelector('.aplayer-body').setAttribute('show', 'false');
+        }
+    });
+    const titleSettings = settings.display.title;
+    initializeProfile(profile, music, display, SEO, settings.plugins, titleSettings);
     initializeLinks(links);
     initializeSkills(skills);
     if (music.enabled && github_icon.enabled) {
         initializeGithubIcon(github_icon, true);
         infiniteLoop();
-    };
+    }
     if (alert.enabled) {
         if (alert.https) {
             if (window.location.protocol === 'https:') {
-                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', true, 8000, "#6ac97f", "fa-solid", "fa-lock");
+                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', true, 8000, "fa-solid", "fa-lock");
             } else {
-                showSnackbar('It seems that you are not browsing using the http:// protocol. Your connection may be not secure!', true, 10000, "#d55757", "fa-solid", "fa-lock-open");
+                showSnackbar('It seems that you are not browsing using the https:// protocol. Your connection may be not secure!', true, 10000, "fa-solid", "fa-lock-open", "warn");
             }
         }
-        initializeAlert(alert.data);
+        initializeAlert(alert.data)
     } else {
         debug("彈幕通知已禁用", "info")
         document.getElementById('notification').remove();
-    };
-    if(!display.blur){
+    }
+    if (!display.blur) {
         document.body.style.setProperty('--global-blur', 'blur(0)');
-    };
+    }
+    observer.observe(notificationElement, { childList: true });
 });
 
 function createLink(id, className, target, title, url, linkName) {
@@ -59,24 +69,48 @@ function infiniteLoop() {
     }, 6500);
 }
 
-function initializeProfile(profile, music, display, SEO, plugins_list) {
+function greetUser(settings) {
+    const currentHour = new Date().getHours();
+    const greetings = {
+        morning: settings.morning || "Good morning!☕",
+        afternoon: settings.afternoon || "Good afternoon!🌤️",
+        evening: settings.evening || "Good evening!🌆",
+        night: settings.night || "Good night!💤"
+    };
+
+    if (currentHour >= 6 && currentHour < 12) {
+        return greetings.morning;
+    } else if (currentHour >= 12 && currentHour < 18) {
+        return greetings.afternoon;
+    } else if (currentHour >= 18 && currentHour < 21) {
+        return greetings.evening;
+    } else {
+        return greetings.night;
+    }
+}
+
+function initializeProfile(profile, music, display, SEO, plugins_list, titleSettings) {
     const { icon } = profile;
     const { background, signature } = display;
-    const { language, description, keywords } = SEO;
+    const { language, description } = SEO;
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
+    /* Basic HTML Elements */
     document.documentElement.lang = language || 'zh-TW';
-    document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
-    document.querySelector('meta[name="keywords"]')?.setAttribute('content', keywords || 'webpage');
     document.title = profile.website_name;
-    document.getElementById('title').innerText = `HEY! ${profile.name}`;
+    document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = profile.subtitle;
+    /* Meta Tags */
+    document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
+    /* Open Graph */
+    // document.querySelector('meta[property="og:title"]').setAttribute('content', profile.website_name);
+    // document.querySelector('meta[property="og:url"]').setAttribute('content', profile.url);
+    // document.querySelector('meta[property="og:description"]').setAttribute('content', description);
 
     handleSignature(signature);
     handleMusic(music, musicSetting);
     handleBackground(background.url);
-    handleDarkMode(darkMode);
+    handleTheme(darkMode, setting.theme);
     handleHolderIcon(icon, plugins_list);
 }
 
@@ -131,8 +165,11 @@ function handleBackground(backgroundUrl) {
     }
 }
 
-function handleDarkMode(darkMode) {
+function handleTheme(darkMode, theme) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
+    if (theme != "" || theme != null) {
+        document.documentElement.setAttribute("theme", theme);
+    }
 }
 
 function handleHolderIcon(holderIcon) {
@@ -154,7 +191,7 @@ function initializeGithubIcon(github_icon, margin = false) {
             githubProject.classList.add("github-loop");
         }
         if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
-            document.getElementById("githubProject").innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
+            githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
     } else {
         debug("Github Icon已禁用", "info")
@@ -208,7 +245,7 @@ function initializeAlert(alertSettings) {
     if (alertSettings && Object.keys(alertSettings).length > 0) {
         Object.keys(alertSettings).forEach(key => {
             const message = alertSettings[key];
-            showSnackbar(message.content, message.scroll, message.duration, message.color, message.iconType, message.iconName);
+            showSnackbar(message.content, message.scroll, message.duration, message.iconType, message.iconName, message.level);
         });
     }
 }

@@ -21,12 +21,15 @@
     },
     "SEO": {
         "description": "",
-        "language": "",
-        "keywords": ""
+        "language": ""
     },
     "display": {
         "background": {
             "url": "/src/img/wallpaper.png"
+        },
+        "title": {
+            "method": "greeting",
+            "advanced_settings":{}
         },
         "signature": {
             "enabled": true,
@@ -75,15 +78,7 @@
     "alert": {
         "enabled": true,
         "https": true,
-        "data":{
-            "alert_1":{
-                "content": "We understand your needs and work hard to protect your data privacy",
-                "iconType": "fa-solid",
-                "iconName": "fa-shield-halved",
-                "duration": 5000,
-                "scroll": true
-            }
-        }
+        "data":{}
     },
     "theme": "default"
 }

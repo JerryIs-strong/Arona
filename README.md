@@ -5,14 +5,14 @@
 > Our privacy policy has been enhanced and all scripts(not include plugins) containing any third-party APIs will no longer be used but will instead be provided via ***plugins***.
 <br/>
 <div align="center">
-    <img src="/src/sample/demo.png">
+    <img src="https://imgur.com/Kx26EDx.png">
     <br/>
     <a href="https://pw-demo-ten.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-更新日志" target="blank"><strong>📄 日志</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.4.6(推送版本)</strong>
+    <strong>💌 V1.5.0(推送版本)</strong>
     <br/>
     <br/>
     <div>
@@ -51,28 +51,28 @@
 <br/>
 1. 點擊以上的```Deploy to Netlify```按鈕
 2. 點擊```Connect to GitHub```
-![](/src/sample/netlify/screenshot-1.png)
+![](https://imgur.com/ijZSGdF.png)
 3. 授權GitHub賬戶，點擊```Authorize netlify```
-![](/src/sample/netlify/screenshot-2.png)
+![](https://imgur.com/CeuWSUH.png)
 4. 根據步驟，創建Git儲存庫，點擊```Save & Deploy```
-![](/src/sample/netlify/screenshot-3.png)
+![](https://imgur.com/jBlQSQZ.png)
 5. 等待NetLify的部署工作，部署成功
-![](/src/sample/netlify/screenshot-4.png)
+![](https://imgur.com/wIW3KUf.png)
 
 ## ⚙️ 以Github Page開始
 歡迎使用Github Page部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至NetLify的伺服器。<br/>
 1. 點擊```Fork```按鈕
-![](/src/sample/github/screenshot-1.png)
+![](https://imgur.com/Jnn8kcN.png)
 2. 根據步驟，創建GitHub儲存庫，點擊```Create```
-![](/src/sample/github/screenshot-2.png)
+![](https://imgur.com/POrPEWR.png)
 3. 點擊```Settings```一欄
-![](/src/sample/github/screenshot-3.png)
+![](https://imgur.com/jnuWIzf.png)
 4. 點擊```Pages```一項
-![](/src/sample/github/screenshot-4.png)
+![](https://imgur.com/8pSMfrT.png)
 5. 選擇```Main```分支，點擊```Save```
-![](/src/sample/github/screenshot-5.png)
+![](https://imgur.com/nLUutod.png)
 6. 等待Github Page的部署工作，部署成功
-![](/src/sample/github/screenshot-6.png)
+![](https://imgur.com/qteR1wL.png)
 ## ⚙️ 以Vercel開始
 歡迎使用Vercel部署你的個人主頁，相信這是一個簡單且穩定的方式! 以下教程將會講解如何將此項目部署至Vercel的伺服器。<br/>
 <br/>
@@ -80,11 +80,11 @@
 <br/>
 1. 點擊以上的```deploy```按鈕
 2. 在"Create Git Repository"一欄中，選擇一個Git儲存庫(推介GitHub)
-![](/src/sample/vercel/screenshot-1.png)
+![](https://imgur.com/7WKRoCE.png)
 3. 根據步驟，創建Git儲存庫，點擊```Create fork```
-![](/src/sample/vercel/screenshot-2.png)
+![](https://imgur.com/ySQw4ci.png)
 4. 等待Git任務完成
-![](/src/sample/vercel/screenshot-3.png)
+![](https://imgur.com/sl8WRWQ.png)
 5. 部署成功
 
 ## 💾 配置項
@@ -166,7 +166,7 @@ syntax: ```url + ?media=```
 Case: 在blog中發放連結
 | Url | NEW | OLD |
 | :---: | :---: | :---: |
-| https://demo.webpage.com/?media=blog | ![](/src/sample/hEydFbJLOV6c4ko.png) | ![](/src/sample/WEYTNaJC3fMot2b.png) |
+| https://demo.webpage.com/?media=blog | ![](https://imgur.com/QPrqYQd.png) | ![](https://imgur.com/6dUeYF4.png) |
 | blog icon | ❎ | ✅ |
 
 ## 🚛 模組
@@ -190,13 +190,26 @@ Case: 在blog中發放連結
 - [V1.2.x](#v12x10)
 - [V1.3.x](#v13x4)
 - [V1.4.x](#v14x_arona-)
+- [V1.5.x](#v15x_bocchi-)
 
 ----
 
-### V1.4.X_\[Arona\](#-)
+### V1.5.X_\[Bocchi\](#-)
 
-> V1.4.6[1]: 有數個功能得到改進
-> - global: darkmode(現在暗黑模式支援被第三方暗黑模式模組所檢測，即原生darkmode樣式不會被三方暗黑模式模組所覆蓋)
+> V1.5.0[2]: 有數個功能得到改進
+> - SEO移除對於tag的支持
+> - 支援手動修改Open Graph的設置
+
+> V1.5.0[1]: 有數個功能上的更新
+> - 更新Notification的樣式
+> - 支持更換主題(需於配置文件定義)
+> - title支援使用問候語
+
+----
+
+### V1.4.X_\[Arona\](#9)
+
+> INFO: V1.4.X_\[Arona\]更新生命期完結，共更新 ***9*** 次
 
 > V1.4.5[2]: 有數個功能得到改進
 > - setting.json(支援設置blur效果的啓或禁用)
@@ -241,9 +254,9 @@ Case: 在blog中發放連結
 
 ### V1.3.X(#4)
 
-> INFO:  V1.3.x更新生命期完結，共更新 ***4*** 次
+> INFO: V1.3.x更新生命期完結，共更新 ***4*** 次
 
-> INFO:  V1.3.x的變量(統一)更新已完成，受影響的變量名稱共 ***14*** 個，請在可能的情況下酌情更新，以減低將來報錯的可能性
+> INFO: V1.3.x的變量(統一)更新已完成，受影響的變量名稱共 ***14*** 個，請在可能的情況下酌情更新，以減低將來報錯的可能性
 
 > V1.3.2[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。\
 > [-] 受影響的變量名稱: 
@@ -279,7 +292,7 @@ Case: 在blog中發放連結
 ----
 ### V1.2.X(#10)
 
-> INFO:  V1.2.x更新生命期完結，共更新 ***10*** 次
+> INFO: V1.2.x更新生命期完結，共更新 ***10*** 次
 
 > V1.2.6[1]: 已更新文件variable的名稱，故舊有的配置文件可能會出現錯誤。建議使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)更新你當前的配置文件。同時預設不再開啟update-alert模組，但我們仍強烈建議開啟，以取得重要的更新提示。\
 > [-] 受影響的變量名稱: 
@@ -328,7 +341,7 @@ Case: 在blog中發放連結
 ----
 ### V1.0.X(#8)
 
-> INFO:  V1.0.x更新生命期完結，共更新 ***8*** 次
+> INFO: V1.0.x更新生命期完結，共更新 ***8*** 次
 
 > V1.0.5[1]: 解決Android設備背景錯位的問題
 

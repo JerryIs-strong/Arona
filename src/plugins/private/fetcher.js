@@ -13,6 +13,6 @@
             window.location.reload();
         }
     } catch (error) {
-        showSnackbar("The dataset may be corrupted", 10000, "#d55757", "fa-solid", "fa-bomb");
+        showSnackbar("The dataset may be corrupted", 10000, "fa-solid", "fa-bomb");
     }
 })();

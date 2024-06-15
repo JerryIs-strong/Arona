@@ -14,11 +14,35 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-function showSnackbar(message, scroll = true, duration = 3000, color = "#4388d9", iconType = "fa-regular", iconName = "fa-bell") {
+function showSnackbar(message, scroll = true, duration = 3000, iconType = "fa-regular", iconName = "fa-bell", level = "info") {
     const wrapper = document.getElementById('notification');
+
+    const main = document.createElement('div');
+    main.classList.add('notification_wrapper', 'snackbar');
+
+    const iconDiv = document.createElement('div');
+    iconDiv.className = "notification_icon";
+    const iconElement = document.createElement('i');
+    iconElement.classList.add(iconType, iconName);
+    iconElement.classList.add("notification_icon");
+
+    const titleDiv = document.createElement('div');
+    titleDiv.innerText = "通知";
+    titleDiv.classList.add("notification_title");
+
+    const LevelDiv = document.createElement('div');
+    LevelDiv.innerText = level === 'danger' ? "嚴重" : level === 'warn' ? "警告" : "資訊";
+    LevelDiv.style.backgroundColor = level === 'danger' ? '#d57079' : level === 'warn' ? 'rgb(145, 112, 52)' : 'rgb(52, 118, 145)';
+    LevelDiv.classList.add("notification_level");
+
+    const title = document.createElement('div');
+    title.classList.add('snackbar_title_sub');
+
+    const title_top = document.createElement('div');
+    title_top.classList.add('snackbar_title');
+
     const snackbar = document.createElement('div');
-    snackbar.classList.add('notification_wrapper', 'snackbar');
-    snackbar.style.backgroundColor = color;
+    snackbar.classList.add('notification_main');
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'notification_content';
@@ -27,25 +51,24 @@ function showSnackbar(message, scroll = true, duration = 3000, color = "#4388d9"
     if (scroll) {
         contentDiv.classList.add("mobile-scroll")
     } else {
-        contentDiv.classList.add("mobile-center")
+        snackbar.classList.add("mobile-center")
     }
 
-    const iconDiv = document.createElement('div');
-    iconDiv.className = "notification_icon";
-    const iconElement = document.createElement('i');
-    iconElement.classList.add(iconType, iconName);
-
-    iconDiv.appendChild(iconElement);
-    snackbar.appendChild(iconDiv);
     snackbar.appendChild(contentDiv);
-    wrapper.appendChild(snackbar);
-    snackbar.classList.add('snackbar-show');
+    title.appendChild(iconElement);
+    title.appendChild(titleDiv);
+    title_top.appendChild(title);
+    title_top.appendChild(LevelDiv);
+    main.appendChild(title_top);
+    main.appendChild(snackbar);
+    wrapper.appendChild(main);
+    main.classList.add('snackbar-show');
 
     setTimeout(function () {
-        snackbar.classList.remove('snackbar-show');
-        snackbar.classList.add('snackbar-hide');
+        main.classList.remove('snackbar-show');
+        main.classList.add('snackbar-hide');
         setTimeout(function () {
-            wrapper.removeChild(snackbar);
+            wrapper.removeChild(main);
         }, 300);
     }, duration);
 }
