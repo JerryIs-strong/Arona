@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (music.enabled && github_icon.enabled) {
         initializeGithubIcon(github_icon, true);
         infiniteLoop();
+    } else if(github_icon.enabled){
+        initializeGithubIcon(github_icon);
     }
     if (alert.enabled) {
         if (alert.https) {
@@ -44,6 +46,7 @@ function createLink(id, className, target, title, url, linkName) {
     LinkBtn.className = className;
     LinkBtn.target = target;
     LinkBtn.title = title;
+    LinkBtn.setAttribute('alt', title)
     if (url) {
         LinkBtn.href = url;
     }
@@ -160,6 +163,7 @@ function handleBackground(backgroundUrl) {
     const backgroundElement = document.getElementById('background');
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
         backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
+        backgroundElement.setAttribute('alt', 'background')
     } else {
         debug("本地壁紙設置錯誤", "warn")
     }
@@ -176,9 +180,11 @@ function handleHolderIcon(holderIcon) {
     const imgElement = document.getElementById('img');
     if (holderIcon.method === "local") {
         imgElement.style.backgroundImage = `url("${holderIcon.local.url}")`;
+        imgElement.setAttribute('alt', 'icon');
     } else if (holderIcon.method === "gravatar") {
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon.gravatar.email)}?size=500`;
         imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
+        imgElement.setAttribute('alt', 'icon');
     } else {
         debug("頭像設置錯誤", "warn")
     }
@@ -186,6 +192,7 @@ function handleHolderIcon(holderIcon) {
 
 function initializeGithubIcon(github_icon, margin = false) {
     const githubProject = document.getElementById("github");
+    console.log(github_icon);
     if (github_icon.enabled) {
         if (margin) {
             githubProject.classList.add("github-loop");
@@ -193,6 +200,7 @@ function initializeGithubIcon(github_icon, margin = false) {
         if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
             githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
+        githubProject.setAttribute('alt', 'Github Repository')
     } else {
         debug("Github Icon已禁用", "info")
         document.getElementById("github").remove();
