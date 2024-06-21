@@ -12,7 +12,7 @@
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-更新日志" target="blank"><strong>📄 日志</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.5.0(推送版本)</strong>
+    <strong>💌 V1.5.1(推送版本)</strong>
     <br/>
     <br/>
     <div>
@@ -195,6 +195,16 @@ Case: 在blog中發放連結
 ----
 
 ### V1.5.X_\[Bocchi\](#-)
+
+> V1.5.1[2]: 有數個功能得到改進
+> - title支援問候語的自定義
+> - 通知圖標在移動端下潛問題
+> - 通知Api現支援自動於移動端滾動，固scroll參數無效
+> - 改善fetcher性能
+> - 增加language Api
+
+> V1.5.1[1]: 有數個功能上的更新
+> - 初步支援多國語言(優先級: 自定義>多國語言>預設設置)
 
 > V1.5.0[2]: 有數個功能得到改進
 > - SEO移除對於tag的支持
