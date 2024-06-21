@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.setProperty('--global-blur', 'blur(0)');
     }
     observer.observe(notificationElement, { childList: true });
-    showSnackbar(`${language.welcome}`, 4000, iconType = "fa-solid", iconName = "fa-earth-americas", level = "info", language.list_name);
+    if(language.list_code === navigator.language){
+        showSnackbar(`${language.welcome}${language.support}`, 4000, iconType = "fa-solid", iconName = "fa-earth-americas", level = "info", language.list_name);
+    }
 });
 
 function createLink(id, className, target, title, url, linkName) {
