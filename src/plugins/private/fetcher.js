@@ -1,22 +1,24 @@
-// Load language data
-async function loadLanguageData(languageCode) {
+(async () => {
     try {
-        const response = await fetch(`src/language/${languageCode}.json`);
-        if (response.ok) {
-            return await response.json();
-        } else if (response.status === 404) {
-            return loadLanguageData('en'); // Fall back to English
-        } else {
-            throw new Error(`Failed to fetch language file: ${response.status}`);
-        }
-    } catch (error) {
-        return loadLanguageData('en'); // Fall back to English
-    }
-}
+        const userLang = navigator.language || navigator.userLanguage;
+        console.log(userLang);
+        let languageResponse;
 
-// Load setting and version data
-async function loadSettingAndVersion() {
-    try {
+        try {
+            languageResponse = await fetch(`src/language/${userLang}.json`);
+
+            if (!languageResponse.ok) {
+                if (languageResponse.status === 404) {
+                    languageResponse = await fetch('src/language/en.json');
+                } else {
+                    throw new Error(`Failed to fetch language file: ${languageResponse.status}`);
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching language file:', error);
+            languageResponse = await fetch('src/language/en.json');
+        }
+
         const [settingResponse, versionResponse] = await Promise.all([
             fetch('setting.json'),
             fetch('version.txt')
@@ -24,40 +26,15 @@ async function loadSettingAndVersion() {
 
         const data = await settingResponse.json();
         const version = await versionResponse.text();
-        return { ...data, version };
-    } catch (error) {
-        return null;
-    }
-}
-
-// Enable language
-function enableLanguage() {
-    const localData = JSON.parse(sessionStorage.getItem('setting')) || {};
-    localData.language = localData.language || [];
-    localData.language[0] = { ...localData.language[0], enabled: true };
-    sessionStorage.setItem('setting', JSON.stringify(localData));
-    window.location.reload();
-}
-
-// Check for version update and load data
-async function checkVersionAndLoadData() {
-    const userLang = navigator.language || navigator.userLanguage;
-    const languageData = await loadLanguageData(userLang);
-    const settingAndVersion = await loadSettingAndVersion();
-
-    if (settingAndVersion) {
-        const { version, ...settingData } = settingAndVersion;
+        const languageData = await languageResponse.json();
         const existingSetting = JSON.parse(sessionStorage.getItem('setting') || '{}');
 
         if (!existingSetting.version || existingSetting.version !== version) {
-            const setting = { ...settingData, version, language: languageData };
+            const setting = { ...data, version, language: languageData };
             sessionStorage.setItem('setting', JSON.stringify(setting));
-        } else {
-            const localData = { ...existingSetting, language: languageData };
-            sessionStorage.setItem('setting', JSON.stringify(localData));
+            window.location.reload();
         }
+    } catch (error) {
+        console.log(error, "error")
     }
-}
-
-// Initialize
-checkVersionAndLoadData();
+})();
