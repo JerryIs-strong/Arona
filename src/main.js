@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const titleSettings = settings.display.title;
     initializeProfile(profile, music, display, SEO, settings.plugins, titleSettings);
-    initializeLanguage();
     initializeLinks(links);
     initializeSkills(skills);
     if (music.enabled && github_icon.enabled) {
@@ -101,10 +100,10 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     /* Basic HTML Elements */
-    document.documentElement.lang = language;
-    document.title = profile.website_name;
+    document.documentElement.lang = language.list_code || language;
+    document.title = language.website_name || profile.website_name;
     document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
-    document.getElementById('description').innerText = profile.subtitle;
+    document.getElementById('description').innerText = language.subtitle || profile.subtitle;
     /* Meta Tags */
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
     /* Open Graph */
@@ -117,12 +116,6 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     handleBackground(background.url);
     handleTheme(darkMode, setting.theme);
     handleHolderIcon(icon, plugins_list);
-}
-
-function initializeLanguage() {
-    document.documentElement.lang = language.list_code;
-    document.title = language.website_name;
-    document.getElementById('description').innerText = language.subtitle;
 }
 
 function handleSignature({ enabled, content, auto_hide }) {
