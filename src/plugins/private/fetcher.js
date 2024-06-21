@@ -10,7 +10,6 @@ async function loadLanguageData(languageCode) {
             throw new Error(`Failed to fetch language file: ${response.status}`);
         }
     } catch (error) {
-        console.error('Error fetching language file:', error);
         return loadLanguageData('en'); // Fall back to English
     }
 }
@@ -27,7 +26,6 @@ async function loadSettingAndVersion() {
         const version = await versionResponse.text();
         return { ...data, version };
     } catch (error) {
-        debugInfo(error, "error");
         return null;
     }
 }
@@ -36,8 +34,9 @@ async function loadSettingAndVersion() {
 function enableLanguage() {
     const localData = JSON.parse(sessionStorage.getItem('setting')) || {};
     localData.language = localData.language || [];
-    language = { ...language, enabled: true };
+    localData.language[0] = { ...localData.language[0], enabled: true };
     sessionStorage.setItem('setting', JSON.stringify(localData));
+    window.location.reload();
 }
 
 // Check for version update and load data
