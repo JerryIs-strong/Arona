@@ -1,5 +1,4 @@
 const setting = JSON.parse(sessionStorage.getItem("setting"));
-const language = setting.language[0];
 const version = setting.version;
 
 console.log(

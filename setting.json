@@ -21,7 +21,7 @@
     },
     "SEO": {
         "description": "",
-        "language": "zh-TW"
+        "language": ""
     },
     "display": {
         "background": {
@@ -33,7 +33,7 @@
         },
         "signature": {
             "enabled": true,
-            "content": "V.Bocchi",
+            "content": "V.Arona",
             "auto_hide": true
         },
         "share": {

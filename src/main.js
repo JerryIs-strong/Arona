@@ -18,15 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (music.enabled && github_icon.enabled) {
         initializeGithubIcon(github_icon, true);
         infiniteLoop();
-    } else if (github_icon.enabled) {
-        initializeGithubIcon(github_icon);
     }
     if (alert.enabled) {
         if (alert.https) {
             if (window.location.protocol === 'https:') {
-                showSnackbar(language.https_security_true, 8000, "fa-solid", "fa-lock");
+                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', true, 8000, "fa-solid", "fa-lock");
             } else {
-                showSnackbar(language.https_security_false, 10000, "fa-solid", "fa-lock-open", "warn");
+                showSnackbar('It seems that you are not browsing using the https:// protocol. Your connection may be not secure!', true, 10000, "fa-solid", "fa-lock-open", "warn");
             }
         }
         initializeAlert(alert.data)
@@ -38,9 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.setProperty('--global-blur', 'blur(0)');
     }
     observer.observe(notificationElement, { childList: true });
-    if(language.list_code === navigator.language){
-        showSnackbar(`${language.welcome}${language.support}`, 4000, iconType = "fa-solid", iconName = "fa-earth-americas", level = "info", language.list_name);
-    }
 });
 
 function createLink(id, className, target, title, url, linkName) {
@@ -49,7 +44,6 @@ function createLink(id, className, target, title, url, linkName) {
     LinkBtn.className = className;
     LinkBtn.target = target;
     LinkBtn.title = title;
-    LinkBtn.setAttribute('alt', title)
     if (url) {
         LinkBtn.href = url;
     }
@@ -78,10 +72,10 @@ function infiniteLoop() {
 function greetUser(settings) {
     const currentHour = new Date().getHours();
     const greetings = {
-        morning: settings.morning || language.greet_morning,
-        afternoon: settings.afternoon || language.greet_afternoon,
-        evening: settings.evening || language.greet_evening,
-        night: settings.night || language.greet_night
+        morning: settings.morning || "Good morning!",
+        afternoon: settings.afternoon || "Good afternoon!",
+        evening: settings.evening || "Good evening!",
+        night: settings.night || "Good night!"
     };
 
     if (currentHour >= 6 && currentHour < 12) {
@@ -98,14 +92,14 @@ function greetUser(settings) {
 function initializeProfile(profile, music, display, SEO, plugins_list, titleSettings) {
     const { icon } = profile;
     const { background, signature } = display;
-    const { seoLanguage, description } = SEO;
+    const { language, description } = SEO;
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     /* Basic HTML Elements */
-    document.documentElement.lang = language.list_code || seoLanguage;
-    document.title = language.website_name || profile.website_name;
+    document.documentElement.lang = language || 'zh-TW';
+    document.title = profile.website_name;
     document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
-    document.getElementById('description').innerText = language.subtitle || profile.subtitle;
+    document.getElementById('description').innerText = profile.subtitle;
     /* Meta Tags */
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
     /* Open Graph */
@@ -166,7 +160,6 @@ function handleBackground(backgroundUrl) {
     const backgroundElement = document.getElementById('background');
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
         backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
-        backgroundElement.setAttribute('alt', 'background')
     } else {
         debug("本地壁紙設置錯誤", "warn")
     }
@@ -183,11 +176,9 @@ function handleHolderIcon(holderIcon) {
     const imgElement = document.getElementById('img');
     if (holderIcon.method === "local") {
         imgElement.style.backgroundImage = `url("${holderIcon.local.url}")`;
-        imgElement.setAttribute('alt', 'icon');
     } else if (holderIcon.method === "gravatar") {
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon.gravatar.email)}?size=500`;
         imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
-        imgElement.setAttribute('alt', 'icon');
     } else {
         debug("頭像設置錯誤", "warn")
     }
@@ -202,7 +193,6 @@ function initializeGithubIcon(github_icon, margin = false) {
         if (github_icon.github_user_name != "" && github_icon.github_repo_name != "") {
             githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
-        githubProject.setAttribute('alt', 'Github Repository')
     } else {
         debug("Github Icon已禁用", "info")
         document.getElementById("github").remove();
@@ -255,7 +245,7 @@ function initializeAlert(alertSettings) {
     if (alertSettings && Object.keys(alertSettings).length > 0) {
         Object.keys(alertSettings).forEach(key => {
             const message = alertSettings[key];
-            showSnackbar(message.content, message.duration, message.iconType, message.iconName, message.level);
+            showSnackbar(message.content, message.scroll, message.duration, message.iconType, message.iconName, message.level);
         });
     }
 }

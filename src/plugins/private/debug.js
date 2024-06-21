@@ -14,22 +14,7 @@ function debug(DebugMessage, action = 'info') {
     }
 }
 
-function ChineseDetect(text) {
-    const hasEnglish = /[a-zA-Z]/.test(text);
-
-    const hasChinese = /[\u4e00-\u9fa5]/.test(text);
-
-    if (hasEnglish && !hasChinese) { //english
-        return false;
-    } else if (!hasEnglish && hasChinese) { //chinese
-        return true;
-    } else {
-        return true; //both
-    }
-}
-
-
-function showSnackbar(message, duration = 3000, iconType = "fa-regular", iconName = "fa-bell", level = "info", notification_name = language.notification_name) {
+function showSnackbar(message, scroll = true, duration = 3000, iconType = "fa-regular", iconName = "fa-bell", level = "info") {
     const wrapper = document.getElementById('notification');
 
     const main = document.createElement('div');
@@ -42,11 +27,11 @@ function showSnackbar(message, duration = 3000, iconType = "fa-regular", iconNam
     iconElement.classList.add("notification_icon");
 
     const titleDiv = document.createElement('div');
-    titleDiv.innerText = notification_name;
+    titleDiv.innerText = "通知";
     titleDiv.classList.add("notification_title");
 
     const LevelDiv = document.createElement('div');
-    LevelDiv.innerText = level === 'danger' ? language.level_danger : level === 'warn' ? language.level_warn : language.level_info;
+    LevelDiv.innerText = level === 'danger' ? "嚴重" : level === 'warn' ? "警告" : "資訊";
     LevelDiv.style.backgroundColor = level === 'danger' ? '#d57079' : level === 'warn' ? 'rgb(145, 112, 52)' : 'rgb(52, 118, 145)';
     LevelDiv.classList.add("notification_level");
 
@@ -63,19 +48,10 @@ function showSnackbar(message, duration = 3000, iconType = "fa-regular", iconNam
     contentDiv.className = 'notification_content';
     contentDiv.innerHTML = message;
     contentDiv.style.setProperty('--scroll-time', (duration / 1000) - 1 + 's');
-
-    if (ChineseDetect(message) == true) {
-        if (message.length > 13) {
-            contentDiv.classList.add("mobile-scroll")
-        } else {
-            snackbar.classList.add("mobile-center")
-        }
+    if (scroll) {
+        contentDiv.classList.add("mobile-scroll")
     } else {
-        if (message.length > 25) {
-            contentDiv.classList.add("mobile-scroll")
-        } else {
-            snackbar.classList.add("mobile-center")
-        }
+        snackbar.classList.add("mobile-center")
     }
 
     snackbar.appendChild(contentDiv);
