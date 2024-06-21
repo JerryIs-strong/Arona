@@ -96,11 +96,11 @@ function greetUser(settings) {
 function initializeProfile(profile, music, display, SEO, plugins_list, titleSettings) {
     const { icon } = profile;
     const { background, signature } = display;
-    const { language, description } = SEO;
+    const { seoLanguage, description } = SEO;
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     /* Basic HTML Elements */
-    document.documentElement.lang = language.list_code || language;
+    document.documentElement.lang = language.list_code || seoLanguage;
     document.title = language.website_name || profile.website_name;
     document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = language.subtitle || profile.subtitle;
