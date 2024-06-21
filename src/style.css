@@ -130,7 +130,8 @@ html {
 }
 
 .share {
-    color: rgb(255, 255, 255);
+    color: var(--font-color) !important;
+    text-decoration: none !important;
     z-index: 10;
     position: absolute;
     bottom: 20px;
@@ -147,6 +148,11 @@ html {
 
 .share::-webkit-scrollbar {
     display: none;
+}
+
+.githubProject, .MusicName{
+    color: var(--font-color) !important;
+    text-decoration: none !important;
 }
 
 .MusicName {
@@ -327,6 +333,10 @@ a.githubProject:-webkit-any-link {
         padding-left: 20px;
         white-space: nowrap;
         z-index: 10;
+    }
+
+    div.snackbar_title_sub{
+        margin-top: -2px !important;
     }
 
     div.notification_icon {

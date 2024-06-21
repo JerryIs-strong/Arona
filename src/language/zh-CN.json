@@ -1,0 +1,21 @@
+[
+    {
+        "list_name": "中文(简体)",
+        "list_code": "zh-TW",
+        "welcome": "您好！",
+        "website_name": "我的个人网页",
+        "subtitle": "您现在可以开始配置您的网页",
+        "name": "您成功了！",
+        "support": "我们支持您所在地区的语言！",
+        "notification_name": "通知",
+        "level_danger": "严重",
+        "level_info": "信息",
+        "level_warn": "警告",
+        "greet_morning": "早上好！ ",
+        "greet_afternoon": "下午好！ ",
+        "greet_evening": "安安！ ",
+        "greet_night": "晚上好！ ",
+        "https_security_true": "您正在使用 https://协定浏览，连线是安全的！",
+        "https_security_false": "您似乎没有使用 https:// 协定进行浏览。"
+    }
+]

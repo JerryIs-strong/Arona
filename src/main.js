@@ -13,20 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const titleSettings = settings.display.title;
     initializeProfile(profile, music, display, SEO, settings.plugins, titleSettings);
+    initializeLanguage();
     initializeLinks(links);
     initializeSkills(skills);
     if (music.enabled && github_icon.enabled) {
         initializeGithubIcon(github_icon, true);
         infiniteLoop();
-    } else if(github_icon.enabled){
+    } else if (github_icon.enabled) {
         initializeGithubIcon(github_icon);
     }
     if (alert.enabled) {
         if (alert.https) {
             if (window.location.protocol === 'https:') {
-                showSnackbar('You\'re browsing with https:// protocol, the connection is safe!', true, 8000, "fa-solid", "fa-lock");
+                showSnackbar(language.https_security_true, 8000, "fa-solid", "fa-lock");
             } else {
-                showSnackbar('It seems that you are not browsing using the https:// protocol. Your connection may be not secure!', true, 10000, "fa-solid", "fa-lock-open", "warn");
+                showSnackbar(language.https_security_false, 10000, "fa-solid", "fa-lock-open", "warn");
             }
         }
         initializeAlert(alert.data)
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.setProperty('--global-blur', 'blur(0)');
     }
     observer.observe(notificationElement, { childList: true });
+    showSnackbar(`${language.welcome}`, 4000, iconType = "fa-solid", iconName = "fa-earth-americas", level = "info", language.list_name);
 });
 
 function createLink(id, className, target, title, url, linkName) {
@@ -75,10 +77,10 @@ function infiniteLoop() {
 function greetUser(settings) {
     const currentHour = new Date().getHours();
     const greetings = {
-        morning: settings.morning || "Good morning!☕",
-        afternoon: settings.afternoon || "Good afternoon!🌤️",
-        evening: settings.evening || "Good evening!🌆",
-        night: settings.night || "Good night!💤"
+        morning: settings.morning || language.greet_morning,
+        afternoon: settings.afternoon || language.greet_afternoon,
+        evening: settings.evening || language.greet_evening,
+        night: settings.night || language.greet_night
     };
 
     if (currentHour >= 6 && currentHour < 12) {
@@ -99,7 +101,7 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     /* Basic HTML Elements */
-    document.documentElement.lang = language || 'zh-TW';
+    document.documentElement.lang = language;
     document.title = profile.website_name;
     document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = profile.subtitle;
@@ -115,6 +117,12 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     handleBackground(background.url);
     handleTheme(darkMode, setting.theme);
     handleHolderIcon(icon, plugins_list);
+}
+
+function initializeLanguage() {
+    document.documentElement.lang = language.list_code;
+    document.title = language.website_name;
+    document.getElementById('description').innerText = language.subtitle;
 }
 
 function handleSignature({ enabled, content, auto_hide }) {
@@ -192,7 +200,6 @@ function handleHolderIcon(holderIcon) {
 
 function initializeGithubIcon(github_icon, margin = false) {
     const githubProject = document.getElementById("github");
-    console.log(github_icon);
     if (github_icon.enabled) {
         if (margin) {
             githubProject.classList.add("github-loop");
@@ -253,7 +260,7 @@ function initializeAlert(alertSettings) {
     if (alertSettings && Object.keys(alertSettings).length > 0) {
         Object.keys(alertSettings).forEach(key => {
             const message = alertSettings[key];
-            showSnackbar(message.content, message.scroll, message.duration, message.iconType, message.iconName, message.level);
+            showSnackbar(message.content, message.duration, message.iconType, message.iconName, message.level);
         });
     }
 }
