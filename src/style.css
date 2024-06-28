@@ -130,7 +130,7 @@ html {
 }
 
 .share {
-    color: var(--font-color) !important;
+    color: #fff !important;
     text-decoration: none !important;
     z-index: 10;
     position: absolute;
@@ -151,7 +151,7 @@ html {
 }
 
 .githubProject, .MusicName{
-    color: var(--font-color) !important;
+    color: #fff !important;
     text-decoration: none !important;
 }
 
@@ -270,6 +270,7 @@ a.githubProject:-webkit-any-link {
     padding: 2px 10px;
     margin: -3px 0 0 10px;
     border-radius: 20px;
+    color: #fff;
 }
 
 .notification_main{
@@ -278,6 +279,7 @@ a.githubProject:-webkit-any-link {
 
 .notification_content {
     width: 350px;
+    color: var(--font-color);
 }
 
 .snackbar-show {
