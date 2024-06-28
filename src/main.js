@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const settings = JSON.parse(sessionStorage.getItem('setting'));
     const { profile, SEO, links, display, alert } = settings;
-    const { skills } = profile;
+    const { skills, favicon } = profile;
     const { github_icon, music } = display.share;
     const notificationElement = document.querySelector('.notification');
     const observer = new MutationObserver((mutations) => {
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     const titleSettings = settings.display.title;
-    initializeProfile(profile, music, display, SEO, settings.plugins, titleSettings);
+    initializeProfile(profile, music, display, SEO, settings.plugins, titleSettings, favicon);
     initializeLinks(links);
     initializeSkills(skills);
     if (music.enabled && github_icon.enabled) {
@@ -89,7 +89,7 @@ function greetUser(settings) {
     }
 }
 
-function initializeProfile(profile, music, display, SEO, plugins_list, titleSettings) {
+function initializeProfile(profile, music, display, SEO, plugins_list, titleSettings, favicon) {
     const { icon } = profile;
     const { background, signature } = display;
     const { language, description } = SEO;
@@ -102,6 +102,10 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     document.getElementById('description').innerText = profile.subtitle;
     /* Meta Tags */
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
+    if (favicon.default !== null && favicon.default) {
+        document.querySelector("link[rel='shortcut icon']").href = favicon.default;
+        document.querySelector("link[rel='apple-touch-icon']").href = favicon.default;
+    }
     /* Open Graph */
     // document.querySelector('meta[property="og:title"]').setAttribute('content', profile.website_name);
     // document.querySelector('meta[property="og:url"]').setAttribute('content', profile.url);
@@ -110,7 +114,7 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     handleSignature(signature);
     handleMusic(music, musicSetting);
     handleBackground(background.url);
-    handleTheme(darkMode, setting.theme);
+    handleTheme(darkMode, favicon.dark_mode);
     handleHolderIcon(icon, plugins_list);
 }
 
@@ -165,10 +169,17 @@ function handleBackground(backgroundUrl) {
     }
 }
 
-function handleTheme(darkMode, theme) {
+function handleTheme(darkMode, favicon) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
-    if (theme != "" || theme != null) {
-        document.documentElement.setAttribute("theme", theme);
+
+    if(favicon != false){
+        if (!darkMode) {
+            document.querySelector("link[rel='shortcut icon']").href = favicon.path.light;
+            document.querySelector("link[rel='apple-touch-icon']").href = favicon.path.light;
+        } else {
+            document.querySelector("link[rel='shortcut icon']").href = favicon.path.dark;
+            document.querySelector("link[rel='apple-touch-icon']").href = favicon.path.dark;
+        }
     }
 }
 
