@@ -3,8 +3,8 @@ const debugInfo = setting.debug;
 function styleInfo(message1, message2, primary_color, second_color) {
     console.log(
         `%c${message1}%c${message2}`,
-        `background-color: ${primary_color}; color: ${second_color}; padding: 5px`,
-        `background-color: ${second_color}; color: ${primary_color}; padding: 5px`
+        `background-color: ${primary_color}; color: ${second_color}; padding: 5px; border-radius: 15px 0 0 15px`,
+        `background-color: ${second_color}; color: ${primary_color}; padding: 5px; border-radius: 0 15px 15px 0`
     );
 }
 
