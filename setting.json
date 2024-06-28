@@ -12,6 +12,16 @@
                 "email": ""
             }
         },
+        "favicon":{
+            "default": "/favicon-dark.png",
+            "dark_mode":{
+                "enabled": true,
+                "path":{
+                    "light": "/favicon-light.png",
+                    "dark": "/favicon-dark.png"
+                }
+            }
+        },
         "skills": {
             "enabled": true,
             "breath": true,
