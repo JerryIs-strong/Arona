@@ -5,14 +5,14 @@
 > Our privacy policy has been enhanced and all scripts(not include plugins) containing any third-party APIs will no longer be used but will instead be provided via ***plugins***.
 <br/>
 <div align="center">
-    <img src="https://imgur.com/Kx26EDx.png">
+    <img src="https://imgur.com/LbReEjp.png">
     <br/>
     <a href="https://pw-demo-ten.vercel.app/" target="blank"><strong>🌎 DEMO</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#%EF%B8%8F-部署" target="blank"><strong>📦️ 部署</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-配置項" target="blank"><strong>💾 配置項</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-更新日志" target="blank"><strong>📄 日志</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/JerryIs-strong/pw-plugins-repo" target="blank"><strong>🚛 Plugins Store</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-    <strong>💌 V1.5.0(推送版本)</strong>
+    <strong>💌 V1.5.1(推送版本)</strong>
     <br/>
     <br/>
     <div>
