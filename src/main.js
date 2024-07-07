@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         initializeAlert(alert.data)
     } else {
-        debug("彈幕通知已禁用", "info")
+        debug("彈幕通知已禁用", "info");
         document.getElementById('notification').remove();
     }
     if (!display.blur) {
@@ -89,17 +89,42 @@ function greetUser(settings) {
     }
 }
 
+
+
 function initializeProfile(profile, music, display, SEO, plugins_list, titleSettings, favicon) {
     const { icon } = profile;
     const { background, signature } = display;
     const { language, description } = SEO;
     const { music_data: musicSetting } = music;
     const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const tagElement = document.getElementById('tagContent');
+    const tagSetting = profile.tag_intro.self_tag;
+    const tagName = profile.tag_intro.name;
     /* Basic HTML Elements */
     document.documentElement.lang = language || 'zh-TW';
     document.title = profile.website_name;
     document.getElementById('title').innerText = titleSettings.method === "greeting" ? greetUser(titleSettings.advanced_settings) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = profile.subtitle;
+    /* Main: tag intro */
+    if (profile.name) {
+        const nameElement = document.getElementById('name');
+        if (nameElement) {
+            if (tagName === 'auto') {
+                nameElement.innerText = `@${profile.name}`;
+            } else {
+                nameElement.remove();
+            }
+        }
+    }
+
+    if (tagSetting) {
+        const tagElement = document.getElementById('tag');
+        if (tagElement) {
+            tagElement.innerText = tagSetting[Math.floor(Math.random() * tagSetting.length)];
+        } else {
+            tagElement.remove();
+        }
+    }
     /* Meta Tags */
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
     if (favicon.default !== null && favicon.default) {
@@ -125,10 +150,11 @@ function handleSignature({ enabled, content, auto_hide }) {
         if (auto_hide) {
             signElement.classList.add("auto-hide");
         } else {
-            debug("個性簽名[auto-hide]已禁用", "info")
+            debug("個性簽名[auto-hide]已禁用", "info");
         }
     } else {
-        debug("個性簽名已禁用", "info")
+        signElement.remove();
+        debug("個性簽名已禁用", "info");
     }
 }
 
@@ -140,7 +166,7 @@ function handleMusic(music, musicSetting) {
         const musicKey = musicSetting[`music_${musicRandom}`];
         musicElement.innerText = musicKey.name;
         musicElement.href = musicKey.url;
-        if (musicKey.album != null || musicKey.artist != null) {
+        if (musicKey.album || musicKey.artist) {
             if (musicKey.album.length > 0) {
                 var musicKeyName = `${musicKey.name} - ${musicKey.artist} • ${musicKey.album}`;
             } else {
@@ -165,14 +191,14 @@ function handleBackground(backgroundUrl) {
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
         backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
     } else {
-        debug("本地壁紙設置錯誤", "warn")
+        debug("本地壁紙設置錯誤", "warn");
     }
 }
 
 function handleTheme(darkMode, favicon) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
 
-    if(favicon != false){
+    if (favicon != false) {
         if (!darkMode) {
             document.querySelector("link[rel='shortcut icon']").href = favicon.path.light;
             document.querySelector("link[rel='apple-touch-icon']").href = favicon.path.light;
@@ -191,7 +217,7 @@ function handleHolderIcon(holderIcon) {
         const gravatarUrl = `https://www.gravatar.com/avatar/${md5(holderIcon.gravatar.email)}?size=500`;
         imgElement.style.backgroundImage = `url("${gravatarUrl}")`;
     } else {
-        debug("頭像設置錯誤", "warn")
+        debug("頭像設置錯誤", "warn");
     }
 }
 
@@ -205,7 +231,7 @@ function initializeGithubIcon(github_icon, margin = false) {
             githubProject.innerText = `${github_icon.github_user_name}/${github_icon.github_repo_name}`;
         }
     } else {
-        debug("Github Icon已禁用", "info")
+        debug("Github Icon已禁用", "info");
         document.getElementById("github").remove();
     }
 }
@@ -216,7 +242,7 @@ function initializeSkills(skillSettings) {
     const languageContainer = document.getElementById("language");
     const learningContainer = document.getElementById("learning");
     if (skillSettings.enabled) {
-        if (skillSettings.language != null || skillSettings.learning != null) {
+        if (skillSettings.language || skillSettings.learning) {
             Object.keys(languageSkills).forEach(key => {
                 languageContainer.appendChild(createSkills(languageSkills[key], skillSettings.breath));
             });
@@ -227,7 +253,7 @@ function initializeSkills(skillSettings) {
             document.getElementById("skills").remove();
         }
     } else {
-        debug("技能已禁用", "info")
+        debug("技能已禁用", "info");
         document.getElementById("skills").remove();
     }
 }
@@ -247,7 +273,7 @@ function initializeLinks(linkSettings) {
             }
         });
     } else {
-        debug("連結設置錯誤", "warn")
+        debug("連結設置錯誤", "warn");
         document.getElementById('mediaBtn_wrapper').remove();
     }
 }

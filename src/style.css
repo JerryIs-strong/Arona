@@ -58,6 +58,8 @@ html {
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
     max-width: 850px;
+    height: 40vh;
+    min-height: 250px;
 }
 
 .main .img {
@@ -68,6 +70,45 @@ html {
     position: relative;
     animation: in 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
     border-radius: 20px 0 0 20px;
+    height: 100%;
+}
+
+.main .img .intro{
+    bottom: 5px;
+    left: 5px;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+}
+
+#name{
+    margin-right: 5px;
+    animation: name 0.6s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    animation-delay: 0.7s;
+    opacity: 0;
+}
+
+#tag{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    animation: name 0.6s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    animation-delay: 0.9s;
+    opacity: 0;
+}
+
+.main .img .intro .tag::before{
+    content: '#';
+}
+
+.main .img .intro .name, .main .img .intro .tag{
+    background-color: var(--background-color);
+    width: fit-content;
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
+    color: var(--font-color);
+    border-radius: 30px;
+    padding: 5px 10px;
 }
 
 .main .text {
@@ -293,12 +334,26 @@ a.githubProject:-webkit-any-link {
 @media screen and (max-width: 590px) {
     #main {
         flex-direction: column;
+        height: unset;
+        min-height: unset;
     }
 
     #img {
         width: 100%;
         animation: in-lite 0.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
         border-radius: 20px 20px 0 0;
+    }
+
+    #name{
+        animation: name-lite 0.6s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+        animation-delay: 0.7s;
+        opacity: 0;
+    }
+    
+    #tag{
+        animation: name-lite 0.6s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+        animation-delay: 0.9s;
+        opacity: 0;
     }
 
     div.snackbar_title{
@@ -384,8 +439,53 @@ a.githubProject:-webkit-any-link {
     }
 }
 
-@keyframes in-lite {
+@keyframes name {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
 
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes name-lite {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate-word {
+    0% {
+        transform: translateY(120%);
+    }
+    50%,
+    70%{
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-120%);
+    }
+}
+
+@keyframes rotate-word-first {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-120%);
+    }
+}
+
+@keyframes in-lite {
     0%,
     40% {
         height: 0;

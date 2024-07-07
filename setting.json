@@ -2,7 +2,11 @@
     "profile": {
         "website_name": "My Personal website",
         "subtitle": "You can now configure your website",
-        "name": "You did it!",
+        "name": "Arona",
+        "tag_intro": {
+            "name": "auto",
+            "self_tag": ["project"]
+        },
         "icon": {
             "method": "local",
             "local": {
