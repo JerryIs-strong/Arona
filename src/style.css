@@ -81,6 +81,8 @@ html {
     position: fixed;
     display: flex;
     flex-direction: row;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #name{
