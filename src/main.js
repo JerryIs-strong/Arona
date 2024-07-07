@@ -1,3 +1,7 @@
+const shareElement = document.getElementById("share");
+let shareCounter = 0;
+let animeDelay = 0.2;
+
 document.addEventListener('DOMContentLoaded', () => {
     const settings = JSON.parse(sessionStorage.getItem('setting'));
     const { profile, SEO, links, display, alert } = settings;
@@ -44,6 +48,9 @@ function createLink(id, className, target, title, url, linkName) {
     LinkBtn.className = className;
     LinkBtn.target = target;
     LinkBtn.title = title;
+    LinkBtn.style.animationDelay = `${animeDelay}s`;
+    console.log(animeDelay);
+    animeDelay += 0.1;
     if (url) {
         LinkBtn.href = url;
     }
@@ -57,9 +64,6 @@ function createSkills(name, breath) {
     skillBtn.className = `${styleTemp}${name} skill-icon${breath ? ' skill-breath' : ''}`;
     return skillBtn;
 }
-
-const shareElement = document.getElementById("share");
-let shareCounter = 0;
 
 function infiniteLoop() {
     setTimeout(() => {
