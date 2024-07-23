@@ -85,6 +85,13 @@
             "icon": "fa-solid fa-bug",
             "url": "https://github.com/JerryIs-strong/Arona/issues",
             "target": "_blank"
+        },
+        "link_4": {
+            "enabled": true,
+            "title": "repository",
+            "icon": "fa-brands fa-github",
+            "url": "https://github.com/JerryIs-strong/Arona/",
+            "target": "_blank"
         }
     },
     "debug": false,

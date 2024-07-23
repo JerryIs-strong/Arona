@@ -1,0 +1,30 @@
+name: Update Hash File
+
+on:
+  push:
+    branches:
+      - main # or your default branch name
+    paths-ignore:
+      - "hash.txt"
+
+jobs:
+  update-hash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Run hash script
+        run: python update_hash.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add hash.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update hash.txt" && git push)

@@ -42,17 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(notificationElement, { childList: true });
 });
 
-function createLink(id, className, target, title, url, linkName) {
+function createLink(id, className, target, title, url, linkName, onclick) {
     const LinkBtn = document.createElement('a');
-    LinkBtn.id = id;
-    LinkBtn.className = className;
-    LinkBtn.target = target;
-    LinkBtn.title = title;
+    Object.assign(LinkBtn, {
+        id, 
+        className, 
+        target, 
+        title,
+        href: url || 'javascript:void(0)'
+    });
+    
     LinkBtn.style.animationDelay = `${animeDelay}s`;
-    console.log(animeDelay);
     animeDelay += 0.1;
-    if (url) {
-        LinkBtn.href = url;
+    
+    if (onclick) {
+        LinkBtn.onclick = (e) => {
+            e.preventDefault();
+            new Function(onclick)();
+        };
     }
     LinkBtn.setAttribute('l-name', linkName);
     return LinkBtn;
@@ -262,23 +269,39 @@ function initializeSkills(skillSettings) {
     }
 }
 
+function LinkBox(action) {
+    const box = document.getElementById('mediaBtn_wrapper_box');
+    const animation = action === "open" ? "box-in" : "box-out";
+    box.style.display = action === "open" ? "flex" : "none";
+    box.style.animation = `${animation} 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards`;
+}
+
 function initializeLinks(linkSettings) {
     const urlParams = new URLSearchParams(window.location.search);
     const linkGroup = document.getElementById('mediaBtn_wrapper');
+    const linkGroupMore = document.getElementById('mediaBtn_wrapper_box');
+    let linkNum = 0;
 
     if (linkSettings && Object.keys(linkSettings).length > 0) {
-        Object.keys(linkSettings).forEach(key => {
-            const link = linkSettings[key];
-            if (link.enabled) {
+        Object.entries(linkSettings).forEach(([key, link]) => {
+            if (link.enabled && link.name !== urlParams.get('media')) {
                 const linkElement = createLink(key, link.icon, link.target, link.title, link.url, link.name);
-                if (linkElement.getAttribute('l-name') !== urlParams.get('media')) {
-                    linkGroup.appendChild(linkElement);
-                }
+                (linkNum < 3 ? linkGroup : linkGroupMore).appendChild(linkElement);
+                linkNum++;
             }
         });
+
+        if (Object.keys(linkSettings).length >= 4) {
+            const moreButton = createLink("more", "fa-solid fa-circle-chevron-down", "_blank", "more", false, "more", "LinkBox('open')");
+            const closeButton = createLink("close", "fa-solid fa-xmark", "_blank", "close", false, "close", "LinkBox('close')");
+            
+            moreButton.style.animationDelay = (parseFloat(moreButton.style.animationDelay) - ((Object.keys(linkSettings).length - 3) * 0.1)).toFixed(2) + 's';
+            linkGroup.appendChild(moreButton);
+            linkGroupMore.appendChild(closeButton);
+        }
     } else {
-        debug("連結設置錯誤", "warn");
-        document.getElementById('mediaBtn_wrapper').remove();
+        console.warn("連結設置錯誤");
+        linkGroup.remove();
     }
 }
 

@@ -23,7 +23,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Klee One", cursive;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: var(--font-hover-color);
@@ -140,6 +140,62 @@ html {
     margin: 10px 10px 30px;
 }
 
+.mediaBtn_box {
+    position: fixed; /* Changed from absolute to fixed for better overlay */
+    inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+    z-index: 999;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
+    padding: 20px;
+    overflow-y: auto; /* Only vertical scroll if needed */
+    box-sizing: border-box;
+    align-content: center;
+}
+
+.mediaBtn_box a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--font-color);
+    border-radius: 20px;
+    padding: 20px 35px;
+    min-width: 15px; /* Changed width to min-width */
+    color: var(--font-color);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.04, 0, 0.89);
+    animation: btn-in 0.8s cubic-bezier(0.25, 0.04, 0, 0.89) forwards;
+    opacity: 0;
+    margin: 20px;
+}
+
+.mediaBtn_box a:hover {
+    background-color: var(--font-color);
+    color: var(--font-hover-color);
+    box-shadow: 0 0 10px var(--font-color); /* Added a size to the box-shadow */
+}
+
+.mediaBtn_box #close {
+    border: none;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: var(--background-color);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    opacity: 1;
+    animation: none !important;
+}
+
+.mediaBtn_box #close:hover {
+    color: var(--font-color);
+    box-shadow: none;
+}
+
 .mediaBtn a {
     border: 1px solid var(--font-color);
     border-radius: 30px;
@@ -188,7 +244,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    max-height: 21px;
+    max-height: 23px;
     overflow: auto;
     scroll-behavior: smooth;
 }
@@ -280,7 +336,7 @@ a.githubProject:-webkit-any-link {
     flex-wrap: nowrap;
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
-    z-index: 999;
+    z-index: 998;
 }
 
 .notification_main{
@@ -433,6 +489,17 @@ a.githubProject:-webkit-any-link {
 
     div.notification_level{
         display: none;
+    }
+
+    div.mediaBtn_box a {
+        padding: 15px 25px;
+        margin: 10px;
+    }
+    
+    div.mediaBtn_box #close {
+        top: 10px;
+        right: 10px;
+        padding: 15px;
     }
 }
 
@@ -625,5 +692,27 @@ a.githubProject:-webkit-any-link {
     100%{
         scale: 1;
         opacity: 1;
+    }
+}
+
+@keyframes box-in{
+    0%{
+        display: none;
+        opacity: 0;
+    }
+    100%{
+        display: flex;
+        opacity: 1;
+    }
+}
+
+@keyframes box-out{
+    0%{
+        display: flex;
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        opacity: 0;
     }
 }
