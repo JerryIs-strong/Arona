@@ -5,7 +5,7 @@ import pytz
 
 def calculate_hashes(directory):
     # Change this line to put hash.txt in the root directory
-    hash_file_path = os.path.join(directory, "..", "hash.txt")
+    hash_file_path = os.path.join(directory, "hash.txt")
     last_dir = None
 
     with open(hash_file_path, "w") as f:
