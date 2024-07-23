@@ -4,7 +4,8 @@ from datetime import datetime
 import pytz
 
 def calculate_hashes(directory):
-    hash_file_path = os.path.join(directory, "hash.txt")
+    # Change this line to put hash.txt in the root directory
+    hash_file_path = os.path.join(directory, "..", "hash.txt")
     last_dir = None
 
     with open(hash_file_path, "w") as f:
@@ -43,5 +44,6 @@ def calculate_hashes(directory):
 
     print(f"The hash values have been saved to {hash_file_path}.")
 
-# Use the current directory as the root
-calculate_hashes(os.getcwd())
+# Use the current directory (./src/script) as the starting point
+# but generate hash.txt in the root directory
+calculate_hashes(os.path.dirname(os.path.dirname(os.getcwd())))
