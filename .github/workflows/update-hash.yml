@@ -25,7 +25,7 @@ jobs:
             pip install pytz
 
       - name: Run hash script
-        run: python update_hash.py
+        run: python /src/script/update_hash.py
 
       - name: Commit and push if changed
         run: |
