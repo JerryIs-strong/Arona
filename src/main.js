@@ -138,7 +138,7 @@ function initializeProfile(profile, music, display, SEO, plugins_list, titleSett
     }
     /* Meta Tags */
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
-    if (favicon.default !== null && favicon.default) {
+    if (favicon.default) {
         document.querySelector("link[rel='shortcut icon']").href = favicon.default;
         document.querySelector("link[rel='apple-touch-icon']").href = favicon.default;
     }
@@ -208,8 +208,7 @@ function handleBackground(backgroundUrl) {
 
 function handleTheme(darkMode, favicon) {
     document.documentElement.setAttribute("dark", darkMode ? "true" : "false");
-
-    if (favicon != false) {
+    if (favicon.enabled != false) {
         if (!darkMode) {
             document.querySelector("link[rel='shortcut icon']").href = favicon.path.light;
             document.querySelector("link[rel='apple-touch-icon']").href = favicon.path.light;
