@@ -1,4 +1,3 @@
-update_hash.py: a1319cff2ed72f2965de597a5fc5fcd8a9dc07c5d20f7eacbc15cf35997a6877
 favicon-dark.png: ce814bf1b45b4ecdf2fe1dad41b2d4653af2141694361e2d90ba973bf9c52740
 favicon-light.png: 14101b3a5bd518e3262faa43437ae64bb30625f28753585bd18c073d53c7a30f
 README.md: 1324eb6dc0b1086c7e8b9e42c3257e00884853d9a489c82fbd3697fda0a62fc6
@@ -7,7 +6,7 @@ setting.json: e10f6ad30fbbe478b04a0d680ecb6c5902cc96a3c0d695d03852df4168e590ba
 version.txt: 35e74062edc70f99deb9f2c4ae8f00a5b5e869dd5cd9e29f0ec9c6cb7e433319
 index.html: b0a1dcac67238b18fa0a190568d4f051c58d1d6cae12ed7a7ab44556f302fe99
 
-.github/workflows/update-hash.yml: 910def08795f3dc2378a84b7b0e60f376350962eb4b50cf5f88d774590bc2c8d
+.github/workflows/update-hash.yml: 55ac196c141c6d71636883a160285f065eafa5c9046b8ad4d3ba5a21679485ff
 
 src/main.js: a72a1a156793256846c61611b77123db542d0a4bc71d7048d2e6aa8184a12a88
 src/style.css: b46fa9edc713b99787986acffe39adb5fd5896639ddfe3bdf536dc99456150b4
@@ -15,6 +14,8 @@ src/plugins-manager.js: f069bcda622b5c8e6fc556b009f1a53f480295e4e101e3d3f8ea5c31
 
 src/font/font.css: ae989b04877a9a31450d627542c4168ec19acfa243d28265d38889be114c0416
 src/font/ProtestRiot-Regular.ttf: 5cdda348fbb52e3b50c9a92fd5132834f6570bf0814202c85f12a0d0b95d8364
+
+src/script/update_hash.py: 9c63c7738a1987b13e1c25b78dc2b5ada688b4682588986880f5773402f50317
 
 src/img/icon.png: d977082effbaeb3e733c9af78241635ac81b4f8e9156524054e0e2c6eba926d8
 src/img/wallpaper.png: f59a9cef5e8ad4564b5daf9b507e0df70e5c7bbe6e2904524c8d2ee83169d9d7
@@ -24,5 +25,5 @@ src/plugins/private/log.js: 4bd954f5fdc136578650fbc1433b4002c152367f4d6008253c6f
 src/plugins/private/fetcher.js: bceae04cc7e5590cf7e629a44aadbc2cd2a0214a7d52ba29d3ccacac726da4f9
 src/plugins/private/update-alert.js: 1843f153afc9e97fa0da89a7dd4f36f5a6ea53a648eda069a3d130de808e669e
 
-Last updated: 2024-07-23 14:13:17 [Asia/Hong_Kong]
+Last updated: 2024-07-23 14:23:54 [Asia/Hong_Kong]
 Verified: pass
