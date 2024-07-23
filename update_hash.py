@@ -19,7 +19,7 @@ def calculate_hashes(directory):
                     continue
 
                 if current_dir != last_dir and last_dir is not None and not files_processed:
-                    f.write(f"\n{os.path.join(directory, current_dir)}\n")
+                    f.write(f"\n")
                 files_processed = True
 
                 file_path = os.path.join(root, file)
