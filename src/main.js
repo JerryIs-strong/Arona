@@ -309,7 +309,7 @@ function initializeLinks(linkSettings) {
     if (linkSettings && Object.keys(linkSettings).length > 0) {
         Object.entries(linkSettings).forEach(([key, link]) => {
             if (link.enabled && link.name !== urlParams.get('media')) {
-                if (linkNum < 3) {
+                if (linkNum < 2) {
                     linkGroup.appendChild(createLink(key, link.icon, link.target, link.title, link.url, link.name));
                 } else {
                     if (link.category) {
