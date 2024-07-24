@@ -5,13 +5,10 @@ LICENSE: 740f7e44bd56f8b9d231bfb6f9837d8bf9473ece5b22a71a91fa8abbcecb8d92
 README.md: c3653ca9cd080026d26a4914542d01835753df07b034dd5ef9b9dd8611e43539
 setting.json: f9d8cbd7f4bc6d22cd04bc019f6170e04a36c143e9d8be76fa5f91f77ef29390
 version.txt: d142667fb8e4623a5dcd8169691c23784982d2c68e31075fb0bf81b55a93eb69
-index.html: b0a1dcac67238b18fa0a190568d4f051c58d1d6cae12ed7a7ab44556f302fe99
 
-.github/workflows/update-hash.yml: 55ac196c141c6d71636883a160285f065eafa5c9046b8ad4d3ba5a21679485ff
-
-src/main.js: bfd70cddf278f687dc847ce546d4423cfcf15f6923f6c4e701a4c7c457ac0116
-src/style.css: b46fa9edc713b99787986acffe39adb5fd5896639ddfe3bdf536dc99456150b4
-src/plugins-manager.js: f069bcda622b5c8e6fc556b009f1a53f480295e4e101e3d3f8ea5c31a7d988bf
+src\main.js: 8e5b62925f1bcc2c3595dd22e7a93f1d80aa6675c55e45923fa8c20a2467158e
+src\plugins-manager.js: f069bcda622b5c8e6fc556b009f1a53f480295e4e101e3d3f8ea5c31a7d988bf
+src\style.css: ac12c57b17579fbd47af3916ccbbc5ab128a0fb3e0567e0c93abbe7a4f6213f2
 
 src\font\font.css: ae989b04877a9a31450d627542c4168ec19acfa243d28265d38889be114c0416
 src\font\ProtestRiot-Regular.ttf: 5cdda348fbb52e3b50c9a92fd5132834f6570bf0814202c85f12a0d0b95d8364
@@ -24,7 +21,5 @@ src\plugins\private\fetcher.js: bceae04cc7e5590cf7e629a44aadbc2cd2a0214a7d52ba29
 src\plugins\private\log.js: 4bd954f5fdc136578650fbc1433b4002c152367f4d6008253c6f0b3e223ace58
 src\plugins\private\update-alert.js: 1843f153afc9e97fa0da89a7dd4f36f5a6ea53a648eda069a3d130de808e669e
 
-src\script\update_hash.py: a43b286f88ff3d3c3ae2bb9699750b713bf22f032ac36fe1dbbef8c57d52acc0
-
-Last updated: 2024-07-24 17:41:38 [Asia/Hong_Kong]
+Last updated: 2024-07-24 17:58:50 [Asia/Hong_Kong]
 Verified: pass
