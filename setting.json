@@ -68,28 +68,44 @@
         "link_1": {
             "enabled": true,
             "title": "quick start",
-            "icon": "fa-solid fa-gear",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-solid fa-gear",
+                "image": false
+            },
             "url": "https://github.com/JerryIs-strong/Arona?tab=readme-ov-file#-%E9%85%8D%E7%BD%AE%E9%A0%85",
             "target": "_blank"
         },
         "link_2": {
             "enabled": true,
             "title": "get plugins",
-            "icon": "fa-solid fa-puzzle-piece",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-solid fa-puzzle-piece",
+                "image": false
+            },
             "url": "https://github.com/JerryIs-strong/pw-plugins-repo",
             "target": "_blank"
         },
         "link_3": {
             "enabled": true,
             "title": "bug report",
-            "icon": "fa-solid fa-bug",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-solid fa-bug",
+                "image": false
+            },
             "url": "https://github.com/JerryIs-strong/Arona/issues",
             "target": "_blank"
         },
         "link_4": {
             "enabled": true,
             "title": "repository",
-            "icon": "fa-brands fa-github",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-github",
+                "image": false
+            },
             "url": "https://github.com/JerryIs-strong/Arona/",
             "target": "_blank"
         }
