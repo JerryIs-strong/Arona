@@ -191,6 +191,18 @@ html {
     animation: none !important;
 }
 
+.mediaBtn_box .btnImage{
+    background-position: center;
+    background-size: cover;
+    padding: 28px 35px !important;
+}
+
+.mediaBtn .btnImage{
+    background-position: center;
+    background-size: cover;
+    padding: 14px 24px !important;
+}
+
 .mediaBtn_box #close:hover {
     color: var(--font-color);
     box-shadow: none;
@@ -214,6 +226,40 @@ html {
     background-color: var(--font-color);
     color: var(--font-hover-color);
     box-shadow: 0 0 var(--font-color);
+}
+
+.box_container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.box_container .header{
+    color: var(--font-color);
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-left: 12px;
+}
+
+.box_container .header::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    background-color: var(--font-color);
+    margin-left: -15px;
+}
+
+.btn_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .sign {
@@ -497,9 +543,25 @@ a.githubProject:-webkit-any-link {
     }
     
     div.mediaBtn_box #close {
-        top: 10px;
-        right: 10px;
-        padding: 15px;
+        top: unset;
+        right: unset;
+        padding: unset;
+        margin: 20px;
+        padding: 15px 0;
+        position: relative;
+        width: 100%;
+    }
+
+    div.box_container{
+        width: 100%;
+    }
+
+    div.mediaBtn_box{
+        align-content: unset !important;
+    }
+
+    .mediaBtn_box .btnImage{
+        padding: 23px 25px !important;
     }
 }
 

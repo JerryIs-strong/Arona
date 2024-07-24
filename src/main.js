@@ -42,19 +42,28 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(notificationElement, { childList: true });
 });
 
-function createLink(id, className, target, title, url, linkName, onclick) {
+function createLink(id, icon, target, title, url, linkName, onclick) {
     const LinkBtn = document.createElement('a');
     Object.assign(LinkBtn, {
-        id, 
-        className, 
-        target, 
+        id,
+        target,
         title,
         href: url || 'javascript:void(0)'
     });
-    
+
+    if (icon.type == "fontawesome") {
+        LinkBtn.className = icon.fontawesome;
+    } else if (icon.type == "image") {
+        LinkBtn.style.backgroundImage = `url('${icon.image}')`;
+        LinkBtn.className = "btnImage";
+    }else{
+        LinkBtn.innerText = title.charAt(0).toUpperCase();
+        LinkBtn.style.fontWeight = "900";
+    }
+
     LinkBtn.style.animationDelay = `${animeDelay}s`;
     animeDelay += 0.1;
-    
+
     if (onclick) {
         LinkBtn.onclick = (e) => {
             e.preventDefault();
@@ -275,29 +284,73 @@ function LinkBox(action) {
     box.style.animation = `${animation} 0.5s cubic-bezier(0.25, 0.04, 0, 0.89) forwards`;
 }
 
+function createContainer(header) {
+    const container = document.createElement('div');
+    container.className = "box_container";
+    container.id = `${header}_category_container`;
+    const headerElement = document.createElement('div');
+    headerElement.className = "header";
+    headerElement.innerText = header;
+    const btnWrapper = document.createElement('div');
+    btnWrapper.className = "btn_wrapper";
+    btnWrapper.id = `${header}_category_btn_wrapper`;
+    container.appendChild(headerElement);
+    container.appendChild(btnWrapper);
+    return container;
+}
+
 function initializeLinks(linkSettings) {
     const urlParams = new URLSearchParams(window.location.search);
     const linkGroup = document.getElementById('mediaBtn_wrapper');
     const linkGroupMore = document.getElementById('mediaBtn_wrapper_box');
     let linkNum = 0;
+    const category = [];
 
     if (linkSettings && Object.keys(linkSettings).length > 0) {
         Object.entries(linkSettings).forEach(([key, link]) => {
             if (link.enabled && link.name !== urlParams.get('media')) {
-                const linkElement = createLink(key, link.icon, link.target, link.title, link.url, link.name);
-                (linkNum < 3 ? linkGroup : linkGroupMore).appendChild(linkElement);
+                if (linkNum < 3) {
+                    linkGroup.appendChild(createLink(key, link.icon, link.target, link.title, link.url, link.name));
+                } else {
+                    if (link.category) {
+                        if (category.includes(link.category)) {
+                            document.getElementById(`${link.category}_category_btn_wrapper`).appendChild(createLink(key, link.icon, link.target, link.title, link.url, link.name));
+                        } else {
+                            linkGroupMore.appendChild(createContainer(link.category));
+                            document.getElementById(`${link.category}_category_btn_wrapper`).appendChild(createLink(key, link.icon, link.target, link.title, link.url, link.name));
+                            category.push(link.category);
+                        }
+                    } else {
+                        if(!category.includes("more")){
+                            linkGroupMore.appendChild(createContainer("more"));
+                            category.push("more");
+                        }
+                        document.getElementById('more_category_btn_wrapper').appendChild(createLink(key, link.icon, link.target, link.title, link.url, link.name));
+                    }
+                }
                 linkNum++;
             }
         });
 
         if (Object.keys(linkSettings).length >= 4) {
-            const moreButton = createLink("more", "fa-solid fa-circle-chevron-down", "_blank", "more", false, "more", "LinkBox('open')");
-            const closeButton = createLink("close", "fa-solid fa-xmark", "_blank", "close", false, "close", "LinkBox('close')");
-            
+            const moreButtonIcon = JSON.stringify({
+                type: "fontawesome",
+                fontawesome: "fa-solid fa-circle-chevron-down",
+                image: false
+            });
+            const closeButtonIcon = JSON.stringify({
+                type: "fontawesome",
+                fontawesome: "fa-solid fa-xmark",
+                image: false
+            });
+            const moreButton = createLink("more", JSON.parse(moreButtonIcon), "_blank", "more", false, "more", "LinkBox('open')");
+            const closeButton = createLink("close", JSON.parse(closeButtonIcon), "_blank", "close", false, "close", "LinkBox('close')");
+
             moreButton.style.animationDelay = (parseFloat(moreButton.style.animationDelay) - ((Object.keys(linkSettings).length - 3) * 0.1)).toFixed(2) + 's';
             linkGroup.appendChild(moreButton);
             linkGroupMore.appendChild(closeButton);
         }
+        console.log(category);
     } else {
         console.warn("連結設置錯誤");
         linkGroup.remove();
