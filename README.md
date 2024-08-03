@@ -204,6 +204,55 @@ Case: 在blog中發放連結
 }
 ```
 
+> [!CAUTION]
+> ❌"鏈接收納盒"的標題不能包含"link"，而僅有包含"link"的鏈接會被渲染
+
+以下為"未規范"設置鏈接的事例:
+```Json
+{
+"links": { 
+    "more":{ //"鏈接收納盒名稱"
+        "link_1": { 
+            "enabled": true,
+            "title": "facebook",
+            "name": "fb",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-facebook-f",
+                "image": false
+            },
+            "url": "https://facebook.com",
+            "target": "blank"
+        },
+        "link_2": {
+            "enabled": true,
+            "title": "youtube",
+            "name": "yt",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa fa-youtube",
+                "image": false
+            },
+            "url": "https://youtube.com",
+            "target": "blank"
+        }
+    },
+    "link_3":{
+        "enabled": true,
+        "title": "blog",
+        "name": "blog",
+        "icon": {
+            "type": "fontawesome",
+            "fontawesome": "fa-solid fa-blog",
+            "image": false
+        },
+        "url": "https://myblog.com",
+        "target": "blank"
+    }
+}
+}
+```
+
 ## 🚛 模組
 > Go to ["Document | Get start"](https://jerryplanet.notion.site/Plugins-Document-f06cd809b10143c19a5ff86e070644b6?pvs=4) to read more about plugins development
 
