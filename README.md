@@ -87,7 +87,7 @@
 ![](https://imgur.com/sl8WRWQ.png)
 5. 部署成功
 
-## 💾 配置項
+## 💾 配置項(未更新)
 > 你現在可以使用[JerryIs-strong/pw-config-editor](https://jerryis-strong.github.io/pw-config-editor/)快速和簡單地配置配置項!
 
 以下所用配置項均可以透過`setting.json`文件配置，如果你不是開發者，請不要移動或刪除`setting.json`配置文件以外的文件，以免發生錯誤
@@ -137,7 +137,7 @@
 "plugins": [] //安裝組件
 }
 ```
-### Link 鏈結按鈕
+### Link 鏈結按鈕(未更新)
 ```Json
 {
 "Link": { //Up to 5 limit
@@ -168,6 +168,41 @@ Case: 在blog中發放連結
 | :---: | :---: | :---: |
 | https://demo.webpage.com/?media=blog | ![](https://imgur.com/QPrqYQd.png) | ![](https://imgur.com/6dUeYF4.png) |
 | blog icon | ❎ | ✅ |
+
+## 📦 "鏈接收納空間"
+"鏈接收納空間"旨在當鏈接在主頁面溢出時，把溢出的鏈接整齊有序地放置於一個收納空間(Wrapper)，"鏈接收納空間"由多個"鏈接收納盒"組成，只要用戶能够規範的完成設置工作，"鏈接收納空間"便會在適當的時候自動開啟。
+```Json
+{
+"links": { 
+    "more":{ //"鏈接收納盒名稱"
+        "link_1": { 
+            "enabled": true,
+            "title": "facebook",
+            "name": "fb",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa-brands fa-facebook-f",
+                "image": false
+            },
+            "url": "https://facebook.com",
+            "target": "blank"
+        },
+        "link_2": {
+            "enabled": true,
+            "title": "youtube",
+            "name": "yt",
+            "icon": {
+                "type": "fontawesome",
+                "fontawesome": "fa fa-youtube",
+                "image": false
+            },
+            "url": "https://youtube.com",
+            "target": "blank"
+        }
+    }
+}
+}
+```
 
 ## 🚛 模組
 > Go to ["Document | Get start"](https://jerryplanet.notion.site/Plugins-Document-f06cd809b10143c19a5ff86e070644b6?pvs=4) to read more about plugins development
